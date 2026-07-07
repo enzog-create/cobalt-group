@@ -73,13 +73,21 @@
     display: flex; align-items: center; gap: 12px;
   }
   .nav-logo .mark {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    width: 42px; height: 42px; border-radius: 50%;
+    background: #fff; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     font-size: 12px; color: var(--navy); font-weight: 700;
-    transition: background 0.6s ease;
+    box-shadow: 0 0 0 1.5px rgba(201,169,110,0.65), 0 4px 14px rgba(0,0,0,0.28);
+    transition: transform 0.35s ease, box-shadow 0.6s ease;
   }
-  body.nobleboiz-mode .nav-logo .mark { background: linear-gradient(135deg, var(--mint), var(--gold-light)); }
+  .nav-logo .mark img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .nav-logo:hover .mark {
+    transform: rotate(-4deg) scale(1.06);
+    box-shadow: 0 0 0 1.5px var(--gold), 0 6px 18px rgba(0,0,0,0.35);
+  }
+  body.nobleboiz-mode .nav-logo .mark { background: #fff; }
   .nav-logo span { color: var(--gold); }
 
   .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
@@ -684,6 +692,43 @@
   .status-delivered { background: rgba(111,191,148,0.2); color: #6FBF94; border: 1px solid #6FBF94; }
   .status-building { background: rgba(201,169,110,0.2); color: var(--gold); border: 1px solid var(--gold); }
   .status-design { background: rgba(43,111,209,0.2); color: #5E9DE0; border: 1px solid #5E9DE0; }
+
+  /* Photo réelle d'un projet — recouvre le placeholder */
+  .proj-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.8s ease;
+  }
+  .project-card:hover .proj-photo { transform: scale(1.08); }
+  .project-img::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15,32,64,0.35), transparent 55%);
+    pointer-events: none;
+  }
+
+  /* Bannière partenaires — bas de la section À propos */
+  .partners {
+    grid-column: 1 / -1;
+    margin-top: 70px;
+    padding-top: 55px;
+    border-top: 1px solid rgba(27,58,107,0.14);
+    text-align: center;
+  }
+  .partners-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 500; color: var(--navy);
+    margin: 8px 0 34px;
+  }
+  .partners-banner {
+    max-width: 1100px; margin: 0 auto;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15,32,64,0.18);
+  }
+  .partners-banner img {
+    display: block; width: 100%; height: auto;
+  }
 
   .project-body { padding: 28px; }
   .project-location {
@@ -1298,7 +1343,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><div class="mark">C</div>COBALT <span>GROUP</span></a>
+  <a href="#" class="nav-logo"><div class="mark"><img src="images/logo-cobalt.png" alt="Logo Cobalt Group & Construction" onerror="this.remove();this.parentElement.textContent='C';this.parentElement.style.background='linear-gradient(135deg,var(--gold),var(--gold-light))'"></div>COBALT <span>GROUP</span></a>
   <ul class="nav-links">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#apropos">À Propos</a></li>
@@ -1390,6 +1435,15 @@
           <div class="value-title">Innovation</div>
           <div class="value-text">Un design contemporain et des solutions techniques de pointe.</div>
         </div>
+      </div>
+    </div>
+
+    <!-- BANNIÈRE PARTENAIRES -->
+    <div class="partners fade-up">
+      <div class="section-tag">Ils nous font confiance</div>
+      <h3 class="partners-title">Nos <em style="color:var(--gold)">partenaires</em></h3>
+      <div class="partners-banner">
+        <img src="images/partenaires.png" alt="Nos partenaires — Cobalt Group & Construction" loading="lazy">
       </div>
     </div>
   </div>
@@ -1526,9 +1580,10 @@
     <div class="project-card fade-up" data-category="mixte">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><rect x="10" y="20" width="80" height="60" fill="rgba(201,169,110,0.3)"/><rect x="15" y="25" width="15" height="10" fill="rgba(255,255,255,0.15)"/><rect x="35" y="25" width="15" height="10" fill="rgba(255,255,255,0.15)"/><rect x="55" y="25" width="15" height="10" fill="rgba(255,255,255,0.15)"/><rect x="75" y="25" width="10" height="10" fill="rgba(255,255,255,0.15)"/><rect x="15" y="40" width="70" height="10" fill="rgba(255,255,255,0.08)"/><rect x="15" y="55" width="70" height="22" fill="rgba(255,255,255,0.12)"/></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-plan-campagne.jpg"
+             alt="Complexe mixte Les Vergers de Provence — Plan de Campagne"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">En construction</span>
       </div>
       <div class="project-body">
@@ -1545,9 +1600,10 @@
     <div class="project-card fade-up" data-category="chalets">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><polygon points="50,10 10,45 90,45" fill="rgba(201,169,110,0.35)"/><rect x="20" y="45" width="60" height="30" fill="rgba(201,169,110,0.25)"/><rect x="35" y="55" width="14" height="20" fill="rgba(255,255,255,0.12)"/><rect x="55" y="55" width="14" height="15" fill="rgba(255,255,255,0.12)"/></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="https://primary.jwwb.nl/public/t/t/d/temp-ourtkkpstypezqzciele/image-chalets-standard.png"
+             alt="Chalet Maison NobleBois — Belgique"
+             onerror="this.style.display='none'">
         <span class="project-status status-design">Phase de conception</span>
       </div>
       <div class="project-body">
@@ -1564,9 +1620,10 @@
     <div class="project-card fade-up" data-category="residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><rect x="15" y="10" width="70" height="70" fill="rgba(201,169,110,0.3)"/><g fill="rgba(255,255,255,0.12)"><rect x="20" y="15" width="10" height="8"/><rect x="35" y="15" width="10" height="8"/><rect x="50" y="15" width="10" height="8"/><rect x="65" y="15" width="15" height="8"/><rect x="20" y="30" width="10" height="8"/><rect x="35" y="30" width="10" height="8"/><rect x="50" y="30" width="10" height="8"/><rect x="65" y="30" width="15" height="8"/><rect x="20" y="45" width="10" height="8"/><rect x="35" y="45" width="10" height="8"/><rect x="50" y="45" width="10" height="8"/><rect x="65" y="45" width="15" height="8"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-istres.jpg"
+             alt="Résidence Istres Centre — Istres"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Livraison Juillet 2026</span>
       </div>
       <div class="project-body">
@@ -1583,9 +1640,10 @@
     <div class="project-card fade-up" data-category="residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><rect x="10" y="15" width="80" height="65" fill="rgba(201,169,110,0.3)"/><g fill="rgba(255,255,255,0.12)"><rect x="15" y="20" width="12" height="8"/><rect x="32" y="20" width="12" height="8"/><rect x="49" y="20" width="12" height="8"/><rect x="66" y="20" width="12" height="8"/><rect x="15" y="35" width="12" height="8"/><rect x="32" y="35" width="12" height="8"/><rect x="49" y="35" width="12" height="8"/><rect x="66" y="35" width="12" height="8"/><rect x="15" y="50" width="12" height="8"/><rect x="32" y="50" width="12" height="8"/><rect x="49" y="50" width="12" height="8"/><rect x="66" y="50" width="12" height="8"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-vitrolles.jpg"
+             alt="Résidence Vitrolles — Vitrolles"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Phase avancée</span>
       </div>
       <div class="project-body">
@@ -1602,9 +1660,10 @@
     <div class="project-card fade-up" data-category="villas">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><g><polygon points="30,25 15,40 45,40" fill="rgba(201,169,110,0.35)"/><rect x="20" y="40" width="20" height="35" fill="rgba(201,169,110,0.25)"/><polygon points="70,25 55,40 85,40" fill="rgba(201,169,110,0.35)"/><rect x="60" y="40" width="20" height="35" fill="rgba(201,169,110,0.25)"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-marseille-erable.jpg"
+             alt="Villas de l'Érable — Marseille 13013"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Livraison prochaine</span>
       </div>
       <div class="project-body">
@@ -1640,9 +1699,10 @@
     <div class="project-card fade-up" data-category="livre residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><rect x="15" y="20" width="70" height="60" fill="rgba(111,191,148,0.35)"/><g fill="rgba(255,255,255,0.18)"><rect x="20" y="25" width="12" height="10"/><rect x="37" y="25" width="12" height="10"/><rect x="54" y="25" width="12" height="10"/><rect x="71" y="25" width="10" height="10"/><rect x="20" y="40" width="12" height="10"/><rect x="37" y="40" width="12" height="10"/><rect x="54" y="40" width="12" height="10"/><rect x="71" y="40" width="10" height="10"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-carre.jpg"
+             alt="Résidence Carré — Hyères centre-ville"
+             onerror="this.style.display='none'">
         <span class="project-status status-delivered">Livré</span>
       </div>
       <div class="project-body">
@@ -1659,9 +1719,10 @@
     <div class="project-card fade-up" data-category="livre residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><rect x="20" y="15" width="60" height="65" fill="rgba(111,191,148,0.35)"/><g fill="rgba(255,255,255,0.18)"><rect x="25" y="20" width="10" height="8"/><rect x="40" y="20" width="10" height="8"/><rect x="55" y="20" width="10" height="8"/><rect x="68" y="20" width="8" height="8"/><rect x="25" y="32" width="10" height="8"/><rect x="40" y="32" width="10" height="8"/><rect x="55" y="32" width="10" height="8"/><rect x="68" y="32" width="8" height="8"/><rect x="25" y="44" width="10" height="8"/><rect x="40" y="44" width="10" height="8"/><rect x="55" y="44" width="10" height="8"/><rect x="68" y="44" width="8" height="8"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-bougainvilliers.jpg"
+             alt="Résidence Les Bougainvilliers — Hyères"
+             onerror="this.style.display='none'">
         <span class="project-status status-delivered">Livré</span>
       </div>
       <div class="project-body">
@@ -1678,9 +1739,10 @@
     <div class="project-card fade-up" data-category="villas">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <div class="proj-building">
-          <svg viewBox="0 0 100 80"><g><polygon points="50,15 30,32 70,32" fill="rgba(201,169,110,0.35)"/><rect x="35" y="32" width="30" height="45" fill="rgba(201,169,110,0.25)"/><rect x="42" y="45" width="8" height="10" fill="rgba(255,255,255,0.15)"/><rect x="55" y="45" width="8" height="10" fill="rgba(255,255,255,0.15)"/></g></svg>
-        </div>
+        <img class="proj-photo" loading="lazy"
+             src="images/projet-gourdon.jpg"
+             alt="Domaine du Colombier — Gourdon"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">En cours</span>
       </div>
       <div class="project-body">
