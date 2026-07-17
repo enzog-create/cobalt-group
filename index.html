@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/enzog/Downloads/index_11.html -->
-<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cobalt Group &amp; Construction — L'immobilier par nature</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./inex_files/css2" rel="stylesheet">
+<title>Cobalt Group & Construction — L'immobilier par nature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #1B3A6B;
@@ -499,23 +499,23 @@
     margin: 24px auto 0;
   }
   .founder-grid {
-    display: grid; grid-template-columns: 280px 1fr;
-    gap: 70px; align-items: start;
+    display: grid; grid-template-columns: 380px 1fr;
+    gap: 80px; align-items: start;
   }
   .founder-portrait {
     display: flex; flex-direction: column; align-items: center;
   }
   .founder-portrait img {
-    width: 100%; max-width: 250px;
+    width: 100%; max-width: 340px;
     aspect-ratio: 3/4; object-fit: cover;
     border-radius: 4px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
   }
   .founder-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 29px; color: var(--navy);
+    font-size: 34px; color: var(--navy);
     font-style: italic; font-weight: 400;
-    margin-top: 26px; text-align: center;
+    margin-top: 32px; text-align: center;
   }
   .founder-line {
     width: 40px; height: 1px; background: #c4c4c4;
@@ -726,41 +726,22 @@
   }
 
   /* ───────── RÉSEAUX SOCIAUX ───────── */
-  .socials { display: flex; gap: 18px; align-items: center; }
+  .socials { display: flex; gap: 12px; align-items: center; }
   .social-link {
-    width: 54px; height: 54px; border-radius: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
     display: inline-flex; align-items: center; justify-content: center;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.14);
-    position: relative; overflow: hidden;
-    transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, border-color .4s ease, background .4s ease;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.62);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
   }
-  .social-link svg { width: 27px; height: 27px; display: block; position: relative; z-index: 2; }
-  /* couleurs d'origine des marques */
-  .social-link .s-fb { fill: #1877F2; }
-  .social-link .s-li { fill: #0A66C2; }
-  .social-link .s-ig { fill: url(#igGrad); }
-  .social-link::before {
-    content: ''; position: absolute; inset: 0;
-    opacity: 0; transition: opacity .4s ease;
+  .social-link svg { width: 15px; height: 15px; fill: currentColor; display: block; }
+  .social-link:hover {
+    transform: translateY(-4px) scale(1.08);
+    background: var(--gold); color: var(--navy);
+    border-color: var(--gold);
+    box-shadow: 0 8px 20px rgba(201,169,110,0.4);
   }
-  .social-link.fb::before { background: #1877F2; }
-  .social-link.li::before { background: #0A66C2; }
-  .social-link.ig::before {
-    background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
-  }
-  .social-link:hover, .social-link:focus-visible {
-    transform: translateY(-7px) scale(1.09);
-    border-color: transparent;
-    box-shadow: 0 14px 32px rgba(0,0,0,0.42);
-  }
-  .social-link:hover::before, .social-link:focus-visible::before { opacity: 1; }
-  /* au survol : icône en blanc sur la couleur de la marque */
-  .social-link:hover .s-fb, .social-link:hover .s-li,
-  .social-link:focus-visible .s-fb, .social-link:focus-visible .s-li { fill: #fff; }
-  .social-link:hover .s-ig, .social-link:focus-visible .s-ig { fill: #fff; }
-  .social-link:active { transform: translateY(-3px) scale(1.03); }
-  .social-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .social-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
   /* ───────── PARTENAIRES (bandeau défilant) ───────── */
   .partners {
@@ -1506,11 +1487,6 @@
       padding: 16px 12px;
     }
 
-    /* Réseaux sociaux : confort tactile */
-    .socials { gap: 16px; }
-    .social-link { width: 52px; height: 52px; }
-    .social-link svg { width: 26px; height: 26px; }
-
     /* Hero — passage en colonne (évite le débordement latéral) */
     .hero {
       height: auto; min-height: auto;
@@ -1577,6 +1553,8 @@
     /* Pied de page */
     .footer-bottom { flex-direction: column; text-align: center; gap: 18px; }
     .socials { justify-content: center; }
+    .social-link { width: 40px; height: 40px; }
+    .social-link svg { width: 17px; height: 17px; }
   }
 
   @media (max-width: 420px) {
@@ -1589,21 +1567,21 @@
 <body>
 
 <!-- CURSORS -->
-<div class="cursor-dot" style="transform: translate(557px, 343px);"></div>
-<div class="cursor-ring" style="transform: translate(542.005px, 327.996px);"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 
 <!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/enzog/Downloads/index_11.html#" class="nav-logo"><div class="mark"></div>COBALT <span>GROUP</span></a>
+  <a href="#" class="nav-logo"><div class="mark"><img src="logo-cobalt.png" alt="Logo Cobalt Group & Construction" onerror="this.remove();this.parentElement.textContent='C';this.parentElement.style.background='linear-gradient(135deg,var(--gold),var(--gold-light))'"></div>COBALT <span>GROUP</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#accueil">Accueil</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#apropos">À Propos</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#services">Services</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#projets">Biens &amp; Projets</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#vendre">Je vends</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#jeanbrun">Dispositif JeanBrun</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#noblebois" class="noble-tab" id="nav-noble">Maison NobleBois</a></li>
-    <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#contact" class="nav-cta">Contact</a></li>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#apropos">À Propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projets">Biens & Projets</a></li>
+    <li><a href="#vendre">Je vends</a></li>
+    <li><a href="#jeanbrun">Dispositif JeanBrun</a></li>
+    <li><a href="#noblebois" class="noble-tab" id="nav-noble">Maison NobleBois</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
@@ -1614,7 +1592,7 @@
 <section class="hero" id="accueil">
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
-  <div class="hero-particles" id="particles"><div class="particle" style="left: 89.6448%; animation-duration: 10.6944s; animation-delay: 5.42055s;"></div><div class="particle" style="left: 23.5879%; animation-duration: 15.1698s; animation-delay: 1.55012s;"></div><div class="particle" style="left: 0.495853%; animation-duration: 8.88827s; animation-delay: 9.23025s;"></div><div class="particle" style="left: 68.05%; animation-duration: 17.3328s; animation-delay: 1.9905s;"></div><div class="particle" style="left: 30.2487%; animation-duration: 17.769s; animation-delay: 0.207161s;"></div><div class="particle" style="left: 26.2675%; animation-duration: 14.0515s; animation-delay: 8.01103s;"></div><div class="particle" style="left: 58.7986%; animation-duration: 13.1526s; animation-delay: 2.55717s;"></div><div class="particle" style="left: 30.4959%; animation-duration: 14.3071s; animation-delay: 9.39754s;"></div><div class="particle" style="left: 33.9322%; animation-duration: 8.21853s; animation-delay: 6.70068s;"></div><div class="particle" style="left: 56.5788%; animation-duration: 13.2222s; animation-delay: 3.62214s;"></div><div class="particle" style="left: 53.3219%; animation-duration: 15.7233s; animation-delay: 3.92368s;"></div><div class="particle" style="left: 42.8521%; animation-duration: 11.4574s; animation-delay: 8.59204s;"></div><div class="particle" style="left: 73.2806%; animation-duration: 11.1414s; animation-delay: 2.85974s;"></div><div class="particle" style="left: 88.539%; animation-duration: 15.0291s; animation-delay: 4.6884s;"></div><div class="particle" style="left: 46.1121%; animation-duration: 9.54976s; animation-delay: 5.25516s;"></div><div class="particle" style="left: 76.7446%; animation-duration: 10.531s; animation-delay: 1.7273s;"></div><div class="particle" style="left: 68.9577%; animation-duration: 9.59425s; animation-delay: 5.5744s;"></div><div class="particle" style="left: 26.0927%; animation-duration: 16.7113s; animation-delay: 7.06227s;"></div><div class="particle" style="left: 40.6444%; animation-duration: 16.9481s; animation-delay: 3.85804s;"></div><div class="particle" style="left: 95.0671%; animation-duration: 16.6674s; animation-delay: 6.0419s;"></div><div class="particle" style="left: 59.5372%; animation-duration: 8.55281s; animation-delay: 1.81709s;"></div><div class="particle" style="left: 92.2933%; animation-duration: 8.60089s; animation-delay: 3.20542s;"></div><div class="particle" style="left: 27.9637%; animation-duration: 10.4109s; animation-delay: 3.17699s;"></div><div class="particle" style="left: 76.7872%; animation-duration: 14.4495s; animation-delay: 0.4962s;"></div><div class="particle" style="left: 90.1999%; animation-duration: 8.24634s; animation-delay: 9.17459s;"></div><div class="particle" style="left: 57.9373%; animation-duration: 16.9999s; animation-delay: 0.90547s;"></div><div class="particle" style="left: 16.4735%; animation-duration: 12.9804s; animation-delay: 2.96167s;"></div><div class="particle" style="left: 52.9916%; animation-duration: 8.60885s; animation-delay: 9.88146s;"></div><div class="particle" style="left: 83.783%; animation-duration: 9.59434s; animation-delay: 5.70261s;"></div><div class="particle" style="left: 29.4073%; animation-duration: 15.4708s; animation-delay: 7.3081s;"></div></div>
+  <div class="hero-particles" id="particles"></div>
   <div class="hero-frame"></div>
 
   <div class="hero-tag">Depuis 1998</div>
@@ -1624,15 +1602,15 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-kicker">Cobalt Group &amp; Construction</div>
+    <div class="hero-kicker">Cobalt Group & Construction</div>
     <h1 class="hero-title">
       <div class="word"><span>L'immobilier</span></div>
       <em><div class="word"><span>par nature</span></div></em>
     </h1>
     <p class="hero-sub">Votre partenaire de confiance pour l'achat, la vente, la construction et la gestion de biens immobiliers d'exception. Une approche humaine, durable et sophistiquée depuis bientôt dix ans.</p>
     <div class="hero-actions">
-      <a href="file:///C:/Users/enzog/Downloads/index_11.html#projets" class="btn-primary">Découvrir nos projets →</a>
-      <a href="file:///C:/Users/enzog/Downloads/index_11.html#contact" class="btn-ghost">Nous rencontrer</a>
+      <a href="#projets" class="btn-primary">Découvrir nos projets →</a>
+      <a href="#contact" class="btn-ghost">Nous rencontrer</a>
     </div>
   </div>
 
@@ -1655,14 +1633,15 @@
 <!-- ABOUT -->
 <section class="about" id="apropos">
   <div class="about-grid">
-    <div class="about-logo-wrap fade-up visible">
-      <img src="file:///C:/Users/enzog/Downloads/logo-cobalt.png" alt="Cobalt Group &amp; Construction — Immobilier par nature" onerror="this.style.display=&#39;none&#39;;this.parentElement.insertAdjacentHTML(&#39;beforeend&#39;,&#39;&lt;div style=\&#39;font-family:Cormorant Garamond,serif;text-align:center;color:var(--navy);padding:40px\&#39;&gt;&lt;div style=\&#39;font-size:72px;font-weight:600;letter-spacing:-2px;line-height:1\&#39;&gt;COBALT&lt;br&gt;GROUP&lt;br&gt;&amp; CONSTRUCTION&lt;/div&gt;&lt;div style=\&#39;margin:20px auto;width:180px;height:1px;background:var(--navy)\&#39;&gt;&lt;/div&gt;&lt;div style=\&#39;font-size:18px;letter-spacing:6px;text-transform:uppercase\&#39;&gt;Immobilier par nature&lt;/div&gt;&lt;/div&gt;&#39;)" style="display: none;">
-    <div style="font-family:Cormorant Garamond,serif;text-align:center;color:var(--navy);padding:40px"><div style="font-size:72px;font-weight:600;letter-spacing:-2px;line-height:1">COBALT<br>GROUP<br>&amp; CONSTRUCTION</div><div style="margin:20px auto;width:180px;height:1px;background:var(--navy)"></div><div style="font-size:18px;letter-spacing:6px;text-transform:uppercase">Immobilier par nature</div></div></div>
+    <div class="about-logo-wrap fade-up">
+      <img src="logo-cobalt.png" alt="Cobalt Group & Construction — Immobilier par nature"
+           onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style=\'font-family:Cormorant Garamond,serif;text-align:center;color:var(--navy);padding:40px\'><div style=\'font-size:72px;font-weight:600;letter-spacing:-2px;line-height:1\'>COBALT<br>GROUP<br>&amp; CONSTRUCTION</div><div style=\'margin:20px auto;width:180px;height:1px;background:var(--navy)\'></div><div style=\'font-size:18px;letter-spacing:6px;text-transform:uppercase\'>Immobilier par nature</div></div>')">
+    </div>
 
-    <div class="fade-up visible">
+    <div class="fade-up">
       <div class="section-tag">À propos</div>
       <h2 class="section-title">Une approche <em>humaine</em> et <em>durable</em></h2>
-      <p class="section-text">Cobalt Group &amp; Construction est un acteur majeur de l'immobilier français et européen, spécialisé dans l'achat, la vente, la construction et la gestion locative de biens d'exception.</p>
+      <p class="section-text">Cobalt Group & Construction est un acteur majeur de l'immobilier français et européen, spécialisé dans l'achat, la vente, la construction et la gestion locative de biens d'exception.</p>
       <p class="section-text">Notre philosophie repose sur trois piliers : la qualité irréprochable, l'écoute attentive de nos clients, et un profond respect de l'environnement. Chaque projet est conçu avec des matériaux durables et un design innovant qui s'intègre harmonieusement dans son cadre naturel.</p>
 
       <div class="about-values">
@@ -1701,7 +1680,8 @@
 
     <div class="founder-grid">
       <div class="founder-portrait fade-up">
-        <img src="data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22&gt;&lt;rect width=%22300%22 height=%22400%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22150%22 y=%22210%22 font-family=%22Georgia%22 font-size=%2250%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;CSG&lt;/text&gt;&lt;/svg&gt;" alt="Charles-Stéphane Giunta, Fondateur Cobalt Group" onerror="this.onerror=null;this.src=&#39;data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22&gt;&lt;rect width=%22300%22 height=%22400%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22150%22 y=%22210%22 font-family=%22Georgia%22 font-size=%2250%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;CSG&lt;/text&gt;&lt;/svg&gt;&#39;">
+        <img src="charles-stephane-giunta.jpg" alt="Charles-Stéphane Giunta, Fondateur Cobalt Group"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22><rect width=%22300%22 height=%22400%22 fill=%22%23e6e6e6%22/><text x=%22150%22 y=%22210%22 font-family=%22Georgia%22 font-size=%2250%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22>CSG</text></svg>'">
         <div class="founder-name">Charles-Stéphane Giunta</div>
         <div class="founder-line"></div>
         <div class="founder-role">Fondateur COBALT GROUP</div>
@@ -1718,28 +1698,32 @@
 
     <div class="team-grid">
       <div class="team-member fade-up">
-        <img class="team-photo" src="data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;IA&lt;/text&gt;&lt;/svg&gt;" alt="Imad AIT-MALK" onerror="this.onerror=null;this.src=&#39;data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;IA&lt;/text&gt;&lt;/svg&gt;&#39;">
+        <img class="team-photo" src="team-imad-ait-malk.jpg" alt="Imad AIT-MALK"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22><rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/><text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22>IA</text></svg>'">
         <div class="team-name">Imad AIT-MALK</div>
         <div class="team-line"></div>
         <div class="team-role">Directeur travaux et achats</div>
       </div>
 
       <div class="team-member fade-up">
-        <img class="team-photo" src="data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EG&lt;/text&gt;&lt;/svg&gt;" alt="Enzo Giunta" onerror="this.onerror=null;this.src=&#39;data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EG&lt;/text&gt;&lt;/svg&gt;&#39;">
+        <img class="team-photo" src="team-enzo-giunta.jpg" alt="Enzo Giunta"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22><rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/><text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22>EG</text></svg>'">
         <div class="team-name">Enzo GIUNTA</div>
         <div class="team-line"></div>
         <div class="team-role">Associé</div>
       </div>
 
       <div class="team-member fade-up">
-        <img class="team-photo" src="data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EM&lt;/text&gt;&lt;/svg&gt;" alt="Eric Martinet" onerror="this.onerror=null;this.src=&#39;data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EM&lt;/text&gt;&lt;/svg&gt;&#39;">
+        <img class="team-photo" src="team-eric-martinet.jpg" alt="Eric Martinet"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22><rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/><text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22>EM</text></svg>'">
         <div class="team-name">Eric MARTINET</div>
         <div class="team-line"></div>
         <div class="team-role">Responsable commercial</div>
       </div>
 
       <div class="team-member fade-up">
-        <img class="team-photo" src="data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EM&lt;/text&gt;&lt;/svg&gt;" alt="Enzo Montoni" onerror="this.onerror=null;this.src=&#39;data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22&gt;&lt;rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/&gt;&lt;text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22&gt;EM&lt;/text&gt;&lt;/svg&gt;&#39;">
+        <img class="team-photo" src="team-enzo-montoni.jpg" alt="Enzo Montoni"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 220 220%22><rect width=%22220%22 height=%22220%22 fill=%22%23e6e6e6%22/><text x=%22110%22 y=%22130%22 font-family=%22Georgia%22 font-size=%2260%22 fill=%22%231B3A6B%22 text-anchor=%22middle%22>EM</text></svg>'">
         <div class="team-name">Enzo MONTONI</div>
         <div class="team-line"></div>
         <div class="team-role">Bachelor</div>
@@ -1756,14 +1740,14 @@
       <div class="section-tag">Nos services</div>
       <h2 class="section-title">Quatre métiers,<br><em>une même exigence</em></h2>
     </div>
-    <a href="file:///C:/Users/enzog/Downloads/index_11.html#contact" class="btn-primary">Parler d'un projet →</a>
+    <a href="#contact" class="btn-primary">Parler d'un projet →</a>
   </div>
 
   <div class="services-grid">
     <div class="service-card fade-up">
       <div class="service-num">01 — Immobilier</div>
       <div class="service-icon">⬢</div>
-      <h3 class="service-title">Achat &amp; Vente</h3>
+      <h3 class="service-title">Achat & Vente</h3>
       <p class="service-desc">Que vous cherchiez à acquérir la propriété de vos rêves ou à vendre votre bien au meilleur prix, notre équipe vous accompagne de A à Z avec discrétion et efficacité.</p>
       <span class="service-arrow">Explorer →</span>
     </div>
@@ -1787,7 +1771,7 @@
     <div class="service-card fade-up">
       <div class="service-num">04 — Conseil</div>
       <div class="service-icon">✦</div>
-      <h3 class="service-title">Conseil &amp; Expertise</h3>
+      <h3 class="service-title">Conseil & Expertise</h3>
       <p class="service-desc">Une expertise approfondie du marché immobilier pour des conseils avisés, qu'il s'agisse d'évaluer un bien ou d'optimiser un projet de construction.</p>
       <span class="service-arrow">Explorer →</span>
     </div>
@@ -1798,7 +1782,7 @@
 <section class="projects" id="projets">
   <div class="section-header">
     <div>
-      <div class="section-tag">Nos biens &amp; projets</div>
+      <div class="section-tag">Nos biens & projets</div>
       <h2 class="section-title">Un patrimoine<br><em style="color:var(--gold)">d'exception</em></h2>
     </div>
   </div>
@@ -1817,7 +1801,10 @@
     <div class="project-card fade-up" data-category="mixte">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-plan-campagne.jpg" alt="Complexe mixte Les Vergers de Provence — Plan de Campagne" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-plan-campagne.jpg"
+             alt="Complexe mixte Les Vergers de Provence — Plan de Campagne"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">En construction</span>
       </div>
       <div class="project-body">
@@ -1834,7 +1821,10 @@
     <div class="project-card fade-up" data-category="chalets">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="./inex_files/image-chalets-standard.png" alt="Chalet Maison NobleBois — Belgique" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="https://primary.jwwb.nl/public/t/t/d/temp-ourtkkpstypezqzciele/image-chalets-standard.png"
+             alt="Chalet Maison NobleBois — Belgique"
+             onerror="this.style.display='none'">
         <span class="project-status status-design">Phase de conception</span>
       </div>
       <div class="project-body">
@@ -1851,7 +1841,10 @@
     <div class="project-card fade-up" data-category="residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-istres.jpg" alt="Résidence Istres Centre — Istres" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-istres.jpg"
+             alt="Résidence Istres Centre — Istres"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Livraison Juillet 2026</span>
       </div>
       <div class="project-body">
@@ -1868,7 +1861,10 @@
     <div class="project-card fade-up" data-category="residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-vitrolles.jpg" alt="Résidence Vitrolles — Vitrolles" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-vitrolles.jpg"
+             alt="Résidence Vitrolles — Vitrolles"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Phase avancée</span>
       </div>
       <div class="project-body">
@@ -1885,7 +1881,10 @@
     <div class="project-card fade-up" data-category="villas">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-marseille-erable.jpg" alt="Villas de l&#39;Érable — Marseille 13013" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-marseille-erable.jpg"
+             alt="Villas de l'Érable — Marseille 13013"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Livraison prochaine</span>
       </div>
       <div class="project-body">
@@ -1902,7 +1901,10 @@
     <div class="project-card fade-up" data-category="residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-fos.jpg" alt="Résidence Sable d&#39;Or — Fos-sur-Mer, vue mer" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-fos.jpg"
+             alt="Résidence Sable d'Or — Fos-sur-Mer, vue mer"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">Livraison prochaine</span>
       </div>
       <div class="project-body">
@@ -1919,7 +1921,10 @@
     <div class="project-card fade-up" data-category="livre residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-carre.jpg" alt="Résidence Carré — Hyères centre-ville" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-carre.jpg"
+             alt="Résidence Carré — Hyères centre-ville"
+             onerror="this.style.display='none'">
         <span class="project-status status-delivered">Livré</span>
       </div>
       <div class="project-body">
@@ -1936,7 +1941,10 @@
     <div class="project-card fade-up" data-category="livre residentiel">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-bougainvilliers.jpg" alt="Résidence Les Bougainvilliers — Hyères" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-bougainvilliers.jpg"
+             alt="Résidence Les Bougainvilliers — Hyères"
+             onerror="this.style.display='none'">
         <span class="project-status status-delivered">Livré</span>
       </div>
       <div class="project-body">
@@ -1953,7 +1961,10 @@
     <div class="project-card fade-up" data-category="villas">
       <div class="project-img">
         <div class="proj-pattern"></div>
-        <img class="proj-photo" loading="lazy" src="file:///C:/Users/enzog/Downloads/projet-gourdon.jpg" alt="Domaine du Colombier — Gourdon" onerror="this.style.display=&#39;none&#39;">
+        <img class="proj-photo" loading="lazy"
+             src="projet-gourdon.jpg"
+             alt="Domaine du Colombier — Gourdon"
+             onerror="this.style.display='none'">
         <span class="project-status status-building">En cours</span>
       </div>
       <div class="project-body">
@@ -2010,23 +2021,23 @@
   </div>
 
   <div class="sell-form-wrap fade-up">
-    <h3 style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Estimation <em style="color:var(--gold)">gratuite</em></h3>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Estimation <em style="color:var(--gold)">gratuite</em></h3>
     <p style="font-size:13px;color:#666;margin-bottom:28px;line-height:1.7">Obtenez une estimation précise de votre bien en moins de 72 heures.</p>
     <form class="sell-form" onsubmit="handleSellSubmit(event)">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Prénom</label>
-          <input type="text" class="form-input" required="">
+          <input type="text" class="form-input" required>
         </div>
         <div class="form-group">
           <label class="form-label">Nom</label>
-          <input type="text" class="form-input" required="">
+          <input type="text" class="form-input" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" class="form-input" required="">
+          <input type="email" class="form-input" required>
         </div>
         <div class="form-group">
           <label class="form-label">Téléphone</label>
@@ -2097,8 +2108,8 @@
         <span>Montant de l'investissement</span>
         <span>Curseur ajustable</span>
       </div>
-      <div class="jb-slider-value"><span id="sliderVal">300 000</span><small>€</small></div>
-      <input type="range" min="100000" max="700000" step="5000" value="300000" class="jb-slider" id="jbSlider" style="--pct: 33.33333333333333%; background: linear-gradient(90deg, var(--gold) 33.33333333333333%, rgba(255,255,255,0.12) 33.33333333333333%);">
+      <div class="jb-slider-value"><span id="sliderVal">300 000</span><small>€</small></div>
+      <input type="range" min="100000" max="700000" step="5000" value="300000" class="jb-slider" id="jbSlider">
       <div class="jb-slider-ticks">
         <span>100 000 €</span>
         <span>250 000 €</span>
@@ -2118,11 +2129,11 @@
     <div class="jb-results">
       <div class="jb-result">
         <div class="jb-result-label">Réduction totale</div>
-        <div class="jb-result-val"><span id="resTotal">54 000</span><small> €</small></div>
+        <div class="jb-result-val"><span id="resTotal">54 000</span><small> €</small></div>
       </div>
       <div class="jb-result">
         <div class="jb-result-label">Économie / année</div>
-        <div class="jb-result-val"><span id="resYear">6 000</span><small> €</small></div>
+        <div class="jb-result-val"><span id="resYear">6 000</span><small> €</small></div>
       </div>
       <div class="jb-result">
         <div class="jb-result-label">Économie / mois</div>
@@ -2131,7 +2142,7 @@
     </div>
 
     <div class="jb-cta-wrap">
-      <a href="file:///C:/Users/enzog/Downloads/index_11.html#contact" class="btn-primary">Obtenir une étude personnalisée →</a>
+      <a href="#contact" class="btn-primary">Obtenir une étude personnalisée →</a>
       <p class="jb-disclaimer">Simulation indicative fondée sur le barème fiscal en vigueur. Les avantages réels dépendent de votre situation personnelle, du type de bien et du respect des conditions d'éligibilité du dispositif. Notre service d'expertise reste à votre disposition pour une étude sur mesure.</p>
     </div>
   </div>
@@ -2186,7 +2197,7 @@
 
     <div class="nb-models-grid">
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;leaf2&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('leaf2')">
         <div class="nb-card-img nb-leaf">
           <div class="nb-badge">Phase 2</div>
           <div class="nb-card-icon">🍃</div>
@@ -2202,7 +2213,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;leaf2pmr&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('leaf2pmr')">
         <div class="nb-card-img nb-leaf">
           <div class="nb-badge">PMR</div>
           <div class="nb-card-icon">♿</div>
@@ -2218,7 +2229,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;leaf3&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('leaf3')">
         <div class="nb-card-img nb-leaf">
           <div class="nb-badge">Phase 2</div>
           <div class="nb-card-icon">🌿</div>
@@ -2234,7 +2245,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;flower&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('flower')">
         <div class="nb-card-img nb-flower">
           <div class="nb-badge">Exclusif</div>
           <div class="nb-card-icon">🌸</div>
@@ -2250,7 +2261,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;lake2&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('lake2')">
         <div class="nb-card-img nb-lake">
           <div class="nb-badge">Phase 2</div>
           <div class="nb-card-icon">🏞️</div>
@@ -2266,7 +2277,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;lake3&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('lake3')">
         <div class="nb-card-img nb-lake">
           <div class="nb-badge">Phase 2</div>
           <div class="nb-card-icon">🌊</div>
@@ -2282,7 +2293,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;life3&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('life3')">
         <div class="nb-card-img nb-life">
           <div class="nb-badge">Nouveau</div>
           <div class="nb-card-icon">🏡</div>
@@ -2298,7 +2309,7 @@
         </div>
       </div>
 
-      <div class="nb-card fade-up" onclick="openNobleModal(&#39;life4&#39;)">
+      <div class="nb-card fade-up" onclick="openNobleModal('life4')">
         <div class="nb-card-img nb-life">
           <div class="nb-badge">Nouveau</div>
           <div class="nb-card-icon">🏘️</div>
@@ -2374,56 +2385,56 @@
   <div class="marquee-mask">
     <div class="marquee-row">
       <div class="marquee">
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
       </div>
     </div>
     <div class="marquee-row">
       <div class="marquee rev">
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
-        <div class="p-tile"><img src="file:///C:/Users/enzog/Downloads/partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -2467,22 +2478,22 @@
 
     <div>
       <div class="sell-form-wrap">
-        <h3 style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Votre message</h3>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Votre message</h3>
         <p style="font-size:13px;color:#666;margin-bottom:28px;line-height:1.7">Nous vous répondons sous 24 heures.</p>
         <form class="sell-form" onsubmit="handleContactSubmit(event)">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Prénom</label>
-              <input type="text" class="form-input" required="">
+              <input type="text" class="form-input" required>
             </div>
             <div class="form-group">
               <label class="form-label">Nom</label>
-              <input type="text" class="form-input" required="">
+              <input type="text" class="form-input" required>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" required="">
+            <input type="email" class="form-input" required>
           </div>
           <div class="form-group">
             <label class="form-label">Sujet</label>
@@ -2516,49 +2527,48 @@
     <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#services">Achat &amp; Vente</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#services">Construction</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#services">Gestion locative</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#services">Conseil</a></li>
+        <li><a href="#services">Achat & Vente</a></li>
+        <li><a href="#services">Construction</a></li>
+        <li><a href="#services">Gestion locative</a></li>
+        <li><a href="#services">Conseil</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Découvrir</div>
       <ul class="footer-links">
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#projets">Nos projets</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#jeanbrun">Dispositif JeanBrun</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#noblebois">Maison NobleBois</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#vendre">Je vends mon bien</a></li>
+        <li><a href="#projets">Nos projets</a></li>
+        <li><a href="#jeanbrun">Dispositif JeanBrun</a></li>
+        <li><a href="#noblebois">Maison NobleBois</a></li>
+        <li><a href="#vendre">Je vends mon bien</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#contact">Paris · 60 Rue François 1er</a></li>
-        <li><a href="file:///C:/Users/enzog/Downloads/index_11.html#contact">Marignane · 8 Mai 1945</a></li>
+        <li><a href="#contact">Paris · 60 Rue François 1er</a></li>
+        <li><a href="#contact">Marignane · 8 Mai 1945</a></li>
         <li><a href="tel:0487335900">04 87 33 59 00</a></li>
         <li><a href="mailto:contact@cobaltgroup.fr">contact@cobaltgroup.fr</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Cobalt Group &amp; Construction — Tous droits réservés</div>
+    <div class="footer-copy">© 2026 Cobalt Group & Construction — Tous droits réservés</div>
     <div class="socials">
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-        <lineargradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#FDF497"></stop><stop offset="25%" stop-color="#FD5949"></stop>
-          <stop offset="60%" stop-color="#D6249F"></stop><stop offset="100%" stop-color="#285AEB"></stop>
-        </lineargradient>
-      </defs></svg>
-      <a class="social-link fb" href="https://www.facebook.com/profile.php?id=61582032461554" target="_blank" rel="noopener noreferrer" aria-label="Facebook Cobalt Group" title="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="s-fb" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.75 8.44-4.92 8.44-9.94z"></path></svg>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=61582032461554" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.75 8.44-4.92 8.44-9.94z"/></svg>
       </a>
-      <a class="social-link ig" href="https://www.instagram.com/cobaltgroup_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Cobalt Group" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="s-ig" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07zm0 3.37a4.49 4.49 0 110 8.98 4.49 4.49 0 010-8.98zm0 7.4a2.91 2.91 0 100-5.82 2.91 2.91 0 000 5.82zm5.72-7.6a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0z"></path></svg>
+      <a class="social-link" href="https://www.instagram.com/cobaltgroup_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07zm0 3.37a4.49 4.49 0 110 8.98 4.49 4.49 0 010-8.98zm0 7.4a2.91 2.91 0 100-5.82 2.91 2.91 0 000 5.82zm5.72-7.6a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0z"/></svg>
       </a>
-      <a class="social-link li" href="https://www.linkedin.com/in/cobalt-group-3580693b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Cobalt Group" title="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="s-li" d="M6.94 5.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.4 8.9h3.1V21H3.4V8.9zm5.06 0h2.97v1.65h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.66c0-1.35-.02-3.09-1.88-3.09-1.89 0-2.18 1.47-2.18 2.99V21H8.46V8.9z"></path></svg>
+      <a class="social-link" href="https://www.linkedin.com/in/cobalt-group-3580693b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.4 8.9h3.1V21H3.4V8.9zm5.06 0h2.97v1.65h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.66c0-1.35-.02-3.09-1.88-3.09-1.89 0-2.18 1.47-2.18 2.99V21H8.46V8.9z"/></svg>
       </a>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+      <a href="#">CGV</a>
     </div>
   </div>
 </footer>
@@ -2756,6 +2766,5 @@
   }
 </script>
 
-
-
-</body></html>
+</body>
+</html>
