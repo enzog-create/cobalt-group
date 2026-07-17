@@ -33,7 +33,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 
   body {
     font-family: 'Jost', sans-serif;
@@ -293,15 +293,6 @@
     font-size: 10px; letter-spacing: 2.5px;
     text-transform: uppercase; color: rgba(255,255,255,0.45);
     margin-top: 8px;
-  }
-
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255,255,255,0.4);
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    writing-mode: vertical-rl;
-    animation: fadeIn 1s 1.5s both, pulse 2s 1.8s infinite;
   }
 
   @keyframes fadeInUp {
@@ -734,27 +725,114 @@
     pointer-events: none;
   }
 
-  /* Bannière partenaires — bas de la section À propos */
+  /* ───────── RÉSEAUX SOCIAUX ───────── */
+  .socials { display: flex; gap: 12px; align-items: center; }
+  .social-link {
+    width: 34px; height: 34px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.62);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+  .social-link svg { width: 15px; height: 15px; fill: currentColor; display: block; }
+  .social-link:hover {
+    transform: translateY(-4px) scale(1.08);
+    background: var(--gold); color: var(--navy);
+    border-color: var(--gold);
+    box-shadow: 0 8px 20px rgba(201,169,110,0.4);
+  }
+  .social-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* ───────── PARTENAIRES (bandeau défilant) ───────── */
   .partners {
-    grid-column: 1 / -1;
-    margin-top: 70px;
-    padding-top: 55px;
-    border-top: 1px solid rgba(27,58,107,0.14);
-    text-align: center;
+    padding: 130px 0 120px;
+    background: linear-gradient(180deg, #FBF9F5 0%, #F3EEE4 100%);
+    position: relative; overflow: hidden;
+  }
+  body.nobleboiz-mode .partners { background: linear-gradient(180deg, #F2F6F2 0%, #E6EFE7 100%); }
+  .partners::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,169,110,0.13), transparent 62%);
+    pointer-events: none;
+  }
+  .partners-head { text-align: center; margin-bottom: 66px; position: relative; z-index: 2; padding: 0 24px; }
+  .partners-eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 20px;
   }
   .partners-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    font-weight: 500; color: var(--navy);
-    margin: 8px 0 34px;
+    font-weight: 300; font-style: italic;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1; color: var(--navy);
+    letter-spacing: -1px; margin: 0;
   }
-  .partners-banner {
-    max-width: 1100px; margin: 0 auto;
-    border-radius: 14px; overflow: hidden;
-    box-shadow: 0 24px 60px rgba(15,32,64,0.18);
+  .partners-title em { font-style: italic; color: var(--gold); }
+  .partners-rule {
+    width: 78px; height: 1px; margin: 30px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
-  .partners-banner img {
-    display: block; width: 100%; height: auto;
+  .partners-sub {
+    margin-top: 22px; font-size: 14px; letter-spacing: 1px;
+    color: rgba(27,58,107,0.55); font-weight: 300;
+  }
+
+  .marquee {
+    position: relative; z-index: 2;
+    display: flex; gap: 26px; width: max-content;
+    padding: 13px 0;
+    animation: slideL 64s linear infinite;
+    will-change: transform;
+  }
+  .marquee.rev { animation: slideR 74s linear infinite; }
+  .marquee-row { overflow: hidden; }
+  .marquee-row + .marquee-row { margin-top: 26px; }
+  .marquee-row:hover .marquee { animation-play-state: paused; }
+  @keyframes slideL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes slideR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+  .p-tile {
+    flex: 0 0 auto;
+    width: 200px; height: 112px;
+    background: #fff; border-radius: 10px;
+    border: 1px solid rgba(27,58,107,0.07);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 14px rgba(27,58,107,0.06);
+    transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, border-color .45s ease;
+    position: relative; overflow: hidden;
+  }
+  .p-tile img {
+    max-width: 84%; max-height: 74%;
+    object-fit: contain; display: block;
+    filter: grayscale(100%) contrast(0.92);
+    opacity: 0.62;
+    transition: filter .45s ease, opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+  }
+  .p-tile::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 38%, rgba(255,255,255,0.6) 50%, transparent 62%);
+    transform: translateX(-130%);
+    transition: transform .8s ease; pointer-events: none;
+  }
+  .p-tile:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 20px 42px rgba(27,58,107,0.16);
+    border-color: rgba(201,169,110,0.55);
+  }
+  .p-tile:hover img { filter: none; opacity: 1; transform: scale(1.07); }
+  .p-tile:hover::after { transform: translateX(130%); }
+
+  /* voiles latéraux : fondu élégant */
+  .marquee-mask { position: relative; overflow: hidden; max-width: 100%; }
+  .marquee-mask::before, .marquee-mask::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 190px; z-index: 3;
+    pointer-events: none;
+  }
+  .marquee-mask::before { left: 0;  background: linear-gradient(90deg, #FAF7F1 12%, rgba(250,247,241,0)); }
+  .marquee-mask::after  { right: 0; background: linear-gradient(270deg, #F4EFE6 12%, rgba(244,239,230,0)); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { animation: none; }
   }
 
   .project-body { padding: 28px; }
@@ -1355,9 +1433,134 @@
   @media (max-width: 640px) {
     .services-grid, .projects-grid, .nb-models-grid, .jb-pillars, .nb-stats { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .hero-title { font-size: 52px; }
     .footer-top { grid-template-columns: 1fr; }
     .cursor-dot, .cursor-ring { display: none; }
+  }
+
+  /* ═══════ BURGER (caché sur ordinateur) ═══════ */
+  .nav-burger {
+    display: none; background: none; border: 0; padding: 8px;
+    width: 44px; height: 44px; cursor: pointer;
+    flex-direction: column; justify-content: center; gap: 5px;
+  }
+  .nav-burger span {
+    display: block; height: 2px; width: 26px; border-radius: 2px;
+    background: var(--white);
+    transition: transform .35s ease, opacity .25s ease;
+  }
+  body.menu-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  body.menu-open .nav-burger span:nth-child(2) { opacity: 0; }
+  body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ═══════ OPTIMISATION MOBILE / TABLETTE ═══════ */
+  @media (max-width: 900px) {
+    .nav-burger { display: flex; }
+    /* backdrop-filter crée un bloc conteneur qui emprisonnerait le menu fixed */
+    nav { padding: 10px 18px; backdrop-filter: none; background: rgba(19,44,82,0.97); }
+    body.nobleboiz-mode nav { background: rgba(6,26,15,0.97); }
+    .nav-logo { font-size: 16px; letter-spacing: 2px; gap: 11px; }
+    .nav-logo .mark { width: 50px; height: 50px; }
+
+    /* Menu plein écran */
+    .nav-links {
+      position: fixed; inset: 0; z-index: 90;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 4px; padding: 90px 24px 40px;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateY(-14px);
+      transition: opacity .38s ease, transform .38s ease, visibility .38s;
+      overflow-y: auto;
+    }
+    body.nobleboiz-mode .nav-links { background: linear-gradient(160deg, var(--forest-deep) 0%, var(--forest) 100%); }
+    body.menu-open .nav-links { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+    body.menu-open { overflow: hidden; }
+    .nav-links li { width: 100%; max-width: 340px; }
+    .nav-links a {
+      display: block; width: 100%; text-align: center;
+      font-size: 15px !important; letter-spacing: 2px !important;
+      padding: 17px 12px; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-links a::after { display: none; }
+    .nav-links .nav-cta {
+      margin-top: 22px; border-radius: 4px; border-bottom: 0;
+      padding: 16px 12px;
+    }
+
+    /* Hero — passage en colonne (évite le débordement latéral) */
+    .hero {
+      height: auto; min-height: auto;
+      flex-direction: column; align-items: stretch; justify-content: flex-end;
+      padding: 126px 20px 64px;
+    }
+    .hero-content { padding-left: 0; max-width: 100%; }
+    .hero-title { font-size: clamp(38px, 11vw, 58px); line-height: 1.03; }
+    .hero-sub { font-size: 15px; max-width: 100%; }
+    .hero-stats {
+      position: static; display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; padding: 0; margin-top: 44px; text-align: center;
+    }
+    .stat-num { font-size: 30px; }
+    .stat-label { font-size: 9px; letter-spacing: 1px; }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+    .hero-actions a, .hero-actions .btn-primary, .hero-actions .btn-ghost { width: 100%; text-align: center; justify-content: center; }
+
+    /* Sections : respiration */
+    .about, .projects, .sell, .jeanbrun, .noblebois, .services, .contact { padding: 72px 20px; }
+    .founder { padding: 72px 20px; }
+    .section-title { font-size: clamp(30px, 8vw, 42px); }
+    .section-text { font-size: 14px; }
+
+    /* À propos : logo animé */
+    .about-logo-wrap { height: 360px; }
+    .about-logo-wrap::before { width: 300px; height: 300px; }
+    .about-logo-wrap::after { width: 262px; height: 262px; }
+    .about-logo-wrap img { width: min(74%, 240px); }
+    .about-values { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+    .value-card { padding: 22px; }
+
+    /* Équipe */
+    .team-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+    .founder-head h2 { font-size: 38px; }
+
+    /* Partenaires */
+    .partners { padding: 84px 0 76px; }
+    .partners-head { margin-bottom: 42px; }
+    .partners-title { font-size: clamp(34px, 10vw, 48px); }
+    .partners-sub { font-size: 12.5px; }
+    .p-tile { width: 142px; height: 84px; border-radius: 8px; }
+    .marquee { gap: 14px; animation-duration: 42s; }
+    .marquee.rev { animation-duration: 50s; }
+    .marquee-row + .marquee-row { margin-top: 14px; }
+    .marquee-mask::before, .marquee-mask::after { width: 56px; }
+
+    /* Jean Brun */
+    .jb-simulator { padding: 22px 18px; }
+    .jb-slider-wrap { padding: 20px 16px; }
+    .jb-slider-value { font-size: 38px; }
+    .jb-sim-title { font-size: 26px; }
+    .jb-pillar { padding: 26px 18px; }
+    .jb-pillar-val { font-size: 40px; }
+
+    /* Projets */
+    .project-img { height: 210px; }
+
+    /* Confort tactile */
+    input, select, textarea { font-size: 16px; }
+    .btn-primary, .btn-ghost, .jb-dur-btn, .filter-btn { min-height: 44px; }
+    .filter-bar { gap: 8px; flex-wrap: wrap; }
+
+    /* Pied de page */
+    .footer-bottom { flex-direction: column; text-align: center; gap: 18px; }
+    .socials { justify-content: center; }
+    .social-link { width: 40px; height: 40px; }
+    .social-link svg { width: 17px; height: 17px; }
+  }
+
+  @media (max-width: 420px) {
+    .team-grid { grid-template-columns: 1fr !important; }
+    .hero-stats { grid-template-columns: 1fr; gap: 18px; }
+    .p-tile { width: 124px; height: 74px; }
   }
 </style>
 </head>
@@ -1370,7 +1573,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo"><div class="mark"><img src="logo-cobalt.png" alt="Logo Cobalt Group & Construction" onerror="this.remove();this.parentElement.textContent='C';this.parentElement.style.background='linear-gradient(135deg,var(--gold),var(--gold-light))'"></div>COBALT <span>GROUP</span></a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#apropos">À Propos</a></li>
     <li><a href="#services">Services</a></li>
@@ -1380,6 +1583,9 @@
     <li><a href="#noblebois" class="noble-tab" id="nav-noble">Maison NobleBois</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1422,8 +1628,6 @@
       <div class="stat-label">Agences</div>
     </div>
   </div>
-
-  <div class="hero-scroll">Scroll ↓</div>
 </section>
 
 <!-- ABOUT -->
@@ -1461,15 +1665,6 @@
           <div class="value-title">Innovation</div>
           <div class="value-text">Un design contemporain et des solutions techniques de pointe.</div>
         </div>
-      </div>
-    </div>
-
-    <!-- BANNIÈRE PARTENAIRES -->
-    <div class="partners fade-up">
-      <div class="section-tag">Ils nous font confiance</div>
-      <h3 class="partners-title">Nos <em style="color:var(--gold)">partenaires</em></h3>
-      <div class="partners-banner">
-        <img src="partenaires.png" alt="Nos partenaires — Cobalt Group & Construction" loading="lazy">
       </div>
     </div>
   </div>
@@ -2178,13 +2373,70 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="testimonial-block">
-  <div class="testimonial-inner fade-up">
-    <div class="test-quote">"</div>
-    <p class="test-text">COBALT GROUP & CONSTRUCTION IMMOBILIER PAR NATURE a transformé notre vision en réalité. Leur professionnalisme et leur dévouement sont exceptionnels.</p>
-    <div class="test-stars">★ ★ ★ ★ ★</div>
-    <div class="test-author">Famille LOCATELLI</div>
+<!-- PARTENAIRES -->
+<section class="partners" id="partenaires">
+  <div class="partners-head fade-up">
+    <div class="partners-eyebrow">Ils nous font confiance</div>
+    <h2 class="partners-title">Nos <em>Partenaires</em></h2>
+    <div class="partners-rule"></div>
+    <p class="partners-sub">Des acteurs d'excellence à nos côtés sur chaque projet</p>
+  </div>
+
+  <div class="marquee-mask">
+    <div class="marquee-row">
+      <div class="marquee">
+        <div class="p-tile"><img src="partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-01.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-02.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-03.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-04.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-05.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-06.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-07.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-08.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-09.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-10.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-11.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-12.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="marquee-row">
+      <div class="marquee rev">
+        <div class="p-tile"><img src="partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-13.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-14.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-15.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-16.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-17.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-18.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-19.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-20.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-21.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-22.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+        <div class="p-tile"><img src="partner-23.jpg" alt="Partenaire Cobalt Group" loading="lazy"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2302,6 +2554,17 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Cobalt Group & Construction — Tous droits réservés</div>
+    <div class="socials">
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=61582032461554" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.75 8.44-4.92 8.44-9.94z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.instagram.com/cobaltgroup_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07zm0 3.37a4.49 4.49 0 110 8.98 4.49 4.49 0 010-8.98zm0 7.4a2.91 2.91 0 100-5.82 2.91 2.91 0 000 5.82zm5.72-7.6a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/in/cobalt-group-3580693b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.4 8.9h3.1V21H3.4V8.9zm5.06 0h2.97v1.65h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.66c0-1.35-.02-3.09-1.88-3.09-1.89 0-2.18 1.47-2.18 2.99V21H8.46V8.9z"/></svg>
+      </a>
+    </div>
     <div class="footer-legal">
       <a href="#">Mentions légales</a>
       <a href="#">Confidentialité</a>
@@ -2334,6 +2597,21 @@
     p.style.animationDuration = (8 + Math.random() * 10) + 's';
     p.style.animationDelay = Math.random() * 10 + 's';
     particlesWrap.appendChild(p);
+  }
+
+  // MENU MOBILE (burger)
+  const burger = document.getElementById('navBurger');
+  const navLinksEl = document.getElementById('navLinks');
+  if (burger && navLinksEl) {
+    const setMenu = (open) => {
+      document.body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+    burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) setMenu(false); });
   }
 
   // SCROLL ANIMATIONS
