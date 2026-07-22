@@ -726,6 +726,36 @@
     pointer-events: none;
   }
 
+  /* ───────── FORMULAIRES : consentement & messages ───────── */
+  .form-consent { display: flex; gap: 11px; align-items: flex-start; margin-top: 6px; }
+  .form-consent input[type=checkbox] {
+    width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0;
+    accent-color: var(--gold); cursor: pointer;
+  }
+  .form-consent label {
+    font-size: 12px; line-height: 1.55; color: #6B6B6B;
+    font-family: 'Jost', sans-serif; cursor: pointer;
+  }
+  .form-status {
+    display: none; margin-top: 4px;
+    font-size: 13px; line-height: 1.55; font-family: 'Jost', sans-serif;
+    padding: 13px 16px; border-radius: 3px;
+  }
+  .form-status.show { display: block; }
+  .form-status.ok {
+    background: rgba(28,74,46,0.07); color: #1C4A2E;
+    border: 1px solid rgba(28,74,46,0.24);
+  }
+  .form-status.err {
+    background: rgba(150,40,40,0.06); color: #96282D;
+    border: 1px solid rgba(150,40,40,0.24);
+  }
+  .hp-field {
+    position: absolute; left: -9999px; width: 1px; height: 1px;
+    overflow: hidden; opacity: 0;
+  }
+  .sell-form button[type=submit][disabled] { opacity: 0.6; cursor: not-allowed; }
+
   /* ───────── RÉSEAUX SOCIAUX ───────── */
   .socials { display: flex; gap: 18px; align-items: center; }
   .social-link {
@@ -1595,7 +1625,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><div class="mark"><img src="logo-cobalt.png" alt="Logo Cobalt Group & Construction" onerror="this.remove();this.parentElement.textContent='C';this.parentElement.style.background='linear-gradient(135deg,var(--gold),var(--gold-light))'"></div>COBALT <span>GROUP</span></a>
+  <a href="#" class="nav-logo"><div class="mark"><img src="logo-cobalt.png" alt="Logo Cobalt Group & Construction" onerror="var p=this.parentElement;this.remove();p.textContent='C';p.style.background='linear-gradient(135deg,var(--gold),var(--gold-light))'"></div>COBALT <span>GROUP</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#apropos">À Propos</a></li>
@@ -2046,30 +2076,30 @@
   <div class="sell-form-wrap fade-up">
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Estimation <em style="color:var(--gold)">gratuite</em></h3>
     <p style="font-size:13px;color:#666;margin-bottom:28px;line-height:1.7">Obtenez une estimation précise de votre bien en moins de 72 heures.</p>
-    <form class="sell-form" onsubmit="handleSellSubmit(event)">
+    <form class="sell-form" id="sellForm" onsubmit="submitCobaltForm(event,'sellStatus','Recevoir mon estimation →')">
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">Prénom</label>
-          <input type="text" class="form-input" required>
+          <label class="form-label" for="sf-prenom">Prénom</label>
+          <input id="sf-prenom" name="Prénom" type="text" class="form-input" autocomplete="given-name" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Nom</label>
-          <input type="text" class="form-input" required>
+          <label class="form-label" for="sf-nom">Nom</label>
+          <input id="sf-nom" name="Nom" type="text" class="form-input" autocomplete="family-name" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" required>
+          <label class="form-label" for="sf-email">Email</label>
+          <input id="sf-email" name="Email" type="email" class="form-input" autocomplete="email" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Téléphone</label>
-          <input type="tel" class="form-input">
+          <label class="form-label" for="sf-tel">Téléphone</label>
+          <input id="sf-tel" name="Téléphone" type="tel" class="form-input" autocomplete="tel">
         </div>
       </div>
       <div class="form-group">
-        <label class="form-label">Type de bien</label>
-        <select class="form-select form-input">
+        <label class="form-label" for="sf-type">Type de bien</label>
+        <select id="sf-type" name="Type de bien" class="form-select form-input">
           <option>Appartement</option>
           <option>Maison / Villa</option>
           <option>Terrain</option>
@@ -2078,10 +2108,20 @@
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">Adresse du bien</label>
-        <input type="text" class="form-input" placeholder="Ville, code postal">
+        <label class="form-label" for="sf-adresse">Adresse du bien</label>
+        <input id="sf-adresse" name="Adresse du bien" type="text" class="form-input" placeholder="Ville, code postal">
       </div>
+      <div class="form-consent">
+        <input type="checkbox" id="sf-consent" name="Consentement RGPD" value="Oui" required>
+        <label for="sf-consent">J'accepte que mes données soient utilisées pour répondre à ma demande d'estimation. Elles ne seront ni cédées ni revendues.</label>
+      </div>
+      <div class="hp-field" aria-hidden="true">
+        <label>Ne pas remplir <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <input type="hidden" name="subject" value="Demande d'estimation — cobalt-group.fr">
+      <input type="hidden" name="from_name" value="Site Cobalt Group">
       <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Recevoir mon estimation →</button>
+      <div class="form-status" id="sellStatus" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
@@ -2503,24 +2543,24 @@
       <div class="sell-form-wrap">
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:10px;font-weight:500">Votre message</h3>
         <p style="font-size:13px;color:#666;margin-bottom:28px;line-height:1.7">Nous vous répondons sous 24 heures.</p>
-        <form class="sell-form" onsubmit="handleContactSubmit(event)">
+        <form class="sell-form" id="contactForm" onsubmit="submitCobaltForm(event,'contactStatus','Envoyer →')">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Prénom</label>
-              <input type="text" class="form-input" required>
+              <label class="form-label" for="cf-prenom">Prénom</label>
+              <input id="cf-prenom" name="Prénom" type="text" class="form-input" autocomplete="given-name" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Nom</label>
-              <input type="text" class="form-input" required>
+              <label class="form-label" for="cf-nom">Nom</label>
+              <input id="cf-nom" name="Nom" type="text" class="form-input" autocomplete="family-name" required>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-input" required>
+            <label class="form-label" for="cf-email">Email</label>
+            <input id="cf-email" name="Email" type="email" class="form-input" autocomplete="email" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Sujet</label>
-            <select class="form-select form-input">
+            <label class="form-label" for="cf-sujet">Sujet</label>
+            <select id="cf-sujet" name="Sujet" class="form-select form-input">
               <option>Demande d'information générale</option>
               <option>Achat / Vente</option>
               <option>Construction</option>
@@ -2530,10 +2570,20 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea form-input" style="min-height:120px;resize:vertical"></textarea>
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea id="cf-message" name="Message" class="form-textarea form-input" style="min-height:120px;resize:vertical" required></textarea>
           </div>
+          <div class="form-consent">
+            <input type="checkbox" id="cf-consent" name="Consentement RGPD" value="Oui" required>
+            <label for="cf-consent">J'accepte que mes données soient utilisées pour répondre à mon message. Elles ne seront ni cédées ni revendues.</label>
+          </div>
+          <div class="hp-field" aria-hidden="true">
+            <label>Ne pas remplir <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <input type="hidden" name="subject" value="Message depuis cobalt-group.fr">
+          <input type="hidden" name="from_name" value="Site Cobalt Group">
           <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Envoyer →</button>
+          <div class="form-status" id="contactStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -2772,22 +2822,53 @@
   }
 
   // FORM SUBMISSIONS
-  function handleSellSubmit(e) {
+  /* ═══ ENVOI DES FORMULAIRES ═══
+     Pour activer : remplacez la valeur ci-dessous par votre clé Web3Forms
+     (obtenue gratuitement sur https://web3forms.com en indiquant votre email). */
+  const WEB3FORMS_KEY = '554a4b5d-a5ea-4060-b394-afa7d0f30d0d';
+
+  async function submitCobaltForm(e, statusId, btnLabel) {
     e.preventDefault();
-    const btn = e.target.querySelector('[type=submit]');
-    btn.textContent = '✓ Demande envoyée';
-    btn.style.background = 'var(--forest)';
-    btn.style.color = '#fff';
-    setTimeout(() => { btn.innerHTML = 'Recevoir mon estimation →'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
+    const form = e.target;
+    const btn = form.querySelector('[type=submit]');
+    const box = document.getElementById(statusId);
+
+    const say = (msg, kind) => {
+      box.textContent = msg;
+      box.className = 'form-status show ' + kind;
+    };
+    const reset = () => { btn.disabled = false; btn.innerHTML = btnLabel; };
+
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('COLLEZ') === 0) {
+      say("Le formulaire n'est pas encore configuré. Merci de nous contacter au 04 87 33 59 00 ou par email.", 'err');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    box.className = 'form-status';
+
+    try {
+      const data = new FormData(form);
+      data.append('access_key', WEB3FORMS_KEY);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        say('Merci, votre demande nous est bien parvenue. Nous vous répondons sous 48 heures ouvrées.', 'ok');
+      } else {
+        say("L'envoi a échoué. Merci de réessayer, ou de nous joindre au 04 87 33 59 00.", 'err');
+      }
+    } catch (err) {
+      say("L'envoi a échoué (connexion). Merci de réessayer, ou de nous joindre au 04 87 33 59 00.", 'err');
+    } finally {
+      reset();
+    }
   }
-  function handleContactSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('[type=submit]');
-    btn.textContent = '✓ Message envoyé';
-    btn.style.background = 'var(--forest)';
-    btn.style.color = '#fff';
-    setTimeout(() => { btn.innerHTML = 'Envoyer →'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
-  }
+  
 </script>
 
 </body>
