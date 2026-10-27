@@ -1219,6 +1219,18 @@
     margin-top: 6px; opacity: 0.8;
   }
 
+
+  .jb-step-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin: 6px 0 12px; font-weight: 500; }
+  .jb-duration.jb-row-2 { grid-template-columns: repeat(2, 1fr); }
+  .jb-duration.jb-row-4 { grid-template-columns: repeat(4, 1fr); }
+  .jb-row-4 .jb-dur-btn { padding: 14px 10px; }
+  .jb-row-4 .jb-dur-years { font-size: 24px; }
+  #jbLoyer .jb-dur-years, #jbType .jb-dur-years { font-size: 24px; }
+  .jb-result-note { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: .55; margin-top: 8px; }
+  @media (max-width: 640px) {
+    .jb-duration, .jb-duration.jb-row-2 { grid-template-columns: 1fr; }
+    .jb-duration.jb-row-4 { grid-template-columns: repeat(2, 1fr); }
+  }
   .jb-results {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
     background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;
@@ -1746,7 +1758,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#projets">Biens & Projets</a></li>
     <li><a href="#vendre">Je vends</a></li>
-    <li><a href="#jeanbrun">Dispositif JeanBrun</a></li>
+    <li><a href="#jeanbrun">Dispositif Jeanbrun</a></li>
     <li><a href="#noblebois" class="noble-tab" id="nav-noble">Maison NobleBois</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -2281,27 +2293,27 @@
 <!-- DISPOSITIF JEANBRUN -->
 <section class="jeanbrun" id="jeanbrun">
   <div class="jeanbrun-header fade-up">
-    <div class="section-tag">Dispositif fiscal</div>
-    <h2 class="section-title">Dispositif <em>JeanBrun</em></h2>
-    <p>Le dispositif JeanBrun permet aux investisseurs de bénéficier d'avantages fiscaux exceptionnels en investissant dans l'immobilier locatif neuf. Jusqu'à <b style="color:var(--gold)">18% de réduction d'impôt</b>, une rente locative sécurisée et un patrimoine valorisé.</p>
+    <div class="section-tag">Dispositif fiscal · Loi de finances 2026</div>
+    <h2 class="section-title">Dispositif <em>Jeanbrun</em></h2>
+    <p>Le statut du bailleur privé, dit dispositif Jeanbrun, permet d'<b style="color:var(--gold)">amortir 80&nbsp;% du prix d'un logement</b> loué nu et de déduire chaque année cet amortissement de vos revenus fonciers&nbsp;: jusqu'à <b style="color:var(--gold)">12&nbsp;000&nbsp;€ par an</b>, dans le neuf comme dans l'ancien rénové, partout en France.</p>
   </div>
 
   <div class="jb-pillars">
     <div class="jb-pillar fade-up">
-      <div class="jb-pillar-val">18<sup>%</sup></div>
-      <div class="jb-pillar-label">Réduction d'impôt max</div>
+      <div class="jb-pillar-val">5,5<sup>%</sup></div>
+      <div class="jb-pillar-label">Amortissement annuel max (neuf)</div>
+    </div>
+    <div class="jb-pillar fade-up">
+      <div class="jb-pillar-val">12<sup>k€</sup></div>
+      <div class="jb-pillar-label">Plafond déductible / an</div>
     </div>
     <div class="jb-pillar fade-up">
       <div class="jb-pillar-val">9<sup>ans</sup></div>
-      <div class="jb-pillar-label">Engagement maximal</div>
+      <div class="jb-pillar-label">Engagement de location minimum</div>
     </div>
     <div class="jb-pillar fade-up">
-      <div class="jb-pillar-val">700<sup>k€</sup></div>
-      <div class="jb-pillar-label">Montant éligible</div>
-    </div>
-    <div class="jb-pillar fade-up">
-      <div class="jb-pillar-val">0<sup>€</sup></div>
-      <div class="jb-pillar-label">Frais de dossier</div>
+      <div class="jb-pillar-val">2028</div>
+      <div class="jb-pillar-label">Achats jusqu'au 31/12/2028</div>
     </div>
   </div>
 
@@ -2310,7 +2322,7 @@
     <div class="jb-sim-head">
       <div>
         <div class="jb-sim-subtitle">Simulation Express</div>
-        <div class="jb-sim-title">Calculez votre <em>réduction d'impôt</em></div>
+        <div class="jb-sim-title">Calculez votre <em>amortissement</em></div>
       </div>
       <div class="jb-live-badge">
         <span class="jb-live-dot"></span>
@@ -2318,13 +2330,42 @@
       </div>
     </div>
 
+    <div class="jb-step-label">1 · Type de bien</div>
+    <div class="jb-duration jb-row-2" id="jbType">
+      <div class="jb-dur-btn active" data-type="neuf">
+        <div class="jb-dur-years">Neuf / VEFA</div>
+        <div class="jb-dur-pct">3,5 % à 5,5 % par an</div>
+      </div>
+      <div class="jb-dur-btn" data-type="ancien">
+        <div class="jb-dur-years">Ancien rénové</div>
+        <div class="jb-dur-pct">Travaux ≥ 30 % · 3 % à 4 %</div>
+      </div>
+    </div>
+
+    <div class="jb-step-label">2 · Niveau de loyer</div>
+    <div class="jb-duration" id="jbLoyer">
+      <div class="jb-dur-btn active" data-loyer="inter">
+        <div class="jb-dur-years">Intermédiaire</div>
+        <div class="jb-dur-pct"><span data-rate-label></span> · plafond 8 000 €</div>
+      </div>
+      <div class="jb-dur-btn" data-loyer="social">
+        <div class="jb-dur-years">Social</div>
+        <div class="jb-dur-pct"><span data-rate-label></span> · plafond 10 000 €</div>
+      </div>
+      <div class="jb-dur-btn" data-loyer="tsocial">
+        <div class="jb-dur-years">Très social</div>
+        <div class="jb-dur-pct"><span data-rate-label></span> · plafond 12 000 €</div>
+      </div>
+    </div>
+
+    <div class="jb-step-label">3 · Prix d'acquisition</div>
     <div class="jb-slider-wrap">
       <div class="jb-slider-label">
-        <span>Montant de l'investissement</span>
+        <span>Base amortissable : 80 % du prix (hors terrain)</span>
         <span>Curseur ajustable</span>
       </div>
       <div class="jb-slider-value"><span id="sliderVal">300 000</span><small>€</small></div>
-      <input type="range" min="100000" max="700000" step="5000" value="300000" class="jb-slider" id="jbSlider">
+      <input type="range" min="100000" max="700000" step="5000" value="300000" class="jb-slider" id="jbSlider" aria-label="Prix d'acquisition">
       <div class="jb-slider-ticks">
         <span>100 000 €</span>
         <span>250 000 €</span>
@@ -2334,46 +2375,49 @@
       </div>
     </div>
 
-    <div class="jb-duration">
-      <div class="jb-dur-btn active" data-years="9" data-rate="18">
-        <div class="jb-dur-years">9 ans</div>
-        <div class="jb-dur-pct">18% de réduction</div>
-      </div>
+    <div class="jb-step-label">4 · Votre tranche marginale d'imposition</div>
+    <div class="jb-duration jb-row-4" id="jbTmi">
+      <div class="jb-dur-btn" data-tmi="11"><div class="jb-dur-years">11 %</div></div>
+      <div class="jb-dur-btn active" data-tmi="30"><div class="jb-dur-years">30 %</div></div>
+      <div class="jb-dur-btn" data-tmi="41"><div class="jb-dur-years">41 %</div></div>
+      <div class="jb-dur-btn" data-tmi="45"><div class="jb-dur-years">45 %</div></div>
     </div>
 
     <div class="jb-results">
       <div class="jb-result">
-        <div class="jb-result-label">Réduction totale</div>
-        <div class="jb-result-val"><span id="resTotal">54 000</span><small> €</small></div>
+        <div class="jb-result-label">Amortissement déductible / an</div>
+        <div class="jb-result-val"><span id="resYear">8 000</span><small> €</small></div>
+        <div class="jb-result-note" id="resCap"></div>
       </div>
       <div class="jb-result">
-        <div class="jb-result-label">Économie / année</div>
-        <div class="jb-result-val"><span id="resYear">6 000</span><small> €</small></div>
+        <div class="jb-result-label">Total déduit sur 9 ans</div>
+        <div class="jb-result-val"><span id="resTotal">72 000</span><small> €</small></div>
       </div>
       <div class="jb-result">
-        <div class="jb-result-label">Économie / mois</div>
-        <div class="jb-result-val"><span id="resMonth">500</span><small> €</small></div>
+        <div class="jb-result-label">Économie d'impôt estimée / an</div>
+        <div class="jb-result-val"><span id="resSave">3 776</span><small> €</small></div>
+        <div class="jb-result-note">TMI + 17,2 % de prélèvements sociaux</div>
       </div>
     </div>
 
     <div class="jb-cta-wrap">
       <a href="#contact" class="btn-primary">Obtenir une étude personnalisée →</a>
-      <p class="jb-disclaimer">Simulation indicative fondée sur le barème fiscal en vigueur. Les avantages réels dépendent de votre situation personnelle, du type de bien et du respect des conditions d'éligibilité du dispositif. Notre service d'expertise reste à votre disposition pour une étude sur mesure.</p>
+      <p class="jb-disclaimer">Simulation indicative, sans valeur contractuelle, établie selon l'article 47 de la loi de finances pour 2026 (loi n° 2026-103 du 19 février 2026). L'économie d'impôt suppose des revenus fonciers suffisants pour absorber l'amortissement ; au-delà, les règles du déficit foncier s'appliquent. Les avantages réels dépendent de votre situation fiscale, du bien et du respect des conditions (plafonds de loyers et de ressources du locataire, location nue pendant 9 ans). Le non-respect des engagements de location entraîne la perte du bénéfice fiscal. Rapprochez-vous de votre conseiller fiscal.</p>
     </div>
   </div>
 
   <div class="jb-conditions">
     <div class="jb-cond fade-up">
-      <div class="jb-cond-title">Éligibilité</div>
-      <p>Investissement dans un bien neuf ou VEFA situé en zone tendue, avec plafonds de loyers et de ressources du locataire respectés selon la zone géographique.</p>
+      <div class="jb-cond-title">Biens éligibles</div>
+      <p>Appartements en immeuble collectif, neufs ou en VEFA, ou anciens avec des travaux d'au moins 30 % du prix d'achat (DPE A ou B après travaux). Maisons individuelles exclues. Aucun zonage : tout le territoire français. Acquisitions du 21 février 2026 au 31 décembre 2028.</p>
     </div>
     <div class="jb-cond fade-up">
       <div class="jb-cond-title">Engagement</div>
-      <p>Location nue à usage d'habitation principale pendant 9 ans. Le taux de réduction de 18% s'applique pour cette durée d'engagement.</p>
+      <p>Location nue en résidence principale du locataire pendant 9 ans minimum, à un loyer intermédiaire, social ou très social, avec plafonds de loyers et de ressources du locataire. Location à la famille proche exclue.</p>
     </div>
     <div class="jb-cond fade-up">
       <div class="jb-cond-title">Accompagnement</div>
-      <p>Cobalt Group vous accompagne de la sélection du bien au montage fiscal, en passant par la gestion locative pour une tranquillité totale.</p>
+      <p>Cobalt Group vous accompagne dans le choix d'un logement éligible au sein de ses programmes, de la réservation jusqu'à la livraison, et vous oriente vers des partenaires pour le montage fiscal.</p>
     </div>
   </div>
 </section>
@@ -2824,7 +2868,7 @@
               <option>Achat / Vente</option>
               <option>Construction</option>
               <option>Gestion locative</option>
-              <option>Dispositif JeanBrun</option>
+              <option>Dispositif Jeanbrun</option>
               <option>Maison NobleBois (Belgique)</option>
             </select>
           </div>
@@ -2869,7 +2913,7 @@
       <div class="footer-col-title">Découvrir</div>
       <ul class="footer-links">
         <li><a href="#projets">Nos projets</a></li>
-        <li><a href="#jeanbrun">Dispositif JeanBrun</a></li>
+        <li><a href="#jeanbrun">Dispositif Jeanbrun</a></li>
         <li><a href="#noblebois">Maison NobleBois</a></li>
         <li><a href="#vendre">Je vends mon bien</a></li>
       </ul>
@@ -3006,15 +3050,25 @@
   }, { threshold: [0.3] });
   nbObs.observe(nbSection);
 
-  // JEANBRUN SIMULATOR
+  // JEANBRUN SIMULATOR — statut du bailleur privé (LF 2026, art. 47)
+  const JB_RATES = { neuf: { inter: 3.5, social: 4.5, tsocial: 5.5 }, ancien: { inter: 3.0, social: 3.5, tsocial: 4.0 } };
+  const JB_CAPS = { inter: 8000, social: 10000, tsocial: 12000 };
   const slider = document.getElementById('jbSlider');
   const sliderVal = document.getElementById('sliderVal');
-  const resTotal = document.getElementById('resTotal');
   const resYear = document.getElementById('resYear');
-  const resMonth = document.getElementById('resMonth');
-  let selectedYears = 9, selectedRate = 18;
+  const resTotal = document.getElementById('resTotal');
+  const resSave = document.getElementById('resSave');
+  const resCap = document.getElementById('resCap');
+  let jbType = 'neuf', jbLoyer = 'inter', jbTmi = 30;
 
   function fmt(n) { return n.toLocaleString('fr-FR'); }
+  function fmtRate(r) { return r.toLocaleString('fr-FR', { minimumFractionDigits: r % 1 ? 1 : 0 }) + ' %'; }
+
+  function refreshRateLabels() {
+    document.querySelectorAll('#jbLoyer .jb-dur-btn').forEach(btn => {
+      btn.querySelector('[data-rate-label]').textContent = fmtRate(JB_RATES[jbType][btn.dataset.loyer]) + ' / an';
+    });
+  }
 
   function updateJB() {
     const amount = parseInt(slider.value);
@@ -3022,12 +3076,14 @@
     slider.style.setProperty('--pct', pct + '%');
     slider.style.background = `linear-gradient(90deg, var(--gold) ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
     sliderVal.textContent = fmt(amount);
-    const total = Math.round(amount * (selectedRate / 100));
-    const year = Math.round(total / selectedYears);
-    const month = Math.round(year / 12);
-    animateVal(resTotal, total);
+    const rate = JB_RATES[jbType][jbLoyer];
+    const cap = JB_CAPS[jbLoyer];
+    const raw = Math.round(amount * 0.8 * rate / 100);
+    const year = Math.min(raw, cap);
+    resCap.textContent = raw > cap ? 'Plafond annuel atteint' : (fmtRate(rate) + ' × 80 % du prix');
     animateVal(resYear, year);
-    animateVal(resMonth, month);
+    animateVal(resTotal, year * 9);
+    animateVal(resSave, Math.round(year * (jbTmi + 17.2) / 100));
   }
   function animateVal(el, target) {
     const start = parseInt((el.textContent || '0').replace(/\D/g, '')) || 0;
@@ -3040,16 +3096,20 @@
       if (p < 1) requestAnimationFrame(step);
     })(t0);
   }
-  slider.addEventListener('input', updateJB);
-  document.querySelectorAll('.jb-dur-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.jb-dur-btn').forEach(b => b.classList.remove('active'));
+  function bindGroup(id, onPick) {
+    const btns = document.querySelectorAll('#' + id + ' .jb-dur-btn');
+    btns.forEach(btn => btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      selectedYears = parseInt(btn.dataset.years);
-      selectedRate = parseFloat(btn.dataset.rate);
+      onPick(btn.dataset);
       updateJB();
-    });
-  });
+    }));
+  }
+  slider.addEventListener('input', updateJB);
+  bindGroup('jbType', d => { jbType = d.type; refreshRateLabels(); });
+  bindGroup('jbLoyer', d => { jbLoyer = d.loyer; });
+  bindGroup('jbTmi', d => { jbTmi = parseFloat(d.tmi); });
+  refreshRateLabels();
   updateJB();
 
   // NOBLE MODAL
