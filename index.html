@@ -1047,6 +1047,9 @@
   .plaq-status { color: rgba(255,255,255,0.75); text-align: center; font-size: 14px; padding: 40px 10px; line-height: 1.8; }
   .plaq-status a { color: var(--gold); }
   body.plaq-open { overflow: hidden; }
+  .plaq-frame-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+  .plaq-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #0b1830; }
+  #plaqLoading { position: absolute; left: 0; right: 0; top: 40%; }
   @media (max-width: 640px) {
     .plaq-bar { padding: 10px 14px; }
     .plaq-title { font-size: 17px; }
@@ -2096,7 +2099,7 @@
       </div>
     </div>
 
-    <div class="project-card fade-up has-plaquette" data-category="villas" data-plaquette="plaquette-villas-erable.pdf" data-plaquette-title="Les Villas de l'Érable — Marseille 13e" tabindex="0" role="button" aria-label="Ouvrir la plaquette des Villas de l'Érable">
+    <div class="project-card fade-up has-plaquette" data-category="villas" data-plaquette="plaquette-villas-erable.html" data-pdf="plaquette-villas-erable.pdf" data-plaquette-title="Les Villas de l'Érable — Marseille 13e" tabindex="0" role="button" aria-label="Ouvrir la plaquette des Villas de l'Érable">
       <div class="project-img">
         <div class="proj-pattern"></div>
         <img class="proj-photo" loading="lazy"
@@ -2182,7 +2185,7 @@
       </div>
     </div>
 
-    <div class="project-card fade-up has-plaquette" data-category="residentiel" data-plaquette="plaquette-hauts-des-cadeneaux.pdf" data-plaquette-title="Les Hauts des Cadeneaux — Les Pennes-Mirabeau" tabindex="0" role="button" aria-label="Ouvrir la plaquette des Hauts des Cadeneaux">
+    <div class="project-card fade-up has-plaquette" data-category="residentiel" data-plaquette="plaquette-hauts-des-cadeneaux.html" data-pdf="plaquette-hauts-des-cadeneaux.pdf" data-plaquette-title="Les Hauts des Cadeneaux — Les Pennes-Mirabeau" tabindex="0" role="button" aria-label="Ouvrir la plaquette des Hauts des Cadeneaux">
       <div class="project-img">
         <div class="proj-pattern"></div>
         <img class="proj-photo" loading="lazy"
@@ -2845,8 +2848,9 @@
       <button class="plaq-btn" id="plaqClose" type="button" aria-label="Fermer">✕ <span class="lbl">Fermer</span></button>
     </div>
   </div>
-  <div class="plaq-scroll" id="plaqScroll">
-    <div class="plaq-pages" id="plaqPages"></div>
+  <div class="plaq-frame-wrap">
+    <div class="plaq-status" id="plaqLoading">Chargement de la plaquette…</div>
+    <iframe class="plaq-frame" id="plaqFrame" title="Plaquette" src="about:blank"></iframe>
   </div>
 </div>
 
@@ -3099,86 +3103,36 @@
   }, { threshold: [0.3] });
   nbObs.observe(nbSection);
 
-  // ═══ VISIONNEUSE DE PLAQUETTES (PDF.js) ═══
+  // ═══ VISIONNEUSE DE PLAQUETTES ═══
   (function () {
     const modal = document.getElementById('plaqModal');
-    const pagesEl = document.getElementById('plaqPages');
+    const frame = document.getElementById('plaqFrame');
+    const loading = document.getElementById('plaqLoading');
     const titleEl = document.getElementById('plaqTitle');
     const dlEl = document.getElementById('plaqDownload');
-    const scrollEl = document.getElementById('plaqScroll');
-    const PDFJS_SOURCES = [
-      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/',
-      'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/'
-    ];
-    let pdfjsReady = null, renderToken = 0, lastFocus = null;
-
-    function loadScript(src) {
-      return new Promise((ok, ko) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = ko; document.head.appendChild(s); });
-    }
-    function loadPdfjs() {
-      if (pdfjsReady) return pdfjsReady;
-      pdfjsReady = (async () => {
-        for (const base of PDFJS_SOURCES) {
-          try {
-            await loadScript(base + 'pdf.min.js');
-            window.pdfjsLib.GlobalWorkerOptions.workerSrc = base + 'pdf.worker.min.js';
-            return window.pdfjsLib;
-          } catch (e) { /* source suivante */ }
-        }
-        throw new Error('pdfjs');
-      })();
-      pdfjsReady.catch(() => { pdfjsReady = null; });
-      return pdfjsReady;
-    }
-    function status(html) { pagesEl.innerHTML = '<div class="plaq-status">' + html + '</div>'; }
-
-    async function openPlaquette(url, title) {
-      const token = ++renderToken;
+    let lastFocus = null;
+    frame.addEventListener('load', () => { if (frame.src !== 'about:blank') loading.style.display = 'none'; });
+    function openPlaquette(card) {
       lastFocus = document.activeElement;
-      titleEl.textContent = title || 'Plaquette';
-      dlEl.href = url;
+      titleEl.textContent = card.dataset.plaquetteTitle || 'Plaquette';
+      dlEl.href = card.dataset.pdf || card.dataset.plaquette;
+      loading.style.display = '';
+      frame.src = card.dataset.plaquette;
       modal.classList.add('open');
       document.body.classList.add('plaq-open');
-      scrollEl.scrollTop = 0;
       document.getElementById('plaqClose').focus();
-      status('Chargement de la plaquette…');
-      try {
-        const pdfjsLib = await loadPdfjs();
-        const pdf = await pdfjsLib.getDocument(url).promise;
-        if (token !== renderToken) return;
-        pagesEl.innerHTML = '';
-        const width = Math.min(pagesEl.clientWidth || 900, 900);
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        for (let n = 1; n <= pdf.numPages; n++) {
-          const page = await pdf.getPage(n);
-          if (token !== renderToken) return;
-          const base = page.getViewport({ scale: 1 });
-          const vp = page.getViewport({ scale: (width / base.width) * dpr });
-          const canvas = document.createElement('canvas');
-          canvas.width = Math.floor(vp.width); canvas.height = Math.floor(vp.height);
-          canvas.setAttribute('aria-label', 'Page ' + n + ' sur ' + pdf.numPages);
-          pagesEl.appendChild(canvas);
-          await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-        }
-      } catch (e) {
-        if (token !== renderToken) return;
-        status('La plaquette ne peut pas s\'afficher ici.<br><a href="' + url + '" target="_blank" rel="noopener">Ouvrir la plaquette (PDF)</a>');
-      }
     }
     function closePlaquette() {
-      renderToken++;
       modal.classList.remove('open');
       document.body.classList.remove('plaq-open');
-      pagesEl.innerHTML = '';
+      frame.src = 'about:blank';
       if (lastFocus) lastFocus.focus();
     }
     document.getElementById('plaqClose').addEventListener('click', closePlaquette);
-    modal.addEventListener('click', e => { if (e.target === modal || e.target === scrollEl) closePlaquette(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closePlaquette(); });
     document.querySelectorAll('.project-card[data-plaquette]').forEach(card => {
-      const go = () => openPlaquette(card.dataset.plaquette, card.dataset.plaquetteTitle);
-      card.addEventListener('click', go);
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+      card.addEventListener('click', () => openPlaquette(card));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPlaquette(card); } });
     });
   })();
 
