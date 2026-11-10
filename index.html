@@ -1780,6 +1780,29 @@
     .p-tile { width: 124px; height: 74px; }
   }
 </style>
+<style>
+  /* ───────── AVANT-PREMIÈRE (programmes en lancement) ───────── */
+  .ap-launch { padding: 140px 60px; background: var(--cream); }
+  .ap-launch .section-header { max-width: 1400px; margin: 0 auto 56px; }
+  .ap-launch .ap-intro { font-size: 16px; line-height: 1.8; color: #555; max-width: 640px; }
+  .ap-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .ap-card { position: relative; display: block; overflow: hidden; min-height: 560px; color: #fff; text-decoration: none; background: var(--navy-deep); }
+  .ap-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+  .ap-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(19,44,82,.92) 0%, rgba(19,44,82,.35) 50%, rgba(19,44,82,0) 75%); }
+  .ap-card:hover img { transform: scale(1.04); }
+  .ap-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .ap-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 44px; }
+  .ap-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold-light); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; padding: 8px 14px; margin-bottom: 18px; }
+  .ap-place { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+  .ap-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.6vw, 52px); font-weight: 400; line-height: 1.02; margin: 10px 0 12px; }
+  .ap-tag { font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,.88); max-width: 460px; }
+  .ap-go { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--gold); transition: gap .3s; }
+  .ap-card:hover .ap-go { gap: 18px; }
+  .ap-note { position: absolute; top: 14px; right: 16px; z-index: 1; font-size: 10px; color: rgba(255,255,255,.75); }
+  .proj-ap-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,169,110,.5); padding-bottom: 4px; }
+  .proj-ap-link:hover { color: var(--gold-light); border-color: var(--gold-light); }
+  @media (max-width: 900px) { .ap-launch { padding: 90px 22px; } .ap-grid { grid-template-columns: 1fr; } .ap-card { min-height: 460px; } .ap-body { padding: 28px; } }
+</style>
 </head>
 <body>
 
@@ -1997,6 +2020,41 @@
 </section>
 
 <!-- PROJECTS -->
+<!-- AVANT-PREMIÈRE -->
+<section class="ap-launch" id="avant-premiere">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Avant-première</div>
+      <h2 class="section-title">Deux nouveaux programmes,<br><em style="color:var(--gold)">inscriptions ouvertes</em></h2>
+      <p class="ap-intro">Inscrivez-vous pour recevoir en priorité les prix, les plans et l'invitation au lancement. Vente en direct par le promoteur, sans frais d'agence.</p>
+    </div>
+  </div>
+  <div class="ap-grid">
+    <a class="ap-card fade-up" href="les-hauts-des-cadeneaux">
+      <img src="programmes/c-b24-terrasse.jpg" alt="Grande terrasse au coucher du soleil, Les Hauts des Cadeneaux" loading="lazy">
+      <span class="ap-note">Illustration non contractuelle</span>
+      <div class="ap-body">
+        <span class="ap-badge">Avant-première</span>
+        <div class="ap-place">Les Pennes-Mirabeau</div>
+        <div class="ap-name">Les Hauts des Cadeneaux</div>
+        <p class="ap-tag">17 appartements neufs du T2 au T4, tous avec terrasse, au pied d'une colline boisée. À partir de 229 000 € TTC.</p>
+        <span class="ap-go">Découvrir et s'inscrire <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="ap-card fade-up" href="les-villas-de-l-erable">
+      <img src="programmes/e-jardin.jpg" alt="Villa côté jardin, Les Villas de l'Érable" loading="lazy">
+      <span class="ap-note">Illustration non contractuelle</span>
+      <div class="ap-body">
+        <span class="ap-badge">Avant-première</span>
+        <div class="ap-place">Marseille 13e</div>
+        <div class="ap-name">Les Villas de l'Érable</div>
+        <p class="ap-tag">9 villas neuves avec jardin privatif, au calme d'une impasse privée.</p>
+        <span class="ap-go">Découvrir et s'inscrire <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section class="projects" id="projets">
   <div class="section-header">
     <div>
@@ -2118,6 +2176,7 @@
           <div class="project-meta-item">Stationnement<b>21 places</b></div>
         </div>
         <p class="project-desc">Un hameau de neuf villas neuves d'inspiration provençale, chacune avec son jardin privatif, au calme d'une impasse privée.</p>
+        <a class="proj-ap-link" href="les-villas-de-l-erable" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()">Avant-première · Je m'inscris <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -2204,6 +2263,7 @@
           <div class="project-meta-item">Prix<b>dès 229 000 €</b></div>
         </div>
         <p class="project-desc">Deux bâtiments d'inspiration provençale adossés à une colline boisée : appartements neufs avec terrasse, loggia ou jardin, entre Marseille et Aix.</p>
+        <a class="proj-ap-link" href="les-hauts-des-cadeneaux" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()">Avant-première · Je m'inscris <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
