@@ -3159,6 +3159,47 @@
   window.addEventListener('load', updateNavTheme);
   updateNavTheme();
 
+
+  // ═══ LES BASTIDES : zoom immersif dans l'image avant d'ouvrir le mini-site ═══
+  (function () {
+    const media = document.querySelector('.be-media');
+    if (!media) return;
+    const img = media.querySelector('img');
+    const go = media.getAttribute('href');
+    let pre = false;
+    function prefetch() {
+      if (pre) return; pre = true;
+      ['bastides-erable/', 'bastides-erable/assets/3a21eda923.mp4'].forEach(h => { const l = document.createElement('link'); l.rel = 'prefetch'; l.href = h; document.head.appendChild(l); });
+    }
+    function zoomIn(e) {
+      if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
+      if (e) e.preventDefault();
+      prefetch();
+      const r = media.getBoundingClientRect();
+      const ov = document.createElement('div');
+      ov.style.cssText = 'position:fixed;z-index:10000;overflow:hidden;background:#0d0906;left:' + r.left + 'px;top:' + r.top + 'px;width:' + r.width + 'px;height:' + r.height + 'px;border-radius:10px 10px 160px 10px;box-shadow:0 40px 80px rgba(40,10,4,.45);transition:left .95s cubic-bezier(.7,0,.2,1),top .95s cubic-bezier(.7,0,.2,1),width .95s cubic-bezier(.7,0,.2,1),height .95s cubic-bezier(.7,0,.2,1),border-radius .95s cubic-bezier(.7,0,.2,1)';
+      const im = document.createElement('img');
+      im.src = img.currentSrc || img.src;
+      im.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 1.3s cubic-bezier(.5,0,.2,1)';
+      ov.appendChild(im);
+      document.body.appendChild(ov);
+      media.style.visibility = 'hidden';
+      ov.getBoundingClientRect();
+      requestAnimationFrame(() => {
+        ov.style.left = '0px'; ov.style.top = '0px'; ov.style.width = '100vw'; ov.style.height = '100vh'; ov.style.borderRadius = '0px';
+        im.style.transform = 'scale(1)';
+      });
+      setTimeout(() => { location.href = go; }, 1050);
+      window.addEventListener('pageshow', function back(ev) {
+        if (ov.parentNode) ov.remove(); media.style.visibility = ''; window.removeEventListener('pageshow', back);
+      });
+    }
+    media.addEventListener('click', zoomIn);
+    media.addEventListener('pointerenter', prefetch);
+    const btn = document.querySelector('.be-btn');
+    if (btn) { btn.addEventListener('click', zoomIn); btn.addEventListener('pointerenter', prefetch); }
+  })();
+
   // ═══ VISIONNEUSE DE PLAQUETTES ═══
   (function () {
     const modal = document.getElementById('plaqModal');
