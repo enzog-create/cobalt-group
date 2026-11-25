@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les Bastides de l’Érable · 9 maisons neuves avec jardin · Marseille 13e · Cobalt Group</title>
+<meta name="description" content="Résidence Les Bastides de l’Érable : 9 maisons neuves avec jardin privatif, impasse de l’Érable, Marseille 13e. Visite immersive, plans de vente et prise de rendez-vous. Cobalt Group, vente en direct par le promoteur.">
+<meta property="og:title" content="Les Bastides de l’Érable · Marseille 13e">
+<meta property="og:description" content="9 maisons neuves avec jardin, dans une impasse privée du 13e arrondissement de Marseille.">
+<meta property="og:image" content="https://cobalt-group.fr/bastides-erable/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="../favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Oswald:wght@400;500&amp;family=Inter:wght@300;400;500&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#1a120d;overflow:hidden}
+a{color:#9C4632}a:hover{color:#6E2E20}
+@keyframes intro{0%{filter:brightness(2.6) saturate(.4);transform:scale(1.04)}100%{filter:none;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,214,150,.7),0 0 12px 3px rgba(255,200,120,.8)}50%{box-shadow:0 0 0 9px rgba(255,214,150,0),0 0 20px 7px rgba(255,200,120,.9)}}
+@keyframes lev{0%,100%{transform:translateY(-12px) rotateY(-16deg) rotateX(8deg)}50%{transform:translateY(12px) rotateY(16deg) rotateX(3deg)}}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(7px);opacity:1}}
+@keyframes blink{50%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes coinIn{0%{transform:scale(.08) rotateY(-1800deg) rotateX(18deg);opacity:0}12%{opacity:1}78%{transform:scale(1.04) rotateY(12deg) rotateX(0)}88%{transform:scale(.99) rotateY(-5deg)}100%{transform:scale(1) rotateY(0)}}
+@keyframes coinOut{0%{transform:scale(1);opacity:1;filter:blur(0)}60%{opacity:1}100%{transform:scale(26);opacity:0;filter:blur(6px)}}
+@keyframes coinUp{0%{transform:scale(1);opacity:1;filter:blur(0)}100%{transform:translateZ(500px) scale(3.2);opacity:0;filter:blur(8px)}}
+@keyframes shine{0%{left:-60%}100%{left:130%}}
+@keyframes ring{from{stroke-dashoffset:126}to{stroke-dashoffset:0}}@keyframes ring2{from{stroke-dashoffset:126}to{stroke-dashoffset:0}}
+.sl,.sr{display:inline-block;opacity:0;transition:transform 1.4s cubic-bezier(.16,.84,.24,1),opacity 1.1s ease}
+.sl{transform:translateX(-55vw)}.sr{transform:translateX(55vw)}
+.in .sl,.in .sr{transform:none;opacity:1}
+.in .sr{transition-delay:.12s}
+[data-rv]{opacity:0;transform:translateX(45vw);transition:opacity 1.1s ease .15s,transform 1.4s cubic-bezier(.16,.84,.24,1) .15s}
+[data-rv].in{opacity:1;transform:none}
+[data-rv]:has(.sl){opacity:1;transform:none}
+[data-rv]:has(.sl)>:not(:has(.sl)){opacity:0;transform:translateX(45vw);transition:opacity 1.1s ease .25s,transform 1.4s cubic-bezier(.16,.84,.24,1) .25s}
+[data-rv].in:has(.sl)>*{opacity:1;transform:none}
+[data-zoom]{overflow:hidden}[data-zoom] img{transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .6s;will-change:transform}
+[data-zoom]:hover img{filter:saturate(1.12) contrast(1.04)}
+[data-tilt]{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;transform-style:preserve-3d;will-change:transform}
+[data-mag]{display:inline-block;transition:transform .45s cubic-bezier(.2,.7,.2,1),color .3s,letter-spacing .45s}
+[data-mag]:hover{color:#C0552F;letter-spacing:.01em}
+.cur{position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1.5px solid #C0552F;pointer-events:none;z-index:90;transition:width .35s,height .35s,margin .35s,background .35s,border-color .35s,opacity .3s;mix-blend-mode:normal}
+.cur.big{width:84px;height:84px;margin:-42px 0 0 -42px;background:rgba(192,85,47,.14);border-color:#F3EBDD}
+.curd{position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#C0552F;pointer-events:none;z-index:91}
+.lens{position:fixed;left:0;top:0;width:210px;height:210px;margin:-105px 0 0 -105px;border-radius:50%;border:3px solid #9C4632;box-shadow:0 18px 50px rgba(40,20,10,.35);background-repeat:no-repeat;background-color:#fff;pointer-events:none;z-index:92;opacity:0;transform:scale(.6);transition:opacity .25s,transform .35s cubic-bezier(.2,.7,.2,1)}
+.lens.on{opacity:1;transform:scale(1)}
+@media(hover:none){.cur,.curd,.lens{display:none}}
+.pill:hover{background:#F3EBDD!important;color:#9C4632!important}
+.row:hover{background:rgba(156,70,50,.08)}
+.lnk{background:none;border:0;cursor:pointer;font:inherit;letter-spacing:inherit;min-height:40px;padding:0}
+@media(max-width:760px){.dsk{display:none!important}.pv{left:10px!important;right:10px!important;bottom:84px!important;top:auto!important;transform:none!important;width:auto!important;position:fixed!important}.col{flex-direction:column!important}}
+@media(max-width:760px) and (orientation:portrait){.aerbox{width:128vw!important;top:42%!important;left:calc(50% + 1.8vw)!important}}
+.pvm{display:none}@media(max-width:760px) and (orientation:portrait){.pvm{display:block}.aerbox .pv{display:none!important}}
+.mob{display:none}@media(hover:none){.dskh{display:none}.mob{display:inline}}
+.frise{height:22px;background-repeat:repeat-x;background-size:32px 22px;opacity:.55;pointer-events:none}
+.frise.t{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2732%27%20height%3D%2722%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%239C4632%27%20stroke-width%3D%272%27%3E%3Cpath%20d%3D%27M0%2020a16%2016%200%200%201%2032%200%27/%3E%3Cpath%20d%3D%27M16%2020V7%27%20stroke-width%3D%271%27%20opacity%3D%27.55%27/%3E%3Cpath%20d%3D%27M0%2020.5H32%27%20stroke-width%3D%271.6%27/%3E%3C/g%3E%3C/svg%3E")}
+.frise.c{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2732%27%20height%3D%2722%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23E9D3B4%27%20stroke-width%3D%272%27%3E%3Cpath%20d%3D%27M0%2020a16%2016%200%200%201%2032%200%27/%3E%3Cpath%20d%3D%27M16%2020V7%27%20stroke-width%3D%271%27%20opacity%3D%27.55%27/%3E%3Cpath%20d%3D%27M0%2020.5H32%27%20stroke-width%3D%271.6%27/%3E%3C/g%3E%3C/svg%3E");opacity:.7}
+.frise.dn{transform:scaleY(-1)}
+.gal{scrollbar-width:none}.gal::-webkit-scrollbar{display:none}
+.garr{width:48px;height:48px;border-radius:50%;border:1px solid rgba(243,235,221,.45);background:transparent;color:#F3EBDD;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .3s,color .3s,border-color .3s}.garr:hover{background:#F3EBDD;color:#2A1D16;border-color:#F3EBDD}
+.fin{display:block;width:100%;box-sizing:border-box;margin-top:6px;min-height:48px;border-radius:10px;border:1px solid #D8C9B2;background:#FBF7F0;padding:0 14px;font:16px Inter,sans-serif;color:#2A1D16;transition:border-color .3s,box-shadow .3s}.fin:focus{outline:none;border-color:#9C4632;box-shadow:0 0 0 3px rgba(156,70,50,.12)}
+.flab{font:600 10px Montserrat,sans-serif;letter-spacing:.18em;color:#7a6658}
+.pqv{scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.pqv>div{scroll-snap-align:center}
+</style>
+
+</head>
+<body>
+<div id="app"></div>
+<script>!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n(e.htmPreact={})}(this,function(e){var n,_,t,o,r,u,l,i={},c=[],f=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function s(e,n){for(var _ in n)e[_]=n[_];return e}function a(e){var n=e.parentNode;n&&n.removeChild(e)}function p(e,_,t){var o,r,u,l={};for(u in _)"key"==u?o=_[u]:"ref"==u?r=_[u]:l[u]=_[u];if(arguments.length>2&&(l.children=arguments.length>3?n.call(arguments,2):t),"function"==typeof e&&null!=e.defaultProps)for(u in e.defaultProps)void 0===l[u]&&(l[u]=e.defaultProps[u]);return h(e,l,o,r,null)}function h(e,n,o,r,u){var l={type:e,props:n,key:o,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==u?++t:u};return null!=_.vnode&&_.vnode(l),l}function d(e){return e.children}function v(e,n){this.props=e,this.context=n}function y(e,n){if(null==n)return e.__?y(e.__,e.__.__k.indexOf(e)+1):null;for(var _;n<e.__k.length;n++)if(null!=(_=e.__k[n])&&null!=_.__e)return _.__e;return"function"==typeof e.type?y(e):null}function m(e){var n,_;if(null!=(e=e.__)&&null!=e.__c){for(e.__e=e.__c.base=null,n=0;n<e.__k.length;n++)if(null!=(_=e.__k[n])&&null!=_.__e){e.__e=e.__c.base=_.__e;break}return m(e)}}function g(e){(!e.__d&&(e.__d=!0)&&o.push(e)&&!k.__r++||u!==_.debounceRendering)&&((u=_.debounceRendering)||r)(k)}function k(){for(var e;k.__r=o.length;)e=o.sort(function(e,n){return e.__v.__b-n.__v.__b}),o=[],e.some(function(e){var n,_,t,o,r,u;e.__d&&(r=(o=(n=e).__v).__e,(u=n.__P)&&(_=[],(t=s({},o)).__v=o.__v+1,D(u,o,t,n.__n,void 0!==u.ownerSVGElement,null!=o.__h?[r]:null,_,null==r?y(o):r,o.__h),w(_,o),o.__e!=r&&m(o)))})}function b(e,n,_,t,o,r,u,l,f,s){var a,p,v,m,g,k,b,H=t&&t.__k||c,E=H.length;for(_.__k=[],a=0;a<n.length;a++)if(null!=(m=_.__k[a]=null==(m=n[a])||"boolean"==typeof m?null:"string"==typeof m||"number"==typeof m||"bigint"==typeof m?h(null,m,null,null,m):Array.isArray(m)?h(d,{children:m},null,null,null):m.__b>0?h(m.type,m.props,m.key,null,m.__v):m)){if(m.__=_,m.__b=_.__b+1,null===(v=H[a])||v&&m.key==v.key&&m.type===v.type)H[a]=void 0;else for(p=0;p<E;p++){if((v=H[p])&&m.key==v.key&&m.type===v.type){H[p]=void 0;break}v=null}D(e,m,v=v||i,o,r,u,l,f,s),g=m.__e,(p=m.ref)&&v.ref!=p&&(b||(b=[]),v.ref&&b.push(v.ref,null,m),b.push(p,m.__c||g,m)),null!=g?(null==k&&(k=g),"function"==typeof m.type&&null!=m.__k&&m.__k===v.__k?m.__d=f=C(m,f,e):f=x(e,m,v,H,g,f),s||"option"!==_.type?"function"==typeof _.type&&(_.__d=f):e.value=""):f&&v.__e==f&&f.parentNode!=e&&(f=y(v))}for(_.__e=k,a=E;a--;)null!=H[a]&&("function"==typeof _.type&&null!=H[a].__e&&H[a].__e==_.__d&&(_.__d=y(t,a+1)),A(H[a],H[a]));if(b)for(a=0;a<b.length;a++)U(b[a],b[++a],b[++a])}function C(e,n,_){var t,o;for(t=0;t<e.__k.length;t++)(o=e.__k[t])&&(o.__=e,n="function"==typeof o.type?C(o,n,_):x(_,o,o,e.__k,o.__e,n));return n}function x(e,n,_,t,o,r){var u,l,i;if(void 0!==n.__d)u=n.__d,n.__d=void 0;else if(null==_||o!=r||null==o.parentNode)e:if(null==r||r.parentNode!==e)e.appendChild(o),u=null;else{for(l=r,i=0;(l=l.nextSibling)&&i<t.length;i+=2)if(l==o)break e;e.insertBefore(o,r),u=r}return void 0!==u?u:o.nextSibling}function H(e,n,_){"-"===n[0]?e.setProperty(n,_):e[n]=null==_?"":"number"!=typeof _||f.test(n)?_:_+"px"}function E(e,n,_,t,o){var r;e:if("style"===n)if("string"==typeof _)e.style.cssText=_;else{if("string"==typeof t&&(e.style.cssText=t=""),t)for(n in t)_&&n in _||H(e.style,n,"");if(_)for(n in _)t&&_[n]===t[n]||H(e.style,n,_[n])}else if("o"===n[0]&&"n"===n[1])r=n!==(n=n.replace(/Capture$/,"")),n=n.toLowerCase()in e?n.toLowerCase().slice(2):n.slice(2),e.l||(e.l={}),e.l[n+r]=_,_?t||e.addEventListener(n,r?S:P,r):e.removeEventListener(n,r?S:P,r);else if("dangerouslySetInnerHTML"!==n){if(o)n=n.replace(/xlink[H:h]/,"h").replace(/sName$/,"s");else if("href"!==n&&"list"!==n&&"form"!==n&&"tabIndex"!==n&&"download"!==n&&n in e)try{e[n]=null==_?"":_;break e}catch(e){}"function"==typeof _||(null!=_&&(!1!==_||"a"===n[0]&&"r"===n[1])?e.setAttribute(n,_):e.removeAttribute(n))}}function P(e){this.l[e.type+!1](_.event?_.event(e):e)}function S(e){this.l[e.type+!0](_.event?_.event(e):e)}function D(e,n,t,o,r,u,l,i,c){var f,a,p,h,y,m,g,k,C,x,H,E=n.type;if(void 0!==n.constructor)return null;null!=t.__h&&(c=t.__h,i=n.__e=t.__e,n.__h=null,u=[i]),(f=_.__b)&&f(n);try{e:if("function"==typeof E){if(k=n.props,C=(f=E.contextType)&&o[f.__c],x=f?C?C.props.value:f.__:o,t.__c?g=(a=n.__c=t.__c).__=a.__E:("prototype"in E&&E.prototype.render?n.__c=a=new E(k,x):(n.__c=a=new v(k,x),a.constructor=E,a.render=M),C&&C.sub(a),a.props=k,a.state||(a.state={}),a.context=x,a.__n=o,p=a.__d=!0,a.__h=[]),null==a.__s&&(a.__s=a.state),null!=E.getDerivedStateFromProps&&(a.__s==a.state&&(a.__s=s({},a.__s)),s(a.__s,E.getDerivedStateFromProps(k,a.__s))),h=a.props,y=a.state,p)null==E.getDerivedStateFromProps&&null!=a.componentWillMount&&a.componentWillMount(),null!=a.componentDidMount&&a.__h.push(a.componentDidMount);else{if(null==E.getDerivedStateFromProps&&k!==h&&null!=a.componentWillReceiveProps&&a.componentWillReceiveProps(k,x),!a.__e&&null!=a.shouldComponentUpdate&&!1===a.shouldComponentUpdate(k,a.__s,x)||n.__v===t.__v){a.props=k,a.state=a.__s,n.__v!==t.__v&&(a.__d=!1),a.__v=n,n.__e=t.__e,n.__k=t.__k,n.__k.forEach(function(e){e&&(e.__=n)}),a.__h.length&&l.push(a);break e}null!=a.componentWillUpdate&&a.componentWillUpdate(k,a.__s,x),null!=a.componentDidUpdate&&a.__h.push(function(){a.componentDidUpdate(h,y,m)})}a.context=x,a.props=k,a.state=a.__s,(f=_.__r)&&f(n),a.__d=!1,a.__v=n,a.__P=e,f=a.render(a.props,a.state,a.context),a.state=a.__s,null!=a.getChildContext&&(o=s(s({},o),a.getChildContext())),p||null==a.getSnapshotBeforeUpdate||(m=a.getSnapshotBeforeUpdate(h,y)),H=null!=f&&f.type===d&&null==f.key?f.props.children:f,b(e,Array.isArray(H)?H:[H],n,t,o,r,u,l,i,c),a.base=n.__e,n.__h=null,a.__h.length&&l.push(a),g&&(a.__E=a.__=null),a.__e=!1}else null==u&&n.__v===t.__v?(n.__k=t.__k,n.__e=t.__e):n.__e=T(t.__e,n,t,o,r,u,l,c);(f=_.diffed)&&f(n)}catch(e){n.__v=null,(c||null!=u)&&(n.__e=i,n.__h=!!c,u[u.indexOf(i)]=null),_.__e(e,n,t)}}function w(e,n){_.__c&&_.__c(n,e),e.some(function(n){try{e=n.__h,n.__h=[],e.some(function(e){e.call(n)})}catch(e){_.__e(e,n.__v)}})}function T(e,_,t,o,r,u,l,c){var f,s,p,h=t.props,d=_.props,v=_.type,m=0;if("svg"===v&&(r=!0),null!=u)for(;m<u.length;m++)if((f=u[m])&&(f===e||(v?f.localName==v:3==f.nodeType))){e=f,u[m]=null;break}if(null==e){if(null===v)return document.createTextNode(d);e=r?document.createElementNS("http://www.w3.org/2000/svg",v):document.createElement(v,d.is&&d),u=null,c=!1}if(null===v)h===d||c&&e.data===d||(e.data=d);else{if(u=u&&n.call(e.childNodes),s=(h=t.props||i).dangerouslySetInnerHTML,p=d.dangerouslySetInnerHTML,!c){if(null!=u)for(h={},m=0;m<e.attributes.length;m++)h[e.attributes[m].name]=e.attributes[m].value;(p||s)&&(p&&(s&&p.__html==s.__html||p.__html===e.innerHTML)||(e.innerHTML=p&&p.__html||""))}if(function(e,n,_,t,o){var r;for(r in _)"children"===r||"key"===r||r in n||E(e,r,null,_[r],t);for(r in n)o&&"function"!=typeof n[r]||"children"===r||"key"===r||"value"===r||"checked"===r||_[r]===n[r]||E(e,r,n[r],_[r],t)}(e,d,h,r,c),p)_.__k=[];else if(m=_.props.children,b(e,Array.isArray(m)?m:[m],_,t,o,r&&"foreignObject"!==v,u,l,u?u[0]:t.__k&&y(t,0),c),null!=u)for(m=u.length;m--;)null!=u[m]&&a(u[m]);c||("value"in d&&void 0!==(m=d.value)&&(m!==e.value||"progress"===v&&!m)&&E(e,"value",m,h.value,!1),"checked"in d&&void 0!==(m=d.checked)&&m!==e.checked&&E(e,"checked",m,h.checked,!1))}return e}function U(e,n,t){try{"function"==typeof e?e(n):e.current=n}catch(e){_.__e(e,t)}}function A(e,n,t){var o,r;if(_.unmount&&_.unmount(e),(o=e.ref)&&(o.current&&o.current!==e.__e||U(o,null,n)),null!=(o=e.__c)){if(o.componentWillUnmount)try{o.componentWillUnmount()}catch(e){_.__e(e,n)}o.base=o.__P=null}if(o=e.__k)for(r=0;r<o.length;r++)o[r]&&A(o[r],n,"function"!=typeof e.type);t||null==e.__e||a(e.__e),e.__e=e.__d=void 0}function M(e,n,_){return this.constructor(e,_)}n=c.slice,_={__e:function(e,n){for(var _,t,o;n=n.__;)if((_=n.__c)&&!_.__)try{if((t=_.constructor)&&null!=t.getDerivedStateFromError&&(_.setState(t.getDerivedStateFromError(e)),o=_.__d),null!=_.componentDidCatch&&(_.componentDidCatch(e),o=_.__d),o)return _.__E=_}catch(n){e=n}throw e}},t=0,v.prototype.setState=function(e,n){var _;_=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=s({},this.state),"function"==typeof e&&(e=e(s({},_),this.props)),e&&s(_,e),null!=e&&this.__v&&(n&&this.__h.push(n),g(this))},v.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),g(this))},v.prototype.render=d,o=[],r="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,k.__r=0,l=0;var F,L,N,W=0,R=[],I=_.__b,O=_.__r,V=_.diffed,q=_.__c,B=_.unmount;function $(e,n){_.__h&&_.__h(L,e,W||n),W=0;var t=L.__H||(L.__H={__:[],__h:[]});return e>=t.__.length&&t.__.push({}),t.__[e]}function j(e){return W=1,G(ee,e)}function G(e,n,_){var t=$(F++,2);return t.t=e,t.__c||(t.__=[_?_(n):ee(void 0,n),function(e){var n=t.t(t.__[0],e);t.__[0]!==n&&(t.__=[n,t.__[1]],t.__c.setState({}))}],t.__c=L),t.__}function z(e,n){var t=$(F++,4);!_.__s&&Z(t.__H,n)&&(t.__=e,t.__H=n,L.__h.push(t))}function J(e,n){var _=$(F++,7);return Z(_.__H,n)&&(_.__=e(),_.__H=n,_.__h=e),_.__}function K(){R.forEach(function(e){if(e.__P)try{e.__H.__h.forEach(X),e.__H.__h.forEach(Y),e.__H.__h=[]}catch(n){e.__H.__h=[],_.__e(n,e.__v)}}),R=[]}_.__b=function(e){L=null,I&&I(e)},_.__r=function(e){O&&O(e),F=0;var n=(L=e.__c).__H;n&&(n.__h.forEach(X),n.__h.forEach(Y),n.__h=[])},_.diffed=function(e){V&&V(e);var n=e.__c;n&&n.__H&&n.__H.__h.length&&(1!==R.push(n)&&N===_.requestAnimationFrame||((N=_.requestAnimationFrame)||function(e){var n,_=function(){clearTimeout(t),Q&&cancelAnimationFrame(n),setTimeout(e)},t=setTimeout(_,100);Q&&(n=requestAnimationFrame(_))})(K)),L=void 0},_.__c=function(e,n){n.some(function(e){try{e.__h.forEach(X),e.__h=e.__h.filter(function(e){return!e.__||Y(e)})}catch(t){n.some(function(e){e.__h&&(e.__h=[])}),n=[],_.__e(t,e.__v)}}),q&&q(e,n)},_.unmount=function(e){B&&B(e);var n=e.__c;if(n&&n.__H)try{n.__H.__.forEach(X)}catch(e){_.__e(e,n.__v)}};var Q="function"==typeof requestAnimationFrame;function X(e){var n=L;"function"==typeof e.__c&&e.__c(),L=n}function Y(e){var n=L;e.__c=e.__(),L=n}function Z(e,n){return!e||e.length!==n.length||n.some(function(n,_){return n!==e[_]})}function ee(e,n){return"function"==typeof n?n(e):n}var ne=function(e,n,_,t){var o;n[0]=0;for(var r=1;r<n.length;r++){var u=n[r++],l=n[r]?(n[0]|=u?1:2,_[n[r++]]):n[++r];3===u?t[0]=l:4===u?t[1]=Object.assign(t[1]||{},l):5===u?(t[1]=t[1]||{})[n[++r]]=l:6===u?t[1][n[++r]]+=l+"":u?(o=e.apply(l,ne(e,l,_,["",null])),t.push(o),l[0]?n[0]|=2:(n[r-2]=0,n[r]=o)):t.push(l)}return t},_e=new Map,te=function(e){var n=_e.get(this);return n||(n=new Map,_e.set(this,n)),(n=ne(this,n.get(e)||(n.set(e,n=function(e){for(var n,_,t=1,o="",r="",u=[0],l=function(e){1===t&&(e||(o=o.replace(/^\s*\n\s*|\s*\n\s*$/g,"")))?u.push(0,e,o):3===t&&(e||o)?(u.push(3,e,o),t=2):2===t&&"..."===o&&e?u.push(4,e,0):2===t&&o&&!e?u.push(5,0,!0,o):t>=5&&((o||!e&&5===t)&&(u.push(t,0,o,_),t=6),e&&(u.push(t,e,0,_),t=6)),o=""},i=0;i<e.length;i++){i&&(1===t&&l(),l(i));for(var c=0;c<e[i].length;c++)n=e[i][c],1===t?"<"===n?(l(),u=[u],t=3):o+=n:4===t?"--"===o&&">"===n?(t=1,o=""):o=n+o[0]:r?n===r?r="":o+=n:'"'===n||"'"===n?r=n:">"===n?(l(),t=1):t&&("="===n?(t=5,_=o,o=""):"/"===n&&(t<5||">"===e[i][c+1])?(l(),3===t&&(u=u[0]),t=u,(u=u[0]).push(2,0,t),t=0):" "===n||"\t"===n||"\n"===n||"\r"===n?(l(),t=2):o+=n),3===t&&"!--"===o&&(t=4,u=u[0])}return l(),u}(e)),n),arguments,[])).length>1?n:n[0]}.bind(p);e.h=p,e.html=te,e.render=function(e,t,o){var r,u,l;_.__&&_.__(e,t),u=(r="function"==typeof o)?null:o&&o.__k||t.__k,l=[],D(t,e=(!r&&o||t).__k=p(d,null,[e]),u||i,i,void 0!==t.ownerSVGElement,!r&&o?[o]:u?null:t.firstChild?n.call(t.childNodes):null,l,!r&&o?o:u?u.__e:t.firstChild,r),w(l,e)},e.Component=v,e.createContext=function(e,n){var _={__c:n="__cC"+l++,__:e,Consumer:function(e,n){return e.children(n)},Provider:function(e){var _,t;return this.getChildContext||(_=[],(t={})[n]=this,this.getChildContext=function(){return t},this.shouldComponentUpdate=function(e){this.props.value!==e.value&&_.some(g)},this.sub=function(e){_.push(e);var n=e.componentWillUnmount;e.componentWillUnmount=function(){_.splice(_.indexOf(e),1),n&&n.call(e)}}),e.children}};return _.Provider.__=_.Consumer.contextType=_},e.useState=j,e.useReducer=G,e.useEffect=function(e,n){var t=$(F++,3);!_.__s&&Z(t.__H,n)&&(t.__=e,t.__H=n,L.__H.__h.push(t))},e.useLayoutEffect=z,e.useRef=function(e){return W=5,J(function(){return{current:e}},[])},e.useImperativeHandle=function(e,n,_){W=6,z(function(){"function"==typeof e?e(n()):e&&(e.current=n())},null==_?_:_.concat(e))},e.useMemo=J,e.useCallback=function(e,n){return W=8,J(function(){return e},n)},e.useContext=function(e){var n=L.context[e.__c],_=$(F++,9);return _.c=e,n?(null==_.__&&(_.__=!0,n.sub(L)),n.props.value):e.__},e.useDebugValue=function(e,n){_.useDebugValue&&_.useDebugValue(n?n(e):e)},e.useErrorBoundary=function(e){var n=$(F++,10),_=j();return n.__=e,L.componentDidCatch||(L.componentDidCatch=function(e){n.__&&n.__(e),_[1](e)}),[_[0],function(){_[1](void 0)}]}});
+</script>
+<script>
+var html=htmPreact.html, prender=htmPreact.render, PComponent=htmPreact.Component;
+function TPL(v){ with(v){ return html`
+<div onMouseMove=${fxMove} onMouseOver=${fxOver} onMouseLeave=${fxOut} style="position:relative;width:100%;height:100vh;overflow:hidden;background:#1a120d;font-family:Inter,system-ui,sans-serif;color:#2A1D16">
+
+
+<div aria-hidden=${filmHidden} style="position:absolute;inset:0;z-index:${filmZ};background:#0d0906;opacity:${filmOp};pointer-events:${filmPe};transition:opacity .8s ease;overflow:hidden">
+  <div ref=${rf.vwrap} style="position:absolute;inset:0;transform-origin:50% 50%">
+    <img src="assets/0739af4460.jpg" alt="Les Bastides de l'Érable au crépuscule" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    <video ref=${rf.v} muted="" playsinline="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease"></video>
+  </div>
+  <div ref=${rf.title} aria-hidden="true" style="position:absolute;left:0;right:0;top:9%;text-align:center;pointer-events:none;transition:opacity 1.2s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)">
+    <div style="font:700 clamp(14px,2.2vw,30px)/1 Montserrat,sans-serif;color:#FFFFFF;letter-spacing:.42em;padding-left:.42em;text-shadow:0 2px 16px rgba(20,10,5,.55);animation:rise 1.4s .2s cubic-bezier(.2,.7,.2,1) both">LES BASTIDES</div>
+    <div style="font:800 clamp(26px,4.4vw,64px)/1 Montserrat,sans-serif;margin-top:.5vw;color:#FFFFFF;letter-spacing:.06em;text-shadow:0 1px 0 #e9dfd1,0 2px 0 #d8c9b5,0 3px 0 #c6b296,0 10px 26px rgba(20,10,5,.5);animation:rise 1.4s .45s cubic-bezier(.2,.7,.2,1) both">DE L’ÉRABLE</div>
+  </div>
+  <div ref=${rf.white} style="position:absolute;inset:0;background:#FBFAF7;opacity:0;pointer-events:none"></div>
+  <div ref=${rf.tr} style="position:absolute;inset:0;opacity:0;pointer-events:none;overflow:hidden;background:#141c2e">
+    <div ref=${rf.aer} class="aerbox" style="position:absolute;left:50%;top:50%;width:max(100%, calc(max(100vh,560px) * 1.3393));aspect-ratio:2400 / 1792;opacity:0;transform:translate(-50%,-50%) scale(1.9) rotate(5deg)"><img src="assets/0d36a7993e.jpg" alt="" style="width:100%;height:100%;display:block" /></div>
+    <div ref=${rf.sky} style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 115%,#c98f6e 0%,#6d5a78 28%,#2c3654 58%,#141c2e 100%)"></div>
+    <div ref=${rf.skyw} style="position:absolute;inset:0;background:#FBFAF7"></div>
+    <canvas ref=${rf.cv} style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  </div>
+  <div ref=${rf.code} aria-hidden="true" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,18px);pointer-events:none;color:#2A1D16;transition:color 1.2s ease;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;text-align:center;padding:0 16px"></div>
+  <div ref=${rf.ui} style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(14px,3vw,36px);gap:12px;transition:opacity .5s">
+    <div style="display:flex;align-items:center;gap:10px"><img src="assets/1d3e87e554.png" alt="Cobalt Group" style="width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain" /><span class="dsk" style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#F3EBDD;text-shadow:0 1px 8px rgba(0,0,0,.6)">COBALT GROUP</span></div>
+    <button onClick=${skip} class="pill" style="min-height:40px;padding:0 16px;border-radius:40px;border:1px solid rgba(243,235,221,.6);background:rgba(20,12,8,.35);color:#F3EBDD;font:600 10px Montserrat,sans-serif;letter-spacing:.2em;cursor:pointer;backdrop-filter:blur(8px)">PASSER LA VISITE →</button>
+  </div>
+  <div ref=${rf.load} style="position:absolute;left:0;right:0;bottom:34px;display:flex;flex-direction:column;align-items:center;gap:10px;color:#F3EBDD;transition:opacity .6s;pointer-events:none">
+    <div style="width:26px;height:26px;border-radius:50%;border:2px solid rgba(243,235,221,.3);border-top-color:#F3EBDD;animation:spin 1s linear infinite"></div>
+    <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.34em;text-shadow:0 1px 8px rgba(0,0,0,.6)">LA VISITE COMMENCE</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(243,235,221,.15)"><div ref=${rf.bar} style="height:100%;width:0;background:#D0703F"></div></div>
+</div>
+
+
+<div ref=${siteRef} aria-hidden=${siteHidden} style="position:absolute;inset:0;z-index:30;overflow-y:auto;overflow-x:hidden;background:#F3EBDD;opacity:${siteOp};pointer-events:${sitePe};transition:opacity .7s ease;scroll-behavior:smooth">
+  ${(pq)?html`
+    <div style="position:fixed;inset:0;z-index:80;background:rgba(21,14,10,.94);display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px;color:#F3EBDD"><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em">LA PLAQUETTE · FAITES DÉFILER</span><button onClick=${closePq} aria-label="Fermer" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,235,221,.5);background:transparent;color:#F3EBDD;font-size:22px;cursor:pointer">×</button></div>
+      <div class="pqv" style="flex:1;min-height:0;display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;padding:0 18px 22px;align-items:center">
+        ${(pqPages||[]).map((pg)=>html`<div style="flex:0 0 auto;height:100%;display:flex;flex-direction:column;align-items:center;gap:8px"><img src=${pg.src} alt=${pg.n} style="height:calc(100% - 26px);max-width:88vw;object-fit:contain;box-shadow:0 18px 40px rgba(0,0,0,.5)" /><span style="font:600 9px Montserrat,sans-serif;letter-spacing:.28em;color:#F3EBDD;opacity:.75">${pg.n}</span></div>`)}
+      </div>
+    </div>
+  `:null}
+
+  
+  <section style="position:relative;height:100vh;min-height:560px;overflow:hidden;background:#15100c">
+    <div class="aerbox" style="position:absolute;left:50%;top:50%;width:max(100%, calc(max(100vh,560px) * 1.3393));aspect-ratio:2400 / 1792;transform:translate(-50%,-50%) scale(${aerS});transition:transform 1.6s cubic-bezier(.2,.7,.2,1)">
+      <img src="assets/0d36a7993e.jpg" alt="Vue aérienne de la résidence, de nuit" style="position:absolute;inset:0;width:100%;height:100%;display:block" />
+      <div style="position:absolute;inset:0;background:#0d0805;opacity:${aDim};transition:opacity .45s;pointer-events:none"></div>
+      ${(aLots||[]).map((lot)=>html`
+        <button aria-label=${lot.aria} onMouseEnter=${lot.aenter} onMouseLeave=${lot.aleave} onFocus=${lot.aenter} onClick=${lot.atap} style=${lot.abox}><img src=${lot.a.hl} alt="" style="width:100%;height:100%;display:block;opacity:${lot.aop};transition:opacity .4s" /></button>
+      `)}
+      ${(apv.show)?html`
+        <div class="pv" onMouseEnter=${apv.keep} onMouseLeave=${apv.leave} style=${apv.box}>
+          <button onClick=${apv.open} style="display:block;width:100%;text-align:left;background:rgba(243,235,221,.97);border:0;border-radius:14px;padding:14px 16px;box-shadow:0 20px 50px rgba(0,0,0,.45);cursor:pointer;animation:rise .25s ease both">
+            <span style="display:flex;align-items:baseline;gap:10px"><span style="font:900 34px/1 Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${apv.lot.id}</span><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#9C4632">${apv.lot.type}</span></span>
+            <span style="display:block;font:500 13px/1.3 Montserrat,sans-serif;color:#2A1D16;margin-top:6px">${apv.lot.tag}</span>
+            <span style="display:block;font:800 24px Montserrat,sans-serif;color:#9C4632;margin:4px 0">${apv.lot.price}</span>
+            <span style="display:block;font:400 12px Inter,sans-serif;color:#5b4a3f">${apv.lot.hab} m² · jardin ${apv.lot.jar} m²</span>
+            <span style="display:block;margin-top:8px;font:700 10px Montserrat,sans-serif;letter-spacing:.16em;color:#9C4632">VOIR LE PLAN DE VENTE →</span>
+          </button>
+        </div>
+      `:null}
+    </div>
+    ${(apv.show)?html`
+        <div class="pvm" style="position:absolute;left:14px;right:14px;top:calc(42% + 48vw + 10px);z-index:6">
+          <button onClick=${apv.open} style="display:block;width:100%;text-align:left;background:#F3EBDD;border:0;border-radius:14px;padding:14px 16px;box-shadow:0 20px 50px rgba(0,0,0,.45);cursor:pointer;animation:rise .25s ease both">
+            <span style="display:flex;align-items:baseline;gap:10px"><span style="font:900 34px/1 Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${apv.lot.id}</span><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#9C4632">${apv.lot.type}</span></span>
+            <span style="display:block;font:500 13px/1.3 Montserrat,sans-serif;color:#2A1D16;margin-top:6px">${apv.lot.tag}</span>
+            <span style="display:block;font:800 24px Montserrat,sans-serif;color:#9C4632;margin:4px 0">${apv.lot.price}</span>
+            <span style="display:block;font:400 12px Inter,sans-serif;color:#5b4a3f">${apv.lot.hab} m² · jardin ${apv.lot.jar} m²</span>
+            <span style="display:block;margin-top:8px;font:700 10px Montserrat,sans-serif;letter-spacing:.16em;color:#9C4632">VOIR LE PLAN DE VENTE →</span>
+          </button>
+        </div>
+      `:null}
+    <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px clamp(14px,3vw,36px);z-index:3;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px"><img src="assets/1d3e87e554.png" alt="Cobalt Group" style="width:36px;height:36px;border-radius:50%;background:#fff;object-fit:contain" /><span style="font:700 11px Montserrat,sans-serif;letter-spacing:.26em;color:#F3EBDD">LES BASTIDES DE L’ÉRABLE</span></div>
+      <div style="display:flex;gap:8px"><button onClick=${replay} class="pill" style="min-height:38px;padding:0 16px;border-radius:38px;border:1px solid rgba(243,235,221,.6);background:rgba(20,12,8,.3);color:#F3EBDD;font:600 10px Montserrat,sans-serif;letter-spacing:.18em;cursor:pointer;display:inline-flex;align-items:center;gap:9px"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/><path d="M10.2 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg>REVOIR LA VISITE</button></div>
+    </div>
+    <div style="position:absolute;left:clamp(16px,4vw,56px);bottom:clamp(70px,12vh,120px);color:#F3EBDD;max-width:min(420px,80vw);z-index:2;pointer-events:none;text-shadow:0 2px 20px rgba(0,0,0,.6)">
+      <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.85">PLAN DE LA RÉSIDENCE</div>
+      <div style="font:800 clamp(30px,4vw,56px)/.95 Montserrat,sans-serif;margin-top:10px;letter-spacing:-.01em">CHOISISSEZ<br />VOTRE BASTIDE</div>
+      <div style="font:400 13px/1.6 Inter,sans-serif;margin-top:12px;opacity:.9"><span class="dskh">Survolez une maison pour l’éclairer, cliquez pour ouvrir son plan de vente.</span><span class="mob">Touchez une maison pour l’éclairer, puis sa fenêtre pour ouvrir son plan de vente.</span></div>
+    </div>
+    <div style="position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:#F3EBDD;z-index:2;pointer-events:none">
+      <svg aria-hidden="true" width="18" height="28" viewBox="0 0 20 30"><rect x="1" y="1" width="18" height="28" rx="9" fill="none" stroke="#F3EBDD" stroke-width="1.5"/><circle cx="10" cy="9" r="2.2" fill="#F3EBDD" style="animation:cue 1.6s infinite"/></svg>
+      <div style="font:600 9px Montserrat,sans-serif;letter-spacing:.3em">DÉFILEZ POUR DÉCOUVRIR</div>
+    </div>
+  </section>
+
+  
+  <section style="position:relative;background:#F3EBDD;padding:120px clamp(20px,6vw,90px) 110px">
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:6vw;align-items:flex-start">
+      <div data-rv="" style="flex:1;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">01 · LE PROGRAMME</div>
+        <h2 style="font:800 clamp(34px,4.6vw,68px)/.98 Montserrat,sans-serif;color:#2A1D16;margin:16px 0 0;letter-spacing:-.02em"><span class="sl">L’ESPRIT D’UN HAMEAU PROVENÇAL,</span> <span class="sr" style="color:#9C4632">EN PLEINE VILLE</span></h2>
+        <div style="margin-top:38px;border:1px solid rgba(156,70,50,.35);border-radius:18px;padding:26px 26px 22px;background:rgba(255,250,243,.55);position:relative;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:14px;color:#9C4632"><svg aria-hidden="true" viewBox="0 0 120 100" style="width:46px;height:38px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M18 92V40M102 92V40"/><path d="M10 40l50-26 50 26"/><path d="M40 92V60a20 20 0 0 1 40 0v32"/><path d="M60 92V54"/><path d="M6 92h108"/><path d="M24 92c-2-14 2-30 6-40 4 10 8 26 6 40"/><path d="M96 92c2-14-2-30-6-40-4 10-8 26-6 40"/></svg><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.24em">UNE OPPORTUNITÉ RARE</div></div>
+          <div style="font:400 15px/1.75 Inter,sans-serif;color:#4d3e34;margin-top:14px">À Marseille, le foncier constructible se raréfie et les permis de construire pour des maisons individuelles sont devenus l’exception. Neuf bastides neuves avec jardin, dans une impasse privée du 13<sup>e</sup> : ce type de programme ne se présente presque plus en ville.</div>
+          <div style="font:400 15px/1.75 Inter,sans-serif;color:#4d3e34;margin-top:10px">Le permis de construire est obtenu, les travaux démarrent au premier semestre 2027. Réserver aujourd’hui, c’est choisir sa maison et son jardin avant tout le monde.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px"><span style="display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:34px;background:#9C4632;color:#F3EBDD;font:600 10px Montserrat,sans-serif;letter-spacing:.16em">TRAVAUX : 1ER SEMESTRE 2027</span><span style="display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:34px;border:1px solid #9C4632;color:#9C4632;font:600 10px Montserrat,sans-serif;letter-spacing:.16em">LIVRAISON ESTIMÉE : FIN 2028</span></div>
+          <div style="position:absolute;right:-18px;bottom:-14px;color:#9C4632;opacity:.12"><svg aria-hidden="true" viewBox="0 0 160 60" style="width:190px;height:72px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M4 40C40 34 90 30 156 14"/><path d="M30 37c-4-10 2-18 10-20-2 9-5 16-10 20zM30 37c8 6 18 6 24 0-9-3-17-3-24 0zM62 31c-3-11 4-18 12-19-3 9-6 15-12 19zM62 31c8 6 19 5 25-2-9-2-18-2-25 2zM96 25c-2-10 5-17 13-17-3 8-7 14-13 17zM96 25c9 4 19 2 24-5-9-1-17 0-24 5zM128 19c0-8 6-13 13-12-3 6-7 10-13 12z"/><circle cx="48" cy="44" r="3.2"/><circle cx="82" cy="37" r="3"/></svg></div>
+        </div>
+      </div>
+      <div data-rv="" style="flex:1;min-width:0;font:400 16px/1.8 Inter,sans-serif;color:#4d3e34;padding-top:30px">
+        <p style="margin:0 0 16px">Dans le 13<sup>e</sup> arrondissement de Marseille, à l’abri de la circulation, neuf maisons neuves s’organisent autour d’une voie privée fermée par un portail. Bordées de talus boisés, elles ont chacune leur jardin privatif et une architecture d’inspiration provençale.</p>
+        <p style="margin:0">Au rez-de-chaussée, une grande pièce de vie s’ouvre sur le jardin par une baie coulissante. À l’étage, les chambres et la salle de bains, au calme.</p>
+        <p style="margin:16px 0 0">Chaque maison dispose de deux places de stationnement privatives ; la bastide M09, en T5, profite en plus d’un garage et d’une chambre au rez-de-chaussée. Les jardins, de 58 à 150 m², sont clos et engazonnés.</p>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:70px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">9</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">BASTIDES R+1</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">8 T4 + 1 T5</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE 82,70 À 93,55 M² HABITABLES</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">150 m²</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE JARDIN AU MAXIMUM</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">395 500 €</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">PRIX DE LANCEMENT, À PARTIR DE</div></div>
+    </div>
+    <div class="frise t" style="position:absolute;left:0;right:0;bottom:22px"></div>
+  </section>
+
+  
+  <section style="position:relative;background:#9C4632;color:#F3EBDD;clip-path:polygon(0 7vw,100% 0,100% calc(100% - 7vw),0 100%);margin:-3vw 0;padding:calc(7vw + 80px) clamp(20px,6vw,90px) calc(7vw + 80px)">
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:5vw;align-items:center">
+      <div data-rv="" style="flex:.9;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.8">02 · IDÉE DIRECTRICE</div>
+        <h2 style="font:800 clamp(32px,4vw,58px)/1 Montserrat,sans-serif;margin:14px 0 22px;overflow:visible"><span class="sl">UNE ARCHITECTURE</span><br /><span class="sr">QUI PARLE PROVENÇAL</span></h2>
+        <svg aria-hidden="true" viewBox="0 0 160 70" width="160" height="70" style="display:block;margin:-6px 0 18px" fill="none" stroke="#F3EBDD" stroke-width="1.2" stroke-linecap="round"><path d="M6 66 C30 50 46 36 58 8"/><path d="M22 66 C40 46 58 34 74 12"/><path d="M38 66 C52 48 70 40 92 22"/><g fill="#F3EBDD" stroke="none" opacity=".9"><ellipse cx="58" cy="8" rx="2.2" ry="4" transform="rotate(25 58 8)"/><ellipse cx="55" cy="15" rx="2" ry="3.6" transform="rotate(25 55 15)"/><ellipse cx="51" cy="22" rx="2" ry="3.4" transform="rotate(30 51 22)"/><ellipse cx="74" cy="12" rx="2.2" ry="4" transform="rotate(35 74 12)"/><ellipse cx="69" cy="19" rx="2" ry="3.6" transform="rotate(38 69 19)"/><ellipse cx="64" cy="26" rx="2" ry="3.4" transform="rotate(40 64 26)"/><ellipse cx="92" cy="22" rx="2.2" ry="4" transform="rotate(55 92 22)"/><ellipse cx="85" cy="27" rx="2" ry="3.6" transform="rotate(55 85 27)"/><ellipse cx="78" cy="32" rx="2" ry="3.4" transform="rotate(58 78 32)"/></g><path d="M110 60 C122 50 136 44 154 40"/><path d="M124 52 c-4 -8 2 -14 8 -14 c0 6 -3 12 -8 14z" fill="rgba(243,235,221,.25)"/><path d="M140 46 c-2 -8 4 -13 10 -12 c-1 6 -5 11 -10 12z" fill="rgba(243,235,221,.25)"/><path d="M132 50 c6 6 14 6 18 2 c-6 -4 -12 -5 -18 -2z" fill="rgba(243,235,221,.25)"/></svg>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;font:400 13px/1.55 Inter,sans-serif">
+          <div><svg aria-hidden="true" width="34" height="22" viewBox="0 0 34 22" fill="none" stroke="#F3EBDD" stroke-width="1.3"><path d="M1 21 17 3l16 18"/><path d="M5 17h24"/></svg><div style="margin-top:8px">Toitures en tuiles de terre cuite</div></div>
+          <div><svg aria-hidden="true" width="34" height="22" viewBox="0 0 34 22" fill="none" stroke="#F3EBDD" stroke-width="1.3"><path d="M2 6c4 0 4 4 8 4s4-4 8-4 4 4 8 4 4-4 6-4"/><path d="M2 14h30"/></svg><div style="margin-top:8px">Génoises, enduits aux teintes chaudes</div></div>
+          <div><svg aria-hidden="true" width="34" height="22" viewBox="0 0 34 22" fill="none" stroke="#F3EBDD" stroke-width="1.3"><circle cx="11" cy="9" r="7"/><path d="M11 16v5M2 21h30M24 21V8"/></svg><div style="margin-top:8px">Un jardin privatif pour chacune</div></div>
+        </div>
+      </div>
+      <div data-rv="" style="flex:1.1;min-width:0"><img src="assets/2809a1872f.webp" alt="Dessin au trait de la façade" style="width:100%;display:block" /></div>
+    </div>
+  </section>
+
+  
+  <section ref=${lotsSecRef} style="position:relative;background:#F3EBDD;padding:140px clamp(20px,6vw,90px) 110px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div data-rv="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+        <div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">03 · LES BASTIDES</div><h2 style="font:800 clamp(32px,4vw,58px)/1 Montserrat,sans-serif;color:#2A1D16;margin:14px 0 0"><span class="sl">LES NEUF</span> <span class="sr">BASTIDES</span></h2></div>
+        <div style="font:400 12px/1.6 Inter,sans-serif;color:#7a6658;max-width:360px">Stationnement en sus : 2 places par bastide, 18 000 € la place. M09 : garage inclus. Surfaces de jardin indicatives, à confirmer par géomètre.</div>
+      </div>
+      <div data-rv="" style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px">
+        ${(lotCards||[]).map((c)=>html`
+          <button data-tilt="" onClick=${c.open} style="text-align:left;border:1px solid #DDCDB6;border-radius:10px;background:#FBF7F0;padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column">
+            <span data-zoom="" style="display:block;height:190px"><img src=${c.crop} alt="Plan du lot ${c.id}" style="width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff;border-bottom:1px solid #EADFCD" /></span>
+            <span style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 16px 4px"><span style="font:800 22px Montserrat,sans-serif;color:#2A1D16">${c.id}</span><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.16em;color:#9C4632">PRIX DANS LA FICHE →</span></span>
+            <span style="padding:0 16px 16px;font:400 12px/1.5 Inter,sans-serif;color:#5b4a3f">${c.type} · <span data-mag="">${c.hab} m²</span> · jardin <span data-mag="">${c.jar} m²</span><br /><span style="color:#9C4632;font-weight:500">${c.tag}</span><br /><span style="color:#7a6658;font-style:italic">Son prix de lancement vous attend dans la fiche.</span></span>
+          </button>
+        `)}
+      </div>
+    </div>
+  </section>
+
+  
+  <section style="position:relative;background:#2A1D16;color:#F3EBDD;padding:120px 0 110px;clip-path:polygon(0 0,100% 5vw,100% 100%,0 100%)">
+    <div data-rv="" style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,6vw,90px)"><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#E3A07E">04 · INTÉRIEURS</div><h2 style="font:800 clamp(32px,4vw,58px)/1 Montserrat,sans-serif;margin:14px 0 36px"><span class="sl">LA LUMIÈRE DU SUD,</span> <span class="sr">PIÈCE APRÈS PIÈCE</span></h2></div>
+    <div ref=${galRef} class="gal" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 clamp(20px,6vw,90px) 14px">
+      ${(gallery||[]).map((g)=>html`
+        <button data-tilt="" onClick=${g.open} style="flex:0 0 min(80vw,620px);scroll-snap-align:start;border:0;padding:0;background:none;cursor:zoom-in;text-align:left;color:#F3EBDD">
+          <span data-zoom="" style="display:block;border-radius:6px"><img src=${g.src} alt=${g.label} style="width:100%;aspect-ratio:16 / 10;object-fit:cover;display:block" /></span>
+          <span style="display:block;margin-top:12px;font:500 22px Oswald,sans-serif;text-transform:uppercase">${g.label}</span>
+        </button>
+      `)}
+    </div>
+    <div style="max-width:1240px;margin:22px auto 0;padding:0 clamp(20px,6vw,90px);display:flex;align-items:center;gap:22px">
+      <div ref=${galCnt} style="font:500 15px Oswald,sans-serif;letter-spacing:.12em;min-width:66px">01 <span style="opacity:.45">/ 06</span></div>
+      <div ref=${galTrack} onPointerDown=${galDown} style="flex:1;position:relative;height:26px;cursor:pointer;touch-action:none"><div style="position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(243,235,221,.25)"></div><div ref=${galThumb} style="position:absolute;top:10px;height:5px;border-radius:5px;background:linear-gradient(90deg,#E3A07E,#C8693F);left:0;width:20%;box-shadow:0 0 14px rgba(227,160,126,.45);transition:left .25s cubic-bezier(.2,.7,.2,1)"></div></div>
+      <button class="garr" onClick=${galPrev} aria-label="Image précédente"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="garr" onClick=${galNext} aria-label="Image suivante"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div style="max-width:1240px;margin:14px auto 0;padding:0 clamp(20px,6vw,90px);font:400 11px Inter,sans-serif;opacity:.6">Illustrations d’ambiance non contractuelles.</div>
+  </section>
+
+  
+  <section style="position:relative;background:#9C4632;color:#F3EBDD;clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);margin-top:-5vw;padding:calc(6vw + 80px) clamp(20px,6vw,90px) 100px">
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:5vw;align-items:center">
+      <div data-rv="" style="flex:1.1;min-width:0"><img src="assets/11ebaef109.webp" alt="Dessin au trait du séjour" style="width:100%;display:block" /></div>
+      <div data-rv="" style="flex:.9;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.8">05 · ART DE VIVRE</div>
+        <h2 style="font:800 clamp(30px,3.6vw,52px)/1 Montserrat,sans-serif;margin:14px 0 18px"><span class="sr">PENSÉE POUR</span> <span class="sl">LA VIE DE FAMILLE</span></h2>
+        <div style="font:400 15px/1.75 Inter,sans-serif;opacity:.92;margin-bottom:20px">Des maisons de ville sur deux niveaux, de 82,70 à 93,55 m² habitables, dessinées pour séparer la vie de jour et le calme de la nuit. Huit T4 à trois chambres et un T5 à quatre chambres, chacun prolongé par son jardin.</div>
+        <div style="border-top:1px solid rgba(243,235,221,.35);padding:14px 0"><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.2em">OUVRIR</div><div style="font:400 14px/1.6 Inter,sans-serif;margin-top:4px;opacity:.9">Au rez-de-chaussée, la pièce de vie avec cuisine ouverte s’ouvre sur le jardin par une grande baie coulissante en aluminium. Salle d’eau et cellier complètent le niveau.</div></div>
+        <div style="border-top:1px solid rgba(243,235,221,.35);padding:14px 0"><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.2em">MONTER</div><div style="font:400 14px/1.6 Inter,sans-serif;margin-top:4px;opacity:.9">À l’étage, trois chambres, une salle de bains et un WC séparé. Les bastides M08 et M09 profitent d’une terrasse à l’étage.</div></div>
+        <div style="border-top:1px solid rgba(243,235,221,.35);padding:14px 0"><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.2em">VIVRE DEHORS</div><div style="font:400 14px/1.6 Inter,sans-serif;margin-top:4px;opacity:.9">Un jardin privatif engazonné et clos de 58 à 150 m², bordé d’une haie végétale, avec robinet extérieur.</div></div>
+        <div style="border-top:1px solid rgba(243,235,221,.35);padding:14px 0"><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.2em">RENTRER CHEZ SOI</div><div style="font:400 14px/1.6 Inter,sans-serif;margin-top:4px;opacity:.9">Une voie privée fermée par un portail motorisé, deux places de stationnement par maison. La M09 dispose en plus d’un garage.</div></div>
+      </div>
+    </div>
+    <div class="frise c" style="position:absolute;left:0;right:0;bottom:24px"></div>
+  </section>
+
+  
+  <section style="position:relative;background:#F3EBDD;padding:120px clamp(20px,6vw,90px) 110px">
+    <div class="frise t dn" style="position:absolute;left:0;right:0;top:26px"></div>
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:6vw;align-items:center">
+      <div data-rv="" style="flex:1;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">06 · RÉPONSE ENVIRONNEMENTALE</div>
+        <h2 style="font:800 clamp(30px,3.6vw,52px)/1 Montserrat,sans-serif;color:#2A1D16;margin:14px 0 24px"><span class="sl">LE CONFORT DU NEUF,</span> <span class="sr">SANS COMPROMIS</span></h2>
+        ${(presta||[]).map((p)=>html`<div style="border-top:1px solid #D8C9B2;padding:11px 0"><div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632">${p.t}</div><div style="font:400 13px/1.55 Inter,sans-serif;color:#4d3e34">${p.d}</div></div>`)}
+      </div>
+      <div data-rv="" style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:26px">
+        <img data-px="-0.08" src="assets/9b158e5448.jpg" alt="Jardin privatif" style="width:min(80vw,420px);aspect-ratio:1;object-fit:cover;border-radius:50%;border:8px solid #fff;box-shadow:0 26px 60px rgba(60,30,15,.22)" />
+        <div style="color:#9C4632;opacity:.8;margin-top:-6px"><svg aria-hidden="true" viewBox="0 0 160 60" style="width:150px;height:56px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M4 40C40 34 90 30 156 14"/><path d="M30 37c-4-10 2-18 10-20-2 9-5 16-10 20zM30 37c8 6 18 6 24 0-9-3-17-3-24 0zM62 31c-3-11 4-18 12-19-3 9-6 15-12 19zM62 31c8 6 19 5 25-2-9-2-18-2-25 2zM96 25c-2-10 5-17 13-17-3 8-7 14-13 17zM96 25c9 4 19 2 24-5-9-1-17 0-24 5zM128 19c0-8 6-13 13-12-3 6-7 10-13 12z"/><circle cx="48" cy="44" r="3.2"/><circle cx="82" cy="37" r="3"/></svg></div>
+        <div style="width:100%;max-width:460px;display:grid;gap:14px">
+          <div style="display:flex;gap:14px;align-items:flex-start"><div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#9C4632;color:#F3EBDD;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div><div><div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632">RÉGLEMENTATION RE2020</div><div style="font:400 13px/1.6 Inter,sans-serif;color:#4d3e34;margin-top:3px">La norme exigée pour toute construction neuve : besoins de chauffage réduits, confort d’été pris en compte dès la conception, empreinte carbone du bâtiment encadrée.</div></div></div>
+          <div style="display:flex;gap:14px;align-items:flex-start"><div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#9C4632;color:#F3EBDD;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><div><div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632">TOUT ÉLECTRIQUE, SANS GAZ</div><div style="font:400 13px/1.6 Inter,sans-serif;color:#4d3e34;margin-top:3px">Pompe à chaleur air/air, chauffe-eau thermodynamique et panneaux rayonnants : des équipements performants pour des charges maîtrisées.</div></div></div>
+          <div style="display:flex;gap:14px;align-items:flex-start"><div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#9C4632;color:#F3EBDD;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M12 22v-8"/><path d="M12 14c-5 0-8-3-8-6 2-3 5-5 8-5s6 2 8 5c0 3-3 6-8 6z"/></svg></div><div><div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632">UN CADRE VÉGÉTAL</div><div style="font:400 13px/1.6 Inter,sans-serif;color:#4d3e34;margin-top:3px">Des jardins privatifs plantés et des haies végétales, au pied des talus boisés qui bordent la résidence.</div></div></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section ref=${bookRef} style="position:relative;background:#9C4632;color:#F3EBDD;clip-path:polygon(0 5vw,100% 0,100% 100%,0 100%);padding:calc(5vw + 80px) clamp(20px,6vw,90px) 100px">
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:5vw;align-items:center">
+      <div data-rv="" style="flex:.8;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.8">07 · LA PLAQUETTE</div>
+        <h2 style="font:800 clamp(30px,3.6vw,52px)/1 Montserrat,sans-serif;margin:14px 0 18px"><span class="sl">FEUILLETEZ</span> <span class="sr">LA POCHETTE</span></h2>
+        <div style="font:400 14px/1.7 Inter,sans-serif;opacity:.9;margin-bottom:22px">La pochette de présentation et les plans de vente des neuf bastides, comme en agence. Touchez la plaquette pour la lire en grand.</div>
+        <button onClick=${bookToggle} style="min-height:46px;padding:0 24px;border-radius:46px;border:1px solid #F3EBDD;background:transparent;color:#F3EBDD;font:700 11px Montserrat,sans-serif;letter-spacing:.16em;cursor:pointer">${bookLabel}</button>
+      </div>
+      <div style="flex:1.2;min-width:0;height:min(70vh,600px);display:flex;align-items:center;justify-content:center;perspective:1900px">
+        <div style="animation:${levAnim};transform-style:preserve-3d">
+          <div onClick=${openPq} style="cursor:zoom-in;position:relative;height:min(56vh,480px,62vw);aspect-ratio:1000 / 1415;transform-style:preserve-3d;transform:${bookTf};transition:transform 1.6s cubic-bezier(.6,.05,.25,1)">
+            <img src="assets/47710c43b6.jpg" alt="Intérieur droit de la plaquette" style="position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;box-shadow:0 20px 40px rgba(30,10,5,.35)" />
+            <img src="assets/baa63090f4.jpg" alt="Dos de la plaquette" style="position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;transform:rotateY(180deg) translateZ(2px)" />
+            <div style="position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;transform:translateZ(3px) rotateY(${coverRot}deg);transition:transform 1.5s cubic-bezier(.55,.05,.3,1)">
+              <img src="assets/ae4f836ebe.jpg" alt="Couverture de la plaquette" style="position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;box-shadow:0 26px 50px rgba(30,10,5,.4)" />
+              <img src="assets/e5d3ad5e5a.jpg" alt="Intérieur gauche de la plaquette" style="position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;transform:rotateY(180deg)" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section ref=${contactRef} style="position:relative;background:#F3EBDD;padding:110px clamp(20px,6vw,90px) 60px">
+    <div class="frise t dn" style="position:absolute;left:0;right:0;top:26px"></div>
+    <div class="col" style="max-width:1240px;margin:0 auto;display:flex;gap:6vw">
+      <div data-rv="" style="flex:1;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">08 · CONTACT</div>
+        <h2 style="font:800 clamp(30px,3.6vw,52px)/1 Montserrat,sans-serif;color:#2A1D16;margin:14px 0 18px"><span class="sl">PRENDRE RENDEZ-VOUS</span> <span class="sr">POUR PLUS D’INFORMATIONS</span></h2>
+        <div style="font:400 14px/1.8 Inter,sans-serif;color:#4d3e34">Un secteur pavillonnaire calme, entre Les Olives et Château-Gombert. Écoles, commerces et transports à proximité, le massif de l’Étoile pour horizon.<br /><br />Éligible au prêt à taux zéro*, frais de notaire réduits, garanties de parfait achèvement, biennale et décennale, vente en direct par le promoteur.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a href="tel:+33760840403" style="display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:46px;background:#9C4632;color:#F3EBDD;text-decoration:none;font:700 11px Montserrat,sans-serif;letter-spacing:.14em">07 60 84 04 03</a><a href="mailto:eg.cobaltgroup@gmail.com" style="display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:46px;border:1px solid #9C4632;color:#9C4632;text-decoration:none;font:700 11px Montserrat,sans-serif;letter-spacing:.1em">eg.cobaltgroup@gmail.com</a></div>
+        <div style="font:400 11px Inter,sans-serif;color:#7a6658;margin-top:14px">*Sous conditions de ressources, pour une résidence principale.</div>
+      </div>
+      <form data-rv="" onSubmit=${sendForm} action="https://api.web3forms.com/submit" method="POST" style="flex:1;min-width:0;display:flex;flex-direction:column;gap:14px;background:#FBF7F0;border:1px solid #E5D7C1;border-radius:22px;padding:28px;box-shadow:0 20px 50px rgba(90,50,25,.08)">
+        <div style="display:flex;align-items:center;gap:12px;color:#9C4632"><svg aria-hidden="true" viewBox="0 0 120 100" style="width:36px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M18 92V40M102 92V40"/><path d="M10 40l50-26 50 26"/><path d="M40 92V60a20 20 0 0 1 40 0v32"/><path d="M60 92V54"/><path d="M6 92h108"/><path d="M24 92c-2-14 2-30 6-40 4 10 8 26 6 40"/><path d="M96 92c2-14-2-30-6-40-4 10-8 26-6 40"/></svg><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.22em">PRENDRE CONTACT</div></div>
+        <input type="hidden" name="access_key" value="ba81c58e-31cf-47a4-92cc-647cb567ee6a" /><input type="hidden" name="from_name" value="Site Les Bastides de l’Érable" /><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" /><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+          <label class="flab">NOM<input class="fin" name="nom" required autocomplete="family-name" /></label>
+          <label class="flab">PRÉNOM<input class="fin" name="prenom" required autocomplete="given-name" /></label>
+          <label class="flab">TÉLÉPHONE<input class="fin" type="tel" name="telephone" required autocomplete="tel" /></label>
+          <label class="flab">E-MAIL<input class="fin" type="email" name="email" required autocomplete="email" /></label>
+          <label class="flab">VOTRE DEMANDE<select class="fin" name="objet"><option>Prendre rendez-vous</option><option>Recevoir les plans et les prix</option><option>Être rappelé</option></select></label>
+          <label class="flab">BASTIDE<select class="fin" name="lot"><option>Je ne sais pas encore</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>M05</option><option>M06</option><option>M07</option><option>M08</option><option>M09</option></select></label>
+        </div>
+        <label class="flab">VOTRE MESSAGE<textarea class="fin" name="message" rows="4" placeholder="Ce que vous recherchez : nombre de chambres, taille de jardin, budget, disponibilités pour un rendez-vous…" style="padding:12px 14px;resize:vertical;min-height:110px;line-height:1.5"></textarea></label>
+        <button type="submit" style="min-height:54px;border:0;border-radius:54px;background:#9C4632;color:#F3EBDD;font:700 12px Montserrat,sans-serif;letter-spacing:.16em;cursor:pointer">${sending?"ENVOI EN COURS…":"PRENDRE RENDEZ-VOUS"}</button>
+        ${sendMsg?html`<div style=${"font:400 13px/1.5 Inter,sans-serif;padding:12px 14px;border-radius:10px;"+(sendOk?"background:#E8F0E0;color:#2f4a24":"background:#F6E3DC;color:#7E3324")}>${sendMsg}</div>`:null}
+        <div style="font:400 11px/1.5 Inter,sans-serif;color:#7a6658">Vos coordonnées servent uniquement à répondre à votre demande.</div>
+      </form>
+    </div>
+    <div style="max-width:1240px;margin:70px auto 0;border-top:1px solid #D8C9B2;padding-top:18px;font:400 11px/1.7 Inter,sans-serif;color:#7a6658">Document non contractuel. Illustrations d’ambiance non contractuelles. Prix de lancement novembre 2026, hors stationnement. COBALT GROUP SAS · 60 rue François 1er, 75008 Paris.</div>
+  </section>
+</div>
+
+
+<div ref=${ficheRef} role="dialog" aria-modal="true" aria-hidden=${ficheHidden} aria-label="Bastide ${f.id}" style="position:absolute;inset:0;z-index:40;overflow-y:auto;background:#F3EBDD;transform:translateY(${ficheY});transition:transform .8s cubic-bezier(.7,0,.2,1);visibility:${ficheVis}">
+  <div style="position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px clamp(14px,3vw,36px);background:rgba(243,235,221,.94);backdrop-filter:blur(8px);border-bottom:1px solid #E2D4BF;flex-wrap:wrap">
+    <button onClick=${closeFiche} style="min-height:42px;padding:0 18px;border-radius:42px;border:1px solid #9C4632;background:transparent;color:#9C4632;font:700 10px Montserrat,sans-serif;letter-spacing:.18em;cursor:pointer">← RETOUR</button>
+    <div style="font:700 11px Montserrat,sans-serif;letter-spacing:.24em;color:#2A1D16">BASTIDE ${f.id}</div>
+    <div style="display:flex;gap:6px"><button onClick=${f.prev} aria-label="Bastide précédente" style="min-height:42px;padding:0 14px;border-radius:42px;border:0;background:#E8DCC8;color:#9C4632;font:700 11px Montserrat,sans-serif;cursor:pointer">← ${f.prevId}</button><button onClick=${f.next} aria-label="Bastide suivante" style="min-height:42px;padding:0 14px;border-radius:42px;border:0;background:#E8DCC8;color:#9C4632;font:700 11px Montserrat,sans-serif;cursor:pointer">${f.nextId} →</button></div>
+  </div>
+  <section style="position:relative;height:min(78vh,760px);min-height:460px;overflow:hidden">
+    <img data-pxf="0.25" src="assets/1c384bbf88.jpg" alt="Façade d’une bastide au crépuscule" style="position:absolute;inset:-8% 0 0 0;width:100%;height:108%;object-fit:cover;will-change:transform" />
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,16,11,.8) 0%,rgba(26,16,11,.35) 45%,rgba(26,16,11,0) 75%)"></div>
+    <div style="position:absolute;left:clamp(18px,5vw,70px);top:12%;max-width:min(560px,84vw);color:#F3EBDD">
+      <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.85">RÉSIDENCE LES BASTIDES DE L’ÉRABLE · ${f.type}</div>
+      <div style="font:800 clamp(24px,2.8vw,40px)/1 Montserrat,sans-serif;margin-top:14px">LA BASTIDE</div>
+      <div style="font:900 clamp(84px,12vw,190px)/.85 Montserrat,sans-serif;letter-spacing:-.04em">${f.id}</div>
+      <div style="display:flex;gap:12px;margin-top:16px"><span style="width:3px;background:#D0703F"></span><div><div style="font:700 11px Montserrat,sans-serif;letter-spacing:.2em">${f.tag}</div><div style="font:400 14px/1.6 Inter,sans-serif;margin-top:8px;opacity:.92">${f.txt}</div></div></div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:30%;background:#F3EBDD;clip-path:polygon(0 45%,100% 0,100% 100%,0 100%)"></div>
+  </section>
+  <section style="max-width:1240px;margin:-60px auto 0;position:relative;padding:0 clamp(18px,5vw,70px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px">
+      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">${f.price}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">PRIX DE LANCEMENT</div></div>
+      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.hab} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">HABITABLE</div></div>
+      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.jar} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">JARDIN PRIVATIF</div></div>
+      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.ter}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">TERRASSE ÉTAGE</div></div>
+    </div>
+  </section>
+  <section style="max-width:1240px;margin:0 auto;padding:60px clamp(18px,5vw,70px) 40px">
+    <div class="col" style="display:flex;gap:44px">
+      <div style="flex:1.5;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">PLAN DE VENTE</div>
+        <button data-lens="" onClick=${openPlan} aria-label="Agrandir le plan de vente" style="display:block;width:100%;margin-top:14px;border:1px solid #DDCDB6;border-radius:8px;background:#fff;padding:8px;cursor:none"><img src=${f.plan} alt="Plan de vente de la bastide ${f.id}" style="width:100%;display:block" /></button>
+        <div style="font:400 11px Inter,sans-serif;color:#7a6658;margin-top:8px">Survolez le plan pour zoomer, cliquez pour l’agrandir. Plan de vente non contractuel.</div>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">LES ATOUTS</div>
+        ${(f.atouts||[]).map((a)=>html`<div style="display:flex;gap:10px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDCDB6;font:500 15px Inter,sans-serif;color:#2A1D16"><span style="color:#9C4632">●</span>${a}</div>`)}
+        <div style="margin-top:24px;font:400 14px/1.7 Inter,sans-serif;color:#4d3e34"><div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632">REZ-DE-CHAUSSÉE</div>${f.rdc}<div style="font:700 10px Montserrat,sans-serif;letter-spacing:.2em;color:#9C4632;margin-top:12px">ÉTAGE</div>${f.etage}</div>
+        <div style="margin-top:24px;display:flex;gap:18px;align-items:center">
+          <div aria-hidden="true" style="width:110px;height:110px;border-radius:50%;background:${f.donut};display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:70px;height:70px;border-radius:50%;background:#F3EBDD;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font:800 14px Montserrat,sans-serif;color:#2A1D16">${f.tot}</div><div style="font:600 7px Montserrat,sans-serif;letter-spacing:.2em;color:#7a6658">M² TOTAL</div></div></div>
+          <div style="font:400 12px/2 Inter,sans-serif;color:#4d3e34"><div><span style="display:inline-block;width:10px;height:10px;background:#9C4632;margin-right:8px"></span>Habitable</div><div><span style="display:inline-block;width:10px;height:10px;background:#7E9A6A;margin-right:8px"></span>Jardin privatif</div><div><span style="display:inline-block;width:10px;height:10px;background:#C9A46A;margin-right:8px"></span>Terrasse</div></div>
+        </div>
+        <div style="margin-top:26px;font:400 12px/1.6 Inter,sans-serif;color:#7a6658">Stationnement en sus : 2 places, 18 000 € la place${f.garage}.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a href=${f.mail} style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:48px;background:#9C4632;color:#F3EBDD;text-decoration:none;font:700 11px Montserrat,sans-serif;letter-spacing:.14em">PRENDRE RENDEZ-VOUS</a><a href="tel:+33760840403" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:48px;border:1px solid #9C4632;color:#9C4632;text-decoration:none;font:700 11px Montserrat,sans-serif;letter-spacing:.1em">07 60 84 04 03</a></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#9C4632;color:#F3EBDD;padding:50px clamp(18px,5vw,70px);clip-path:polygon(0 30px,100% 0,100% 100%,0 100%)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap"><div style="font:800 clamp(22px,2.6vw,36px) Montserrat,sans-serif">ENVIE DE LA VOIR DE L’INTÉRIEUR ?</div><button onClick=${ficheVisit} style="min-height:48px;padding:0 24px;border-radius:48px;border:0;background:#F3EBDD;color:#9C4632;font:700 11px Montserrat,sans-serif;letter-spacing:.16em;cursor:pointer;display:inline-flex;align-items:center;gap:10px"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/><path d="M10.2 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg>LANCER LA VISITE IMMERSIVE</button></div>
+  </section>
+</div>
+
+<div ref=${curRef} class="cur" aria-hidden="true"></div><div ref=${curdRef} class="curd" aria-hidden="true"></div><div ref=${lensRef} class="lens" aria-hidden="true"></div>
+${(lb.show)?html`
+  <div role="dialog" aria-modal="true" aria-label="Image agrandie" style="position:absolute;inset:0;z-index:60;background:rgba(20,12,8,.94);display:flex;align-items:center;justify-content:center;padding:20px">
+    <img src=${lb.src} alt=${lb.alt} style="max-width:100%;max-height:100%;border-radius:6px;background:#fff" />
+    <button onClick=${closeLb} aria-label="Fermer" style="position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:48px;border:0;background:#F3EBDD;color:#2A1D16;font:500 20px Inter,sans-serif;cursor:pointer">✕</button>
+  </div>
+`:null}
+</div>
+`; } }
+class DCLogic extends PComponent { render(){ return TPL(this.renderVals()); } }
+
+const LOTS=[{"id": "M01", "type": "T4", "hab": "89,10", "jar": "86,30", "ter": "—", "tot": "175,40", "price": "430 100 €", "priceN": 430100, "habN": 89.1, "jarN": 86.3, "totN": 175.4, "tag": "Maison d’extrémité, mitoyenne d’un seul côté", "txt": "Placée en entrée de résidence, elle n’est accolée qu’à une seule maison. 89,10 m² habitables, un jardin privatif de 86,30 m² et trois chambres à l’étage : l’équilibre idéal pour une famille.", "atouts": ["Mitoyenne d’un seul côté", "Jardin privatif de 86,30 m²", "Trois chambres et salle de bains à l’étage"], "plan": "assets/d65fa127f1.jpg", "crop": "assets/53d2c891e1.jpg", "hl": "", "hot": false, "l": 0, "t": 0, "w": 0, "h": 0, "clip": "", "ax": 22.5, "ay": 66.3, "front": true, "dx": 12, "dy": 96, "a": {"l": 16.958, "t": 62.109, "w": 12.625, "h": 18.471, "clip": "polygon(11.88% 0.00%, 99.67% 0.00%, 99.67% 99.70%, 15.18% 99.70%, 0.99% 58.61%, 0.00% 57.40%)", "hl": "assets/f08c574c23.webp", "cx": 23.27, "cy": 71.34}}, {"id": "M02", "type": "T4", "hab": "89,10", "jar": "62,65", "ter": "—", "tot": "151,75", "price": "423 000 €", "priceN": 423000, "habN": 89.1, "jarN": 62.65, "totN": 151.75, "tag": "Un jardin à taille humaine, facile à vivre", "txt": "89,10 m² habitables pour un jardin de 62,65 m² qui se profite sans contrainte d’entretien. Une maison neuve, prête à vivre, pensée pour le quotidien.", "atouts": ["Mitoyenne d’un seul côté", "Jardin de 62,65 m², sans contrainte", "89,10 m² habitables"], "plan": "assets/d36ceab8ae.jpg", "crop": "assets/88d76aa2c5.jpg", "hl": "assets/b9adffed43.webp", "hot": true, "l": 0.0, "t": 90.149, "w": 34.958, "h": 9.851, "clip": "polygon(0.00% 1.52%, 98.69% 0.00%, 99.88% 24.24%, 99.88% 100.00%, 0.00% 100.00%)", "ax": 35.1, "ay": 66.3, "front": true, "dx": 17.48, "dy": 95.07, "a": {"l": 29.542, "t": 62.109, "w": 11.458, "h": 18.471, "clip": "polygon(0.00% 0.00%, 99.64% 0.00%, 96.00% 57.40%, 94.91% 58.61%, 97.45% 99.70%, 0.00% 99.70%)", "hl": "assets/9edeb1574b.webp", "cx": 35.27, "cy": 71.34}}, {"id": "M03", "type": "T4", "hab": "89,10", "jar": "98,50", "ter": "—", "tot": "187,60", "price": "433 800 €", "priceN": 433800, "habN": 89.1, "jarN": 98.5, "totN": 187.6, "tag": "Près de 100 m² de jardin", "txt": "Un jardin privatif de 98,50 m² et 89,10 m² habitables : 187,60 m² de surface totale pour profiter du climat marseillais toute l’année.", "atouts": ["Jardin privatif de 98,50 m²", "187,60 m² de surface totale", "Mitoyenne d’un seul côté"], "plan": "assets/764530e0a5.jpg", "crop": "assets/6e30a4df47.jpg", "hl": "assets/b086081be7.webp", "hot": true, "l": 64.917, "t": 89.552, "w": 35.083, "h": 10.448, "clip": "polygon(2.61% 0.00%, 100.00% 0.00%, 100.00% 100.00%, 0.00% 100.00%, 0.83% 35.71%)", "ax": 62.0, "ay": 66.3, "front": true, "dx": 82.46, "dy": 94.78, "a": {"l": 55.833, "t": 62.109, "w": 11.708, "h": 18.694, "clip": "polygon(0.00% 0.00%, 99.64% 0.00%, 99.64% 99.70%, 2.49% 99.70%, 1.78% 57.91%, 0.00% 56.72%)", "hl": "assets/b0f2bb3cbc.webp", "cx": 61.69, "cy": 71.46}}, {"id": "M04", "type": "T4", "hab": "89,10", "jar": "144,90", "ter": "—", "tot": "234,00", "price": "447 700 €", "priceN": 447700, "habN": 89.1, "jarN": 144.9, "totN": 234.0, "tag": "La plus grande surface totale de la résidence", "txt": "234 m² de surface totale, dont un jardin de 144,90 m², le deuxième plus grand du programme. Une maison d’extrémité, mitoyenne d’un seul côté.", "atouts": ["234 m² de surface totale, record du programme", "Jardin de 144,90 m²", "Mitoyenne d’un seul côté"], "plan": "assets/56f0b1fe82.jpg", "crop": "assets/fa7d4d653e.jpg", "hl": "", "hot": false, "l": 0, "t": 0, "w": 0, "h": 0, "clip": "", "ax": 74.1, "ay": 66.3, "front": true, "dx": 88, "dy": 96, "a": {"l": 67.5, "t": 62.109, "w": 12.958, "h": 18.694, "clip": "polygon(0.00% 0.00%, 82.64% 0.00%, 99.68% 56.72%, 93.25% 57.91%, 80.39% 99.70%, 0.00% 99.70%)", "hl": "assets/4cccdedd61.webp", "cx": 73.98, "cy": 71.46}}, {"id": "M05", "type": "T4", "hab": "82,70", "jar": "150,10", "ter": "—", "tot": "232,80", "price": "423 000 €", "priceN": 423000, "habN": 82.7, "jarN": 150.1, "totN": 232.8, "tag": "Le plus grand jardin du programme", "txt": "150,10 m² de jardin privatif en bout de rangée : l’espace pour un coin repas, un potager et les jeux des enfants. Une rare générosité extérieure en pleine ville.", "atouts": ["Plus grand jardin : 150,10 m²", "En bout de rangée, mitoyenne d’un seul côté", "232,80 m² de surface totale"], "plan": "assets/ac3132f40e.jpg", "crop": "assets/4f0a439724.jpg", "hl": "assets/6af8a95628.webp", "hot": true, "l": 77.833, "t": 30.299, "w": 15.667, "h": 20.075, "clip": "polygon(0.00% 1.12%, 38.83% 0.00%, 99.73% 26.77%, 94.95% 27.88%, 92.02% 99.63%, 3.19% 99.63%, 6.65% 28.25%)", "ax": 79.8, "ay": 25.8, "front": false, "dx": 85.67, "dy": 41.34, "a": {"l": 73.0, "t": 24.163, "w": 12.917, "h": 16.908, "clip": "polygon(4.19% 0.66%, 83.87% 0.00%, 99.68% 47.52%, 96.77% 49.50%, 89.68% 98.35%, 0.00% 99.67%, 4.52% 49.50%)", "hl": "assets/6c5fa10b4a.webp", "cx": 79.46, "cy": 32.62}}, {"id": "M06", "type": "T4", "hab": "82,70", "jar": "58,25", "ter": "—", "tot": "140,95", "price": "395 500 €", "priceN": 395500, "habN": 82.7, "jarN": 58.25, "totN": 140.95, "tag": "Le meilleur prix d’entrée de la résidence", "txt": "Au cœur de sa rangée, bien protégée, avec un jardin de 58,25 m² simple à entretenir. La porte d’entrée la plus accessible pour devenir propriétaire d’une maison neuve.", "atouts": ["Prix d’accès du programme", "Jardin de 58,25 m²", "Maison centrale, bien abritée"], "plan": "assets/99f6567e3b.jpg", "crop": "assets/9242a018a5.jpg", "hl": "assets/f541e91e33.webp", "hot": true, "l": 65.458, "t": 30.522, "w": 13.458, "h": 19.851, "clip": "polygon(0.00% 0.00%, 91.95% 0.00%, 99.69% 27.44%, 95.67% 99.62%, 0.00% 99.62%)", "ax": 68.2, "ay": 25.8, "front": false, "dx": 72.19, "dy": 41.44, "a": {"l": 61.958, "t": 24.275, "w": 11.667, "h": 16.797, "clip": "polygon(1.07% 0.00%, 99.29% 0.00%, 99.64% 49.17%, 94.64% 99.67%, 0.36% 99.67%, 0.00% 8.31%)", "hl": "assets/b90885ab78.webp", "cx": 67.79, "cy": 32.67}}, {"id": "M07", "type": "T4", "hab": "82,70", "jar": "76,05", "ter": "—", "tot": "158,75", "price": "400 800 €", "priceN": 400800, "habN": 82.7, "jarN": 76.05, "totN": 158.75, "tag": "Tête de rangée, mitoyenne d’un seul côté", "txt": "En tête de rangée, une seule maison accolée et un jardin de 76,05 m². 82,70 m² habitables, trois chambres à l’étage.", "atouts": ["Mitoyenne d’un seul côté", "Jardin de 76,05 m²", "Excellent rapport surface / prix"], "plan": "assets/2433200eb8.jpg", "crop": "assets/9b6719f053.jpg", "hl": "assets/8074cdd3b2.webp", "hot": true, "l": 52.083, "t": 28.806, "w": 13.417, "h": 20.672, "clip": "polygon(0.00% 24.19%, 48.76% 0.00%, 99.69% 1.08%, 99.69% 99.64%, 2.17% 99.64%, 2.17% 25.27%)", "ax": 56.4, "ay": 25.8, "front": false, "dx": 58.79, "dy": 40.18, "a": {"l": 49.667, "t": 22.042, "w": 12.333, "h": 17.69, "clip": "polygon(4.05% 0.00%, 97.64% 0.00%, 99.66% 20.50%, 99.66% 99.68%, 0.00% 99.68%, 0.00% 45.74%, 4.05% 45.11%)", "hl": "assets/dc87e0db03.webp", "cx": 55.83, "cy": 30.89}}, {"id": "M08", "type": "T4", "hab": "93,55", "jar": "84,90", "ter": "9,00 m²", "tot": "178,45", "price": "444 100 €", "priceN": 444100, "habN": 93.55, "jarN": 84.9, "totN": 178.45, "tag": "La plus grande surface habitable, terrasse à l’étage", "txt": "93,55 m² habitables, la plus vaste de la résidence, et une terrasse de 9 m² à l’étage en plus d’un jardin de 84,90 m².", "atouts": ["93,55 m², la plus grande surface habitable", "Terrasse à l’étage de 9 m²", "Jardin de 84,90 m²"], "plan": "assets/6f87acc981.jpg", "crop": "assets/97d8863d7a.jpg", "hl": "assets/d5ec11350f.webp", "hot": true, "l": 30.5, "t": 27.91, "w": 17.0, "h": 22.612, "clip": "polygon(2.45% 8.91%, 42.89% 8.25%, 76.23% 0.00%, 99.75% 8.91%, 98.77% 40.26%, 96.32% 63.70%, 95.34% 98.35%, 0.00% 99.67%)", "ax": 38.6, "ay": 25.8, "front": false, "dx": 39.0, "dy": 40.35, "a": {"l": 31.042, "t": 19.141, "w": 15.083, "h": 22.377, "clip": "polygon(0.00% 21.20%, 20.44% 21.20%, 69.34% 0.00%, 98.07% 11.47%, 99.72% 39.15%, 99.17% 99.75%, 1.93% 98.75%, 0.83% 58.60%)", "hl": "assets/096c1afbaf.webp", "cx": 38.58, "cy": 30.33}}, {"id": "M09", "type": "T5 + garage", "hab": "92,10", "jar": "67,55", "ter": "9,30 m²", "tot": "159,65", "price": "449 200 €", "priceN": 449200, "habN": 92.1, "jarN": 67.55, "totN": 159.65, "tag": "Le seul T5, avec garage", "txt": "Quatre chambres dont une au rez-de-chaussée, un garage inclus, une terrasse de 9,30 m² à l’étage et un jardin de 67,55 m². La maison des grandes familles.", "atouts": ["Seul T5 : 4 chambres dont une au RDC", "Garage inclus", "Terrasse à l’étage de 9,30 m²"], "plan": "assets/b4224e664c.jpg", "crop": "assets/1c01f6d090.jpg", "hl": "assets/fb49ce16b2.webp", "hot": true, "l": 6.167, "t": 29.851, "w": 24.792, "h": 29.925, "clip": "polygon(0.00% 52.87%, 14.29% 27.93%, 25.55% 24.94%, 26.72% 18.20%, 48.57% 0.00%, 99.83% 0.25%, 98.15% 68.83%, 59.16% 67.83%, 58.32% 72.32%, 41.51% 99.75%, 13.28% 94.26%, 10.25% 72.82%, 2.86% 77.81%, 0.67% 74.81%)", "ax": 23.6, "ay": 25.8, "front": false, "dx": 18.56, "dy": 46.31, "a": {"l": 11.375, "t": 23.884, "w": 20.0, "h": 25.391, "clip": "polygon(4.79% 32.97%, 10.42% 21.10%, 33.75% 0.00%, 98.33% 0.00%, 98.96% 32.97%, 99.79% 67.47%, 60.83% 67.47%, 56.88% 98.90%, 1.67% 99.78%, 0.00% 60.88%)", "hl": "assets/23cd83ce70.webp", "cx": 21.38, "cy": 36.58}}];
+const IMG={sejour:"assets/16b3be35a1.jpg",cuisine:"assets/ae225bb3f5.jpg",chambre1:"assets/ac9623b686.jpg",chambre2:"assets/b114a76150.jpg",sdb:"assets/7d4a9f3d45.jpg",jardin:"assets/9b158e5448.jpg"};
+const PARTS=["assets/c67c51d47f.mp4", "assets/ecb689f73a.mp4", "assets/c1f1ca2dc1.mp4", "assets/2da28f53c0.mp4", "assets/994e3574c0.mp4"];
+const CODEC='video/mp4; codecs="avc1.64002a"', RATE=1.05;
+const SCRN=[0.2083,0.1778,0.5833,0.6333];
+const PUFF='assets/7c1935a455.webp';
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+class Component extends DCLogic {
+  constructor(p){super(p);this.state={view:'film',hover:null,ahover:null,nav:4,fiche:null,lb:null,step:0,arr:false,trans:false};
+    this.R={};this.timers=[];this.hv=null;this.cx=-100;this.cy=-100;this.tx=-100;this.ty=-100;this.started=false;this.minWait=false;}
+  componentDidMount(){this.puff=new Image();this.puff.src=PUFF;this.pt='mouse';this._pd=e=>{this.pt=e.pointerType||'mouse';};window.addEventListener('pointerdown',this._pd,true);this.fxLoop();this.later(()=>this.initStream(),30);this.later(()=>{this.minWait=true;this.tryStart();},1900);}
+  componentWillUnmount(){this.timers.forEach(clearTimeout);cancelAnimationFrame(this.fraf);if(this.io)this.io.disconnect();}
+  later(fn,ms){const t=setTimeout(fn,ms);this.timers.push(t);return t;}
+  initStream(){const v=this.R.v;if(!v||this.inited)return;this.inited=true;
+    v.addEventListener('timeupdate',()=>{if(this.R.bar&&v.duration)this.R.bar.style.width=(v.currentTime/v.duration*100)+'%';});
+    v.addEventListener('ended',()=>{if(this.state.view==='film'&&!this.state.trans)this.transition(true);});
+    v.addEventListener('playing',()=>{v.style.opacity='1';if(this.R.load)this.R.load.style.opacity='0';if(this.R.title){this.later(()=>{this.R.title.style.opacity='0';this.R.title.style.transform='translateY(-30px) scale(.96)';},1400);}});
+    const MS=window.ManagedMediaSource||window.MediaSource;
+    if(MS&&MS.isTypeSupported&&MS.isTypeSupported(CODEC)){const ms=new MS();v.disableRemotePlayback=true;v.src=URL.createObjectURL(ms);
+      ms.addEventListener('sourceopen',async()=>{try{const sb=ms.addSourceBuffer(CODEC);
+        for(const p of PARTS){const buf=await (await fetch(p)).arrayBuffer();await new Promise(r=>{sb.addEventListener('updateend',r,{once:true});sb.appendBuffer(buf);});this.tryStart();}
+        ms.endOfStream();this.tryStart(true);}catch(e){this.fallback();}},{once:true});}
+    else this.fallback();}
+  fallback(){if(this.fb)return;this.fb=true;const v=this.R.v;Promise.all(PARTS.map(p=>fetch(p).then(r=>r.blob()))).then(bs=>{v.src=URL.createObjectURL(new Blob(bs,{type:'video/mp4'}));v.addEventListener('canplay',()=>{this.loaded=true;this.tryStart();},{once:true});});}
+  tryStart(all){const v=this.R.v;if(!v||this.started||!this.minWait||this.state.view!=='film')return;const b=v.buffered;
+    if(this.loaded||all||(b.length&&b.end(0)>=4)){this.started=true;v.playbackRate=RATE;const pr=v.play();if(pr&&pr.catch)pr.catch(()=>{v.muted=true;v.play().catch(()=>{});});}}
+  resetFilm(){const R=this.R;this.seq=(this.seq||0)+1;if(this.craf)cancelAnimationFrame(this.craf);if(this.traf)cancelAnimationFrame(this.traf);
+    if(R.vwrap){R.vwrap.style.transition='none';R.vwrap.style.transform='none';}
+    ['white','tr'].forEach(k=>{if(R[k]){R[k].style.transition='none';R[k].style.opacity='0';}});
+    if(R.code){R.code.innerHTML='';R.code.style.transition='none';R.code.style.color='#2A1D16';R.code.style.textShadow='none';}
+    if(R.sky){R.sky.style.transition='none';R.sky.style.opacity='1';}if(R.skyw){R.skyw.style.transition='none';R.skyw.style.opacity='1';}
+    if(R.aer){R.aer.style.transition='none';R.aer.style.opacity='0';R.aer.style.transform='translate(-50%,-50%) scale(1.9) rotate(5deg)';}
+    if(R.cv){const c=R.cv.getContext('2d');c.clearRect(0,0,R.cv.width,R.cv.height);}
+    if(R.ui)R.ui.style.opacity='1';if(R.bar)R.bar.style.opacity='1';}
+  replay(){this.resetFilm();this.setState({view:'film',fiche:null,lb:null,trans:false});const v=this.R.v;if(v){try{v.currentTime=0;}catch(e){}v.playbackRate=RATE;v.play().catch(()=>{});}}
+  transition(zoom){const R=this.R,v=R.v;if(this.state.trans)return;this.setState({trans:true});if(v&&!v.paused)v.pause();const seq=this.seq=(this.seq||0)+1;
+    if(R.ui)R.ui.style.opacity='0';if(R.bar)R.bar.style.opacity='0';if(R.load)R.load.style.opacity='0';if(R.title)R.title.style.opacity='0';
+    const vw=window.innerWidth,vh=window.innerHeight,s=Math.max(vw/1920,vh/1080),dw=1920*s,dh=1080*s,ox=(vw-dw)/2,oy=(vh-dh)/2;
+    const cx=ox+(SCRN[0]+SCRN[2]/2)*dw,cy=oy+(SCRN[1]+SCRN[3]/2)*dh,sc=Math.max(vw/(SCRN[2]*dw),vh/(SCRN[3]*dh))*1.12;
+    if(zoom&&R.vwrap){R.vwrap.style.transformOrigin=cx+'px '+cy+'px';R.vwrap.style.transition='transform 1.4s cubic-bezier(.7,0,.25,1)';R.vwrap.style.transform='translate('+(vw/2-cx)+'px,'+(vh/2-cy)+'px) scale('+sc+')';}
+    R.white.style.transition='opacity '+(zoom?'.6s ease .9s':'.6s ease');R.white.style.opacity='1';
+    const o=zoom?1300:500,ok=()=>this.seq===seq,FD=250;
+    this.later(()=>{if(!ok())return;R.tr.style.transition='opacity .45s ease';R.tr.style.opacity='1';R.skyw.style.transition='opacity 2.2s cubic-bezier(.4,0,.2,1) .35s';R.skyw.style.opacity='0';this.clouds(seq,FD);
+      this.later(()=>{if(!ok())return;R.aer.style.transition='transform 5.9s cubic-bezier(.45,0,.2,1), opacity 2.4s ease 2.6s';R.aer.style.opacity='1';R.aer.style.transform='translate(-50%,-50%) scale(1) rotate(0deg)';
+        R.sky.style.transition='opacity 2.4s ease 2.8s';R.sky.style.opacity='0';},FD);},o-250);
+    this.later(()=>{if(ok())this.typeCode(seq);},o-150);
+    this.later(()=>{if(!ok())return;R.code.style.transition='color 1s ease';R.code.style.color='#F3EBDD';R.code.style.textShadow='0 2px 14px rgba(20,24,40,.45)';},o+850);
+    this.later(()=>{if(ok())this.dissolveCode();},o+3900);
+    this.later(()=>{if(!ok())return;R.white.style.transition='none';R.white.style.opacity='0';if(this.site)this.site.scrollTop=0;this.setState({view:'site',trans:false});this.observe();},o+6250);}
+  typeCode(seq){const R=this.R,box=R.code;if(!box)return;box.innerHTML='';
+    const L=[['13E ARRONDISSEMENT','font-size:clamp(13px,1.7vw,19px);font-weight:500;letter-spacing:.32em;opacity:.85'],
+      ['IMPASSE DE L’ÉRABLE','font-size:clamp(21px,3.6vw,46px);font-weight:700;letter-spacing:.08em'],
+      ['MARSEILLE','font-size:clamp(13px,1.7vw,19px);font-weight:500;letter-spacing:.32em;opacity:.85'],
+      ['DÉMARRAGE DES TRAVAUX · 1ER SEMESTRE 2027','font-size:clamp(11px,1.5vw,17px);font-weight:700;letter-spacing:.14em;color:#FBF4EA;background:rgba(156,70,50,.9);padding:8px 14px;border-radius:30px;margin-top:8px;text-shadow:none']];
+    const ch=[];let k=0;
+    L.forEach(([txt,st])=>{const d=document.createElement('div');d.style.cssText=st+';white-space:nowrap;min-height:1.2em';box.appendChild(d);
+      [...txt].forEach(c=>{const sp=document.createElement('span');sp.style.cssText='display:inline-block;transition:transform .9s cubic-bezier(.3,0,.2,1),opacity .9s ease,filter .9s ease;min-width:'+(c===' '?'.5em':'0');
+        sp.textContent='';d.appendChild(sp);ch.push({sp,c,t0:k*22});k+=c===' '?.4:1;});k+=3;});
+    const cur=document.createElement('span');cur.textContent='▌';cur.style.cssText='display:inline-block;margin-left:.15em;color:#C8693F;animation:blink .9s steps(2) infinite';
+    const G='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#/_<>';const st=performance.now();this.codeCh=ch;
+    const step=()=>{if(this.seq!==seq)return;const e=performance.now()-st;let last=null;
+      ch.forEach(o=>{if(e<o.t0)return;last=o;if(o.c===' '){o.sp.textContent=' ';return;}
+        if(e<o.t0+90){o.sp.textContent=G[(Math.random()*G.length)|0];o.sp.style.opacity='.55';}else if(!o.done){o.done=1;o.sp.textContent=o.c;o.sp.style.opacity='1';}});
+      if(last&&cur.parentNode!==last.sp.parentNode)last.sp.parentNode.appendChild(cur);
+      if(ch.every(o=>o.done||o.c===' '))return;this.traf=requestAnimationFrame(step);};
+    this.traf=requestAnimationFrame(step);}
+  dissolveCode(){const ch=this.codeCh||[];const n=ch.length;
+    ch.forEach((o,i)=>{const r=Math.random();o.sp.style.transitionDelay=(Math.abs(i-n/2)/n*0.5+r*0.25)+'s';
+      o.sp.style.transform='translate('+((Math.random()-.5)*60)+'px,'+(-30-Math.random()*70)+'px) scale('+(1.4+Math.random())+')';o.sp.style.filter='blur(10px)';o.sp.style.opacity='0';});
+    const cur=this.R.code&&this.R.code.querySelector('span[style*="steps"]');if(cur)cur.style.opacity='0';}
+  clouds(seq,fd){const cv=this.R.cv;if(!cv)return;const img=this.puff||(this.puff=new Image());if(!img.src)img.src=PUFF;
+    const dpr=Math.min(window.devicePixelRatio||1,1.5),W=cv.clientWidth,H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);
+    const f=Math.max(W,H)*0.75,N=W<700?54:78,P=[];let rs=7;const rnd=()=>{rs=(rs*16807)%2147483647;return rs/2147483647;};
+    for(let i=0;i<N;i++){const z=380+i/N*3400+rnd()*60,ang=rnd()*Math.PI*2,rad=(i%6===0?120+rnd()*300:420+rnd()*1500);
+      P.push({x:Math.cos(ang)*rad,y:Math.sin(ang)*rad*.8,z,s:520+rnd()*700,k:(rnd()*4)|0,a:.42+rnd()*.4,rot:(rnd()-.5)*.6,fl:rnd()<.5});}
+    const ss=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t);};const t0=performance.now(),D=5900,ZE=3900;
+    const draw=()=>{if(this.seq!==seq)return;const now=performance.now();const form=ss(0,350,now-t0);
+      let camZ=Math.min((now-t0)/1300*120,140),p=0;if(this.fallT&&now>this.fallT){p=Math.min(1,(now-this.fallT)/D);const q=p<.7?Math.pow(p/.7,2.1)*.82:.82+.18*(1-Math.pow(1-(p-.7)/.3,2));camZ=Math.min(camZ,140)+q*ZE;}
+      c.clearRect(0,0,W,H);if(img.complete&&img.naturalWidth){const dusk=ss(0,.45,p)*.85+.15,part=ss(.55,1,p);
+        const vis=P.map(o=>({o,dz:o.z-camZ})).filter(e=>e.dz>14).sort((a,b)=>b.dz-a.dz);
+        for(const {o,dz} of vis){const al=o.a*form*ss(4200,2600,dz)*ss(20,300,dz)*(1-ss(.9,1,p));if(al<.01)continue;
+          const sc=f/dz,sz=o.s*sc,px=W/2+o.x*sc*(1+part*1.6),py=H/2+o.y*sc*(1+part*1.6);if(px+sz<0||px-sz>W||py+sz<0||py-sz>H)continue;
+          c.save();c.translate(px,py);c.rotate(o.rot);if(o.fl)c.scale(-1,1);
+          c.globalAlpha=al*(1-dusk);c.drawImage(img,o.k*512,0,512,512,-sz/2,-sz/2,sz,sz);
+          c.globalAlpha=al*dusk;c.drawImage(img,o.k*512,512,512,512,-sz/2,-sz/2,sz,sz);c.restore();}}
+      if(p>=1){c.clearRect(0,0,W,H);return;}this.craf=requestAnimationFrame(draw);};
+    this.fallT=performance.now()+(fd||0);this.craf=requestAnimationFrame(draw);}
+  backToStreet(){this.replay();}
+  stopAuto(){}
+  armAuto(){}
+  observe(){if(!this.site||typeof IntersectionObserver==='undefined')return;if(this.io)this.io.disconnect();
+    this.io=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.12){e.target.classList.add('in');if(e.target===this.bookEl&&this.state.step===0)this.runBook();}else if(!e.isIntersecting&&e.target!==this.bookEl){e.target.classList.remove('in');}});},{root:this.site,threshold:[0,.12]});
+    this.site.querySelectorAll('[data-rv]').forEach(n=>this.io.observe(n));if(this.bookEl)this.io.observe(this.bookEl);
+    if(this.fic)this.fic.querySelectorAll('[data-rv]').forEach(n=>n.classList.add('in'));
+    if(!this.site._sc){this.site._sc=1;this.site.addEventListener('scroll',()=>{this.scrollFx(this.site);},{passive:true});}
+    if(this.fic&&!this.fic._sc){this.fic._sc=1;this.fic.addEventListener('scroll',()=>{this.scrollFx(this.fic);},{passive:true});}}
+  scrollFx(root){const vh=window.innerHeight;root.querySelectorAll('[data-px]').forEach(n=>{const r=n.getBoundingClientRect();const k=parseFloat(n.getAttribute('data-px'));n.style.transform='translate3d(0,'+((r.top+r.height/2-vh/2)*k).toFixed(1)+'px,0)';});
+    root.querySelectorAll('[data-pxf]').forEach(n=>{const k=parseFloat(n.getAttribute('data-pxf'));n.style.transform='translate3d(0,'+(root.scrollTop*k).toFixed(1)+'px,0) scale('+(1+root.scrollTop/4000)+')';});}
+  fxLoop(){this.fraf=requestAnimationFrame(()=>this.fxLoop());this.cx+=(this.tx-this.cx)*0.18;this.cy+=(this.ty-this.cy)*0.18;
+    if(this.curEl)this.curEl.style.transform='translate3d('+this.cx+'px,'+this.cy+'px,0)';if(this.curdEl)this.curdEl.style.transform='translate3d('+this.tx+'px,'+this.ty+'px,0)';}
+  fx(e){const x=e.clientX,y=e.clientY;this.tx=x;this.ty=y;const tg=e.target&&e.target.closest?e.target:null;if(!tg)return;
+    const z=tg.closest('[data-zoom]');if(this.zEl&&this.zEl!==z){const im=this.zEl.querySelector('img');if(im)im.style.transform='';this.zEl=null;}
+    if(z){const r=z.getBoundingClientRect(),im=z.querySelector('img');if(im){im.style.transformOrigin=((x-r.left)/r.width*100)+'% '+((y-r.top)/r.height*100)+'%';im.style.transform='scale(1.18)';}this.zEl=z;}
+    const tl=tg.closest('[data-tilt]');if(this.tEl&&this.tEl!==tl){this.tEl.style.transform='';this.tEl.style.boxShadow='';this.tEl=null;}
+    if(tl){const r=tl.getBoundingClientRect(),dx=(x-r.left)/r.width-.5,dy=(y-r.top)/r.height-.5;tl.style.transform='perspective(900px) rotateY('+(dx*10)+'deg) rotateX('+(-dy*10)+'deg) translateZ(0) scale(1.02)';tl.style.boxShadow=(-dx*30)+'px '+(20-dy*20)+'px 50px rgba(60,30,15,.22)';this.tEl=tl;}
+    const mg=tg.closest('[data-mag]');if(this.mEl&&this.mEl!==mg){this.mEl.style.transform='';this.mEl=null;}
+    if(mg){const r=mg.getBoundingClientRect(),dx=x-(r.left+r.width/2),dy=y-(r.top+r.height/2);mg.style.transform='translate('+(dx*.18)+'px,'+(dy*.25)+'px) scale(1.08)';this.mEl=mg;}
+    const ln=tg.closest('[data-lens]');const L=this.lensEl;
+    if(L){if(ln){const im=ln.querySelector('img'),r=im.getBoundingClientRect(),k=2.6;L.style.backgroundImage='url('+im.src+')';L.style.backgroundSize=(r.width*k)+'px '+(r.height*k)+'px';
+      L.style.backgroundPosition=(-(x-r.left)*k+105)+'px '+(-(y-r.top)*k+105)+'px';L.style.left=x+'px';L.style.top=y+'px';L.classList.add('on');}else L.classList.remove('on');}}
+  fxHover(e){const tg=e.target&&e.target.closest?e.target:null;if(!this.curEl||!tg)return;const on=!!tg.closest('button,a,[data-zoom],[data-mag],input,select,label');this.curEl.classList.toggle('big',on&&!tg.closest('[data-lens]'));}
+  runBook(){if(this.state.step!==0)return;this.setState({step:1});this.later(()=>this.setState({step:2}),1700);this.later(()=>this.setState({step:3}),2900);}
+  openFiche(id){if(this.hv){clearTimeout(this.hv);this.hv=null;}this.stopAuto();this.setState({fiche:id,hover:null,ahover:null});if(this.fic)this.fic.scrollTop=0;this.later(()=>this.observe(),60);}
+  hoverIn(key,id){if(this.hv){clearTimeout(this.hv);this.hv=null;}if(key==='hover')this.stopAuto();const st={[key]:id};if(key==='hover')st.nav=LOTS.findIndex(l=>l.id===id);this.setState(st);}
+  lotTap(key,id){if(this.pt==='mouse'&&this.state[key]===id){this.openFiche(id);return;}this.hoverIn(key,id);}
+  galUpd(){const g=this.gal;if(!g)return;const max=g.scrollWidth-g.clientWidth,r=max>0?g.scrollLeft/max:0,n=g.querySelectorAll('button').length||6,fr=Math.max(.12,g.clientWidth/g.scrollWidth);
+    if(this.galThumbEl){this.galThumbEl.style.width=(fr*100)+'%';this.galThumbEl.style.left=(r*(1-fr)*100)+'%';}
+    if(this.galCntEl){const i=Math.min(n,Math.round(r*(n-1))+1);this.galCntEl.innerHTML=String(i).padStart(2,'0')+' <span style="opacity:.45">/ '+String(n).padStart(2,'0')+'</span>';}}
+  galStep(d){const g=this.gal;if(!g)return;const b=g.querySelector('button');const w=b?b.getBoundingClientRect().width+18:g.clientWidth*.8;g.scrollBy({left:d*w,behavior:'smooth'});}
+  galSeek(e){const tr=this.galTrackEl,g=this.gal;if(!tr||!g)return;const rc=tr.getBoundingClientRect(),r=Math.min(1,Math.max(0,(e.clientX-rc.left)/rc.width));g.style.scrollBehavior='auto';g.scrollLeft=r*(g.scrollWidth-g.clientWidth);}
+  hoverOut(key){if(this.pt==='touch'&&(key==='ahover'||key==='hover'))return;if(this.hv)clearTimeout(this.hv);this.hv=this.later(()=>{this.setState({[key]:null});this.hv=null;if(key==='hover'&&this.state.view==='hero'&&!this.state.fiche)this.armAuto(4500);},260);}
+  renderVals(){
+    const s=this.state,v=s.view,lot=(id)=>LOTS.find(l=>l.id===id);
+    const base=LOTS.map(l=>({...l,aria:'Bastide '+l.id+', '+l.type+', '+l.price+' : voir le plan de vente',open:()=>this.openFiche(l.id),
+      enter:()=>this.hoverIn('hover',l.id),leave:()=>this.hoverOut('hover'),aenter:()=>this.hoverIn('ahover',l.id),atap:()=>this.lotTap('ahover',l.id),aleave:()=>this.hoverOut('ahover')}));
+    const hotLots=base.filter(l=>l.hot).map(l=>({...l,op:s.hover===l.id?1:0,
+      box:'position:absolute;left:'+l.l+'%;top:'+l.t+'%;width:'+l.w+'%;height:'+l.h+'%;padding:0;border:0;background:none;cursor:pointer;clip-path:'+l.clip+';-webkit-clip-path:'+l.clip,
+      dot:'position:absolute;left:'+l.dx+'%;top:'+l.dy+'%;width:.7cqw;height:.7cqw;margin:-.35cqw 0 0 -.35cqw;border-radius:50%;background:#FFF6E6;pointer-events:none;transition:opacity .4s;animation:pulse 2.4s infinite;opacity:'+(s.hover?0:.8)}));
+    const aLots=base.map(l=>({...l,aop:s.ahover===l.id?1:0,
+      abox:'position:absolute;left:'+l.a.l+'%;top:'+l.a.t+'%;width:'+l.a.w+'%;height:'+l.a.h+'%;padding:0;border:0;background:none;cursor:pointer;clip-path:'+l.a.clip+';-webkit-clip-path:'+l.a.clip}));
+    let pv={show:false,lot:LOTS[0],box:''};
+    if(s.hover&&v==='hero'&&!s.fiche){const l=lot(s.hover),cx=Math.min(78,Math.max(22,l.dx));let box;
+      if(l.hot&&!l.front)box='position:absolute;z-index:6;left:'+cx+'%;top:'+(l.t+l.h-1)+'%;transform:translateX(-50%);width:430px;padding-top:14px';
+      else box='position:absolute;z-index:6;left:'+cx+'%;bottom:'+(l.hot?(100-l.t-1):16)+'%;transform:translateX(-50%);width:430px;padding-bottom:14px';
+      pv={show:true,lot:l,box,open:()=>this.openFiche(l.id),keep:()=>this.hoverIn('hover',l.id),leave:()=>this.hoverOut('hover')};}
+    let apv={show:false,lot:LOTS[0],box:''};
+    if(s.ahover&&v==='site'&&!s.fiche){const l=lot(s.ahover),up=l.a.cy>55;
+      apv={show:true,lot:l,open:()=>this.openFiche(l.id),keep:()=>this.hoverIn('ahover',l.id),leave:()=>this.hoverOut('ahover'),
+        box:'position:absolute;z-index:4;left:'+l.a.cx+'%;top:'+(up?(l.a.t+2):(l.a.t+l.a.h-2))+'%;transform:translate(-50%,'+(up?'-100%':'0')+');width:250px;'+(up?'padding-bottom:12px':'padding-top:12px')};}
+    const F=lot(s.fiche)||LOTS[4],fi=LOTS.indexOf(F),fp=LOTS[(fi+8)%9],fn=LOTS[(fi+1)%9];
+    const tot=F.habN+F.jarN+(F.ter==='—'?0:parseFloat(F.ter.replace(',','.')));const a1=F.habN/tot*360,a2=a1+F.jarN/tot*360;
+    const f={...F,prevId:fp.id,nextId:fn.id,prev:()=>this.openFiche(fp.id),next:()=>this.openFiche(fn.id),
+      garage:F.id==='M09'?' ; garage inclus':'',
+      rdc:F.id==='M09'?'Pièce de vie avec cuisine ouverte, une chambre, salle d’eau, cellier, garage.':'Pièce de vie avec cuisine ouverte, salle d’eau, cellier.',
+      etage:(F.id==='M09'||F.id==='M08')?'Chambres, salle de bains, WC séparé, terrasse à l’étage.':'Trois chambres, salle de bains, WC séparé.',
+      donut:'conic-gradient(#9C4632 0 '+a1+'deg,#7E9A6A '+a1+'deg '+a2+'deg,#C9A46A '+a2+'deg 360deg)',
+      mail:'mailto:eg.cobaltgroup@gmail.com?subject='+encodeURIComponent('Les Bastides de l’Érable – rendez-vous, bastide '+F.id)};
+    const gallery=[['sejour','Le séjour'],['cuisine','La cuisine'],['chambre1','La chambre parentale'],['chambre2','Une chambre'],['sdb','La salle de bains'],['jardin','Le jardin']].map(([k,label])=>({src:IMG[k],label,open:()=>this.setState({lb:{src:IMG[k],alt:label}})}));
+    const presta=[['RE2020','Isolation renforcée selon étude thermique, ventilation hygroréglable.'],['CHAUFFAGE & CLIMATISATION','Pompe à chaleur air/air dans le séjour, panneaux rayonnants dans les chambres.'],['EAU CHAUDE','Chauffe-eau thermodynamique individuel.'],['MENUISERIES','Baie coulissante aluminium à double vitrage, volets roulants électriques.'],['EXTÉRIEURS','Jardin privatif engazonné et clos, haie végétale, robinet extérieur.'],['SÉCURITÉ','Porte 3 points, visiophone, portail de résidence motorisé.']].map(([t,d])=>({t,d}));
+    const st=s.step,navL=LOTS[s.nav]||LOTS[4];
+    const toSite=(ref)=>{this.setState({view:'site',fiche:null});this.later(()=>{this.observe();if(ref&&this.site)this.site.scrollTo({top:ref.offsetTop,behavior:'smooth'});},120);};
+    const edges=[];for(let k=0;k<12;k++)edges.push('position:absolute;inset:0;border-radius:50%;background:'+(k%2?'#16234d':'#1c2b5a')+';transform:translateZ('+(6-k)+'px);backface-visibility:visible');
+    if(!this.rfs){this.rfs={};['v','vwrap','title','white','tr','aer','sky','skyw','cv','code','ui','load','bar'].forEach(k=>{this.rfs[k]=(el)=>{if(el){this.R[k]=el;if(k==='v')this.initStream&&this.later(()=>this.initStream(),0);}};});}
+    return {hotLots,aLots,pv,apv,f,gallery,presta,lotCards:base,rf:this.rfs,
+      fxMove:(e)=>this.fx(e),fxOver:(e)=>this.fxHover(e),fxOut:()=>{this.tx=-100;this.ty=-100;if(this.lensEl)this.lensEl.classList.remove('on');},
+      stackRef:(el)=>{if(el)this.stack=el;},whiteRef:(el)=>{if(el)this.white=el;},edges,
+      curRef:(el)=>{if(el)this.curEl=el;},curdRef:(el)=>{if(el)this.curdEl=el;},lensRef:(el)=>{if(el)this.lensEl=el;},
+      dimOp:(v==='hero'&&s.hover&&lot(s.hover).hot)?0.5:0,aDim:(s.ahover?0.5:0),aerS:1,
+      uiOp:v==='hero'?1:0,
+      titleTf:'rotateX('+(s.my*-4).toFixed(2)+'deg) rotateY('+(s.mx*6).toFixed(2)+'deg)',
+      tiltMove:(e)=>{if(v!=='hero')return;const w=window.innerWidth||1,h=window.innerHeight||1;this.setState({mx:e.clientX/w*2-1,my:e.clientY/h*2-1});},
+      navLabel:navL.id+' / 09',
+      prevLot:()=>{const n=(s.nav+8)%9;this.hoverIn('hover',LOTS[n].id);},
+      nextLot:()=>{const n=(s.nav+1)%9;this.hoverIn('hover',LOTS[n].id);},
+      visitLabel:'LANCER LA VISITE',ringAnim:s.auto>0?((s.auto%2?'ring':'ring2')+' '+(s.auto>1?'4.5s':'3.4s')+' linear forwards'):'none',
+      goVisit:()=>this.replay(),
+      goSite:()=>toSite(null),goPlans:()=>toSite(this.lotsSec),goContact:()=>toSite(this.contact),
+      filmOp:v==='film'?1:0,filmZ:v==='film'?40:20,filmPe:v==='film'?'auto':'none',filmHidden:v==='film'?'false':'true',skip:()=>this.transition(false),
+      siteOp:v==='site'?1:0,sitePe:v==='site'?'auto':'none',siteHidden:v==='site'?'false':'true',
+      ficheY:s.fiche?'0':'100%',ficheVis:s.fiche?'visible':'hidden',ficheHidden:s.fiche?'false':'true',
+      closeFiche:()=>this.setState({fiche:null}),
+      ficheVisit:()=>this.replay(),
+      backToStreet:()=>this.replay(),
+      replay:()=>this.replay(),
+      openPlan:()=>this.setState({lb:{src:F.plan,alt:'Plan de vente '+F.id}}),
+      lb:s.lb?{show:true,...s.lb}:{show:false,src:'',alt:''},closeLb:()=>this.setState({lb:null}),
+      levAnim:st===0?'lev 6s ease-in-out infinite':'none',
+      bookTf:st===0?'none':st===1?'rotateY(360deg)':st===2?'rotateY(360deg) rotateX(40deg) translateY(20px)':'rotateY(360deg) rotateX(16deg) translateX(50%)',
+      coverRot:st===3?-172:0,bookLabel:st===3?'REFERMER LA PLAQUETTE':'OUVRIR LA PLAQUETTE',
+      bookToggle:()=>{if(st===3)this.setState({step:0});else this.runBook();},pq:!!s.pq,openPq:()=>this.setState({pq:true}),closePq:()=>this.setState({pq:false}),
+      pqPages:[['ae4f836ebeb100129f96ca5663cdc0a6','Couverture'],['e5d3ad5e5af418744c95f41d64752c59','Le programme'],['47710c43b656ae74c593ba52c1066acc','Les maisons'],['baa63090f42ab1c29125ca346d4d4211','Les prestations']].map(([id,n])=>({src:'/_blob/'+id,n})),
+      barRef:(el)=>{if(el)this.bar=el;},
+      galRef:(el)=>{if(el&&el!==this.gal){this.gal=el;el.addEventListener('scroll',()=>this.galUpd(),{passive:true});this.later(()=>this.galUpd(),400);}},
+      galThumb:(el)=>{if(el)this.galThumbEl=el;},galCnt:(el)=>{if(el)this.galCntEl=el;},galTrack:(el)=>{if(el)this.galTrackEl=el;},
+      galPrev:()=>this.galStep(-1),galNext:()=>this.galStep(1),
+      galDown:(e)=>{this.galSeek(e);const mv=(ev)=>this.galSeek(ev),up=()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',up);if(this.gal)this.gal.style.scrollBehavior='smooth';};addEventListener('pointermove',mv);addEventListener('pointerup',up);},
+      sendForm:(e)=>{if(e&&e.preventDefault)e.preventDefault();const f=e.target;if(this.state.sending)return;const fd=new FormData(f);
+        fd.set('subject','Les Bastides de l’Érable – '+(fd.get('objet')||'Demande')+' – '+(fd.get('prenom')||'')+' '+(fd.get('nom')||''));
+        this.setState({sending:true,sendMsg:'',sendOk:false});
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:fd}).then(r=>r.json()).then(d=>{
+          if(d&&d.success){f.reset();this.setState({sending:false,sendOk:true,sendMsg:'Merci, votre demande est bien envoyée. Nous vous recontactons très vite.'});}
+          else throw new Error('x');}).catch(()=>this.setState({sending:false,sendOk:false,sendMsg:'L’envoi n’a pas abouti. Appelez-nous au 07 60 84 04 03 ou écrivez à eg.cobaltgroup@gmail.com.'}));},
+      sending:!!s.sending,sendOk:!!s.sendOk,sendMsg:s.sendMsg||'',
+      siteRef:(el)=>{if(el)this.site=el;},ficheRef:(el)=>{if(el)this.fic=el;},
+      lotsSecRef:(el)=>{if(el)this.lotsSec=el;},contactRef:(el)=>{if(el)this.contact=el;},bookRef:(el)=>{if(el)this.bookEl=el;}
+    };
+  }
+}
+
+prender(html`<${Component} />`, document.getElementById('app'));
+</script>
+</body>
+</html>
