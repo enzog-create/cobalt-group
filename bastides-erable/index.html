@@ -183,10 +183,10 @@ function TPL(v){ with(v){ return html`
       </div>
     </div>
     <div style="max-width:1240px;margin:70px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
-      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">9</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">BASTIDES R+1</div></div>
-      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">8 T4 + 1 T5</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE 82,70 À 93,55 M² HABITABLES</div></div>
-      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">150 m²</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE JARDIN AU MAXIMUM</div></div>
-      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div data-mag="" style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">395 500 €</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">PRIX DE LANCEMENT, À PARTIR DE</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">9</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">BASTIDES R+1</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">8 T4 + 1 T5</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE 82,70 À 93,55 M² HABITABLES</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">150 m²</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">DE JARDIN AU MAXIMUM</div></div>
+      <div data-rv="" style="border-top:2px solid #9C4632;padding-top:16px"><div style="font:800 54px/1 Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">395 500 €</div><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658;margin-top:8px">PRIX DE LANCEMENT, À PARTIR DE</div></div>
     </div>
     <div class="frise t" style="position:absolute;left:0;right:0;bottom:22px"></div>
   </section>
@@ -218,9 +218,9 @@ function TPL(v){ with(v){ return html`
       <div data-rv="" style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px">
         ${(lotCards||[]).map((c)=>html`
           <button data-tilt="" onClick=${c.open} style="text-align:left;border:1px solid #DDCDB6;border-radius:10px;background:#FBF7F0;padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column">
-            <span data-zoom="" style="display:block;height:190px"><img src=${c.crop} alt="Plan du lot ${c.id}" style="width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff;border-bottom:1px solid #EADFCD" /></span>
+            <span style="display:block;height:190px;overflow:hidden"><img src=${c.crop} alt="Plan du lot ${c.id}" style="width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff;border-bottom:1px solid #EADFCD" /></span>
             <span style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 16px 4px"><span style="font:800 22px Montserrat,sans-serif;color:#2A1D16">${c.id}</span><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.16em;color:#9C4632">PRIX DANS LA FICHE →</span></span>
-            <span style="padding:0 16px 16px;font:400 12px/1.5 Inter,sans-serif;color:#5b4a3f">${c.type} · <span data-mag="">${c.hab} m²</span> · jardin <span data-mag="">${c.jar} m²</span><br /><span style="color:#9C4632;font-weight:500">${c.tag}</span><br /><span style="color:#7a6658;font-style:italic">Son prix de lancement vous attend dans la fiche.</span></span>
+            <span style="padding:0 16px 16px;font:400 12px/1.5 Inter,sans-serif;color:#5b4a3f">${c.type} · <span>${c.hab} m²</span> · jardin <span>${c.jar} m²</span><br /><span style="color:#9C4632;font-weight:500">${c.tag}</span><br /><span style="color:#7a6658;font-style:italic">Son prix de lancement vous attend dans la fiche.</span></span>
           </button>
         `)}
       </div>
@@ -361,10 +361,10 @@ function TPL(v){ with(v){ return html`
   </section>
   <section style="max-width:1240px;margin:-60px auto 0;position:relative;padding:0 clamp(18px,5vw,70px)">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px">
-      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">${f.price}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">PRIX DE LANCEMENT</div></div>
-      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.hab} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">HABITABLE</div></div>
-      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.jar} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">JARDIN PRIVATIF</div></div>
-      <div><div data-mag="" style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.ter}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">TERRASSE ÉTAGE</div></div>
+      <div><div style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#9C4632;letter-spacing:-.03em">${f.price}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">PRIX DE LANCEMENT</div></div>
+      <div><div style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.hab} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">HABITABLE</div></div>
+      <div><div style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.jar} m²</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">JARDIN PRIVATIF</div></div>
+      <div><div style="font:800 clamp(26px,3vw,44px) Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${f.ter}</div><div style="font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#7a6658">TERRASSE ÉTAGE</div></div>
     </div>
   </section>
   <section style="max-width:1240px;margin:0 auto;padding:60px clamp(18px,5vw,70px) 40px">
@@ -507,13 +507,13 @@ class Component extends DCLogic {
     const z=tg.closest('[data-zoom]');if(this.zEl&&this.zEl!==z){const im=this.zEl.querySelector('img');if(im)im.style.transform='';this.zEl=null;}
     if(z){const r=z.getBoundingClientRect(),im=z.querySelector('img');if(im){im.style.transformOrigin=((x-r.left)/r.width*100)+'% '+((y-r.top)/r.height*100)+'%';im.style.transform='scale(1.18)';}this.zEl=z;}
     const tl=tg.closest('[data-tilt]');if(this.tEl&&this.tEl!==tl){this.tEl.style.transform='';this.tEl.style.boxShadow='';this.tEl=null;}
-    if(tl){const r=tl.getBoundingClientRect(),dx=(x-r.left)/r.width-.5,dy=(y-r.top)/r.height-.5;tl.style.transform='perspective(900px) rotateY('+(dx*10)+'deg) rotateX('+(-dy*10)+'deg) translateZ(0) scale(1.02)';tl.style.boxShadow=(-dx*30)+'px '+(20-dy*20)+'px 50px rgba(60,30,15,.22)';this.tEl=tl;}
+    if(tl){const r=tl.getBoundingClientRect(),dx=(x-r.left)/r.width-.5,dy=(y-r.top)/r.height-.5;tl.style.transform='perspective(900px) translateY(-8px) rotateY('+(dx*14)+'deg) rotateX('+(-dy*14)+'deg) scale(1.045)';tl.style.boxShadow=(-dx*40)+'px '+(30-dy*24)+'px 60px rgba(60,30,15,.3)';this.tEl=tl;}
     const mg=tg.closest('[data-mag]');if(this.mEl&&this.mEl!==mg){this.mEl.style.transform='';this.mEl=null;}
     if(mg){const r=mg.getBoundingClientRect(),dx=x-(r.left+r.width/2),dy=y-(r.top+r.height/2);mg.style.transform='translate('+(dx*.18)+'px,'+(dy*.25)+'px) scale(1.08)';this.mEl=mg;}
     const ln=tg.closest('[data-lens]');const L=this.lensEl;
     if(L){if(ln){const im=ln.querySelector('img'),r=im.getBoundingClientRect(),k=2.6;L.style.backgroundImage='url('+im.src+')';L.style.backgroundSize=(r.width*k)+'px '+(r.height*k)+'px';
       L.style.backgroundPosition=(-(x-r.left)*k+105)+'px '+(-(y-r.top)*k+105)+'px';L.style.left=x+'px';L.style.top=y+'px';L.classList.add('on');}else L.classList.remove('on');}}
-  fxHover(e){const tg=e.target&&e.target.closest?e.target:null;if(!this.curEl||!tg)return;const on=!!tg.closest('button,a,[data-zoom],[data-mag],input,select,label');this.curEl.classList.toggle('big',on&&!tg.closest('[data-lens]'));}
+  fxHover(e){const tg=e.target&&e.target.closest?e.target:null;if(!this.curEl||!tg)return;const on=!!tg.closest('button,a,input,select,label,[role=button]');this.curEl.classList.toggle('big',on&&!tg.closest('[data-lens]'));}
   runBook(){if(this.state.step!==0)return;this.setState({step:1});this.later(()=>this.setState({step:2}),1700);this.later(()=>this.setState({step:3}),2900);}
   openFiche(id){if(this.hv){clearTimeout(this.hv);this.hv=null;}this.stopAuto();this.setState({fiche:id,hover:null,ahover:null});if(this.fic)this.fic.scrollTop=0;this.later(()=>this.observe(),60);}
   hoverIn(key,id){if(this.hv){clearTimeout(this.hv);this.hv=null;}if(key==='hover')this.stopAuto();const st={[key]:id};if(key==='hover')st.nav=LOTS.findIndex(l=>l.id===id);this.setState(st);}
@@ -583,7 +583,7 @@ class Component extends DCLogic {
       bookTf:st===0?'none':st===1?'rotateY(360deg)':st===2?'rotateY(360deg) rotateX(40deg) translateY(20px)':'rotateY(360deg) rotateX(16deg) translateX(50%)',
       coverRot:st===3?-172:0,bookLabel:st===3?'REFERMER LA PLAQUETTE':'OUVRIR LA PLAQUETTE',
       bookToggle:()=>{if(st===3)this.setState({step:0});else this.runBook();},pq:!!s.pq,openPq:()=>this.setState({pq:true}),closePq:()=>this.setState({pq:false}),
-      pqPages:[['ae4f836ebeb100129f96ca5663cdc0a6','Couverture'],['e5d3ad5e5af418744c95f41d64752c59','Le programme'],['47710c43b656ae74c593ba52c1066acc','Les maisons'],['baa63090f42ab1c29125ca346d4d4211','Les prestations']].map(([id,n])=>({src:'/_blob/'+id,n})),
+      pqPages:[{src:'assets/ae4f836ebe.jpg',n:'Couverture'},{src:'assets/e5d3ad5e5a.jpg',n:'Le programme'},{src:'assets/47710c43b6.jpg',n:'Les maisons'},{src:'assets/baa63090f4.jpg',n:'Les prestations'}],
       barRef:(el)=>{if(el)this.bar=el;},
       galRef:(el)=>{if(el&&el!==this.gal){this.gal=el;el.addEventListener('scroll',()=>this.galUpd(),{passive:true});this.later(()=>this.galUpd(),400);}},
       galThumb:(el)=>{if(el)this.galThumbEl=el;},galCnt:(el)=>{if(el)this.galCntEl=el;},galTrack:(el)=>{if(el)this.galTrackEl=el;},
