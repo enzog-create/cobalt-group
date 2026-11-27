@@ -53,6 +53,9 @@ a{color:#9C4632}a:hover{color:#6E2E20}
 .lnk{background:none;border:0;cursor:pointer;font:inherit;letter-spacing:inherit;min-height:40px;padding:0}
 @media(max-width:760px){.dsk{display:none!important}.pv{left:10px!important;right:10px!important;bottom:84px!important;top:auto!important;transform:none!important;width:auto!important;position:fixed!important}.col{flex-direction:column!important}}
 @media(max-width:760px) and (orientation:portrait){.aerbox{width:128vw!important;top:42%!important;left:calc(50% + 1.8vw)!important}}
+@media(hover:none){.aerbox button[aria-label]::after{content:"";position:absolute;left:50%;top:46%;width:9px;height:9px;margin:-4.5px;border-radius:50%;background:#F3EBDD;box-shadow:0 0 0 0 rgba(243,235,221,.7);animation:tapdot 2.2s ease-out infinite;pointer-events:none}}
+@keyframes tapdot{0%{box-shadow:0 0 0 0 rgba(243,235,221,.7)}70%{box-shadow:0 0 0 12px rgba(243,235,221,0)}100%{box-shadow:0 0 0 0 rgba(243,235,221,0)}}
+.mobo{display:none}@media(max-width:760px){.mobo{display:inline!important}}
 .pvm{display:none}@media(max-width:760px) and (orientation:portrait){.pvm{display:block}.aerbox .pv{display:none!important}}
 .mob{display:none}@media(hover:none){.dskh{display:none}.mob{display:inline}}
 .frise{height:22px;background-repeat:repeat-x;background-size:32px 22px;opacity:.55;pointer-events:none}
@@ -137,13 +140,10 @@ function TPL(v){ with(v){ return html`
       `:null}
     </div>
     ${(apv.show)?html`
-        <div class="pvm" style="position:absolute;left:14px;right:14px;top:calc(42% + 48vw + 10px);z-index:6">
-          <button onClick=${apv.open} style="display:block;width:100%;text-align:left;background:#F3EBDD;border:0;border-radius:14px;padding:14px 16px;box-shadow:0 20px 50px rgba(0,0,0,.45);cursor:pointer;animation:rise .25s ease both">
-            <span style="display:flex;align-items:baseline;gap:10px"><span style="font:900 34px/1 Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.03em">${apv.lot.id}</span><span style="font:600 10px Montserrat,sans-serif;letter-spacing:.22em;color:#9C4632">${apv.lot.type}</span></span>
-            <span style="display:block;font:500 13px/1.3 Montserrat,sans-serif;color:#2A1D16;margin-top:6px">${apv.lot.tag}</span>
-            <span style="display:block;font:800 24px Montserrat,sans-serif;color:#9C4632;margin:4px 0">${apv.lot.price}</span>
-            <span style="display:block;font:400 12px Inter,sans-serif;color:#5b4a3f">${apv.lot.hab} m² · jardin ${apv.lot.jar} m²</span>
-            <span style="display:block;margin-top:8px;font:700 10px Montserrat,sans-serif;letter-spacing:.16em;color:#9C4632">VOIR LE PLAN DE VENTE →</span>
+        <div class="pvm" style="position:absolute;left:12px;right:12px;top:calc(42% + 48vw - 68px);z-index:6">
+          <button onClick=${apv.open} style="display:block;width:100%;text-align:left;background:#F3EBDD;border:0;border-radius:12px;padding:9px 13px;box-shadow:0 12px 30px rgba(0,0,0,.45);cursor:pointer;animation:rise .25s ease both">
+            <span style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="display:flex;align-items:baseline;gap:7px;min-width:0"><span style="font:900 22px/1 Montserrat,sans-serif;color:#2A1D16;letter-spacing:-.02em">${apv.lot.id}</span><span style="font:600 9px Montserrat,sans-serif;letter-spacing:.18em;color:#9C4632;white-space:nowrap">${apv.lot.type}</span></span><span style="font:800 17px Montserrat,sans-serif;color:#9C4632;white-space:nowrap">${apv.lot.price}</span></span>
+            <span style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:5px"><span style="font:400 11px Inter,sans-serif;color:#5b4a3f;white-space:nowrap">${apv.lot.hab} m² · jardin ${apv.lot.jar} m²</span><span style="font:700 9px Montserrat,sans-serif;letter-spacing:.12em;color:#9C4632;white-space:nowrap">VOIR LE PLAN →</span></span>
           </button>
         </div>
       `:null}
@@ -230,7 +230,7 @@ function TPL(v){ with(v){ return html`
   
   <section style="position:relative;background:#2A1D16;color:#F3EBDD;padding:120px 0 110px;clip-path:polygon(0 0,100% 5vw,100% 100%,0 100%)">
     <div data-rv="" style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,6vw,90px)"><div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#E3A07E">04 · INTÉRIEURS</div><h2 style="font:800 clamp(32px,4vw,58px)/1 Montserrat,sans-serif;margin:14px 0 36px"><span class="sl">LA LUMIÈRE DU SUD,</span> <span class="sr">PIÈCE APRÈS PIÈCE</span></h2></div>
-    <div ref=${galRef} class="gal" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 clamp(20px,6vw,90px) 14px">
+    <div ref=${galRef} class="gal" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-inline:clamp(20px,6vw,90px);padding:0 clamp(20px,6vw,90px) 14px">
       ${(gallery||[]).map((g)=>html`
         <button data-tilt="" onClick=${g.open} style="flex:0 0 min(80vw,620px);scroll-snap-align:start;border:0;padding:0;background:none;cursor:zoom-in;text-align:left;color:#F3EBDD">
           <span data-zoom="" style="display:block;border-radius:6px"><img src=${g.src} alt=${g.label} style="width:100%;aspect-ratio:16 / 10;object-fit:cover;display:block" /></span>
@@ -239,7 +239,7 @@ function TPL(v){ with(v){ return html`
       `)}
     </div>
     <div style="max-width:1240px;margin:22px auto 0;padding:0 clamp(20px,6vw,90px);display:flex;align-items:center;gap:22px">
-      <div ref=${galCnt} style="font:500 15px Oswald,sans-serif;letter-spacing:.12em;min-width:66px">01 <span style="opacity:.45">/ 06</span></div>
+      <div ref=${galCnt} style="font:500 15px Oswald,sans-serif;letter-spacing:.12em;min-width:66px"></div>
       <div ref=${galTrack} onPointerDown=${galDown} style="flex:1;position:relative;height:26px;cursor:pointer;touch-action:none"><div style="position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(243,235,221,.25)"></div><div ref=${galThumb} style="position:absolute;top:10px;height:5px;border-radius:5px;background:linear-gradient(90deg,#E3A07E,#C8693F);left:0;width:20%;box-shadow:0 0 14px rgba(227,160,126,.45);transition:left .25s cubic-bezier(.2,.7,.2,1)"></div></div>
       <button class="garr" onClick=${galPrev} aria-label="Image précédente"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="garr" onClick=${galNext} aria-label="Image suivante"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -351,14 +351,7 @@ function TPL(v){ with(v){ return html`
       </form>
     </div>
     <div style="max-width:1240px;margin:70px auto 0;border-top:1px solid #D8C9B2;padding-top:18px;font:400 11px/1.7 Inter,sans-serif;color:#7a6658">Document non contractuel. Illustrations d’ambiance non contractuelles. Prix de lancement novembre 2026, hors stationnement. COBALT GROUP SAS · 60 rue François 1er, 75008 Paris.
-      <details style="margin-top:10px"><summary style="cursor:pointer;color:#9C4632;font-weight:600;letter-spacing:.04em">Mentions légales et données personnelles</summary>
-        <div style="margin-top:10px;max-width:900px">
-          <b>Éditeur du site</b> : COBALT GROUP, société par actions simplifiée, siège social 60 rue François 1er, 75008 Paris, SIREN 922 040 688, RCS Paris. Contact : eg.cobaltgroup@gmail.com · 07 60 84 04 03.<br />
-          <b>Directeur de la publication</b> : Charles-Stéphane Giunta, Président.<br />
-          <b>Hébergeur</b> : GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br />
-          <b>Contenus</b> : visuels, plans et descriptifs non contractuels, susceptibles d’évoluer. Reproduction interdite sans autorisation.<br />
-          <b>Données personnelles</b> : les informations saisies dans le formulaire (nom, prénom, téléphone, e-mail, message) sont transmises à COBALT GROUP par l’intermédiaire du service Web3Forms, dans le seul but de répondre à votre demande et de vous présenter le programme. Elles ne sont ni vendues ni cédées et sont conservées au plus trois ans après le dernier contact. Vous pouvez demander leur accès, leur rectification ou leur suppression en écrivant à eg.cobaltgroup@gmail.com, et saisir la CNIL (cnil.fr). Ce mini-site ne dépose aucun cookie de suivi.
-        </div></details></div>
+      <div style="margin-top:6px"><a href="https://cobalt-group.fr/#mentions-legales" target="_top" style="color:#7a6658">Mentions légales</a> · <a href="https://cobalt-group.fr/#confidentialite" target="_top" style="color:#7a6658">Données personnelles</a></div></div>
   </section>
 </div>
 
@@ -370,7 +363,7 @@ function TPL(v){ with(v){ return html`
     <div style="display:flex;gap:6px"><button onClick=${f.prev} aria-label="Bastide précédente" style="min-height:42px;padding:0 14px;border-radius:42px;border:0;background:#E8DCC8;color:#9C4632;font:700 11px Montserrat,sans-serif;cursor:pointer">← ${f.prevId}</button><button onClick=${f.next} aria-label="Bastide suivante" style="min-height:42px;padding:0 14px;border-radius:42px;border:0;background:#E8DCC8;color:#9C4632;font:700 11px Montserrat,sans-serif;cursor:pointer">${f.nextId} →</button></div>
   </div>
   <section style="position:relative;height:min(78vh,760px);min-height:460px;overflow:hidden">
-    <img data-pxf="0.25" src="assets/1c384bbf88.jpg" alt="Façade d’une bastide au crépuscule" style="position:absolute;inset:-8% 0 0 0;width:100%;height:108%;object-fit:cover;will-change:transform" />
+    <img data-pxf="0.25" src=${f.hero} alt=${f.heroAlt} style="position:absolute;inset:-8% 0 0 0;width:100%;height:108%;object-fit:cover;will-change:transform" />
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,16,11,.8) 0%,rgba(26,16,11,.35) 45%,rgba(26,16,11,0) 75%)"></div>
     <div style="position:absolute;left:clamp(18px,5vw,70px);top:12%;max-width:min(560px,84vw);color:#F3EBDD">
       <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;opacity:.85">RÉSIDENCE LES BASTIDES DE L’ÉRABLE · ${f.type}</div>
@@ -393,7 +386,7 @@ function TPL(v){ with(v){ return html`
       <div style="flex:1.5;min-width:0">
         <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">PLAN DE VENTE</div>
         <button data-lens="" onClick=${openPlan} aria-label="Agrandir le plan de vente" style="display:block;width:100%;margin-top:14px;border:1px solid #DDCDB6;border-radius:8px;background:#fff;padding:8px;cursor:none"><img src=${f.plan} alt="Plan de vente de la bastide ${f.id}" style="width:100%;display:block" /></button>
-        <div style="font:400 11px Inter,sans-serif;color:#7a6658;margin-top:8px">Survolez le plan pour zoomer, cliquez pour l’agrandir. Plan de vente non contractuel.</div>
+        <div style="font:400 11px Inter,sans-serif;color:#7a6658;margin-top:8px"><span class="dsk">Survolez le plan pour zoomer, cliquez pour l’agrandir.</span><span class="mobo">Touchez le plan pour l’agrandir.</span> Plan de vente non contractuel.</div>
       </div>
       <div style="flex:1;min-width:0">
         <div style="font:600 10px Montserrat,sans-serif;letter-spacing:.3em;color:#9C4632">LES ATOUTS</div>
@@ -568,6 +561,7 @@ class Component extends DCLogic {
     const tot=F.habN+F.jarN+(F.ter==='—'?0:parseFloat(F.ter.replace(',','.')));const a1=F.habN/tot*360,a2=a1+F.jarN/tot*360;
     const f={...F,prevId:fp.id,nextId:fn.id,prev:()=>this.openFiche(fp.id),next:()=>this.openFiche(fn.id),
       garage:F.id==='M09'?' ; garage inclus':'',
+      hero:F.id==='M05'?'assets/35ae75f279.jpg':'assets/1c384bbf88.jpg',heroAlt:F.id==='M05'?'Le jardin privatif de la bastide M05 au coucher du soleil':'Façade d’une bastide au crépuscule',
       rdc:F.id==='M09'?'Pièce de vie avec cuisine ouverte, une chambre, salle d’eau, cellier, garage.':'Pièce de vie avec cuisine ouverte, salle d’eau, cellier.',
       etage:(F.id==='M09'||F.id==='M08')?'Chambres, salle de bains, WC séparé, terrasse à l’étage.':'Trois chambres, salle de bains, WC séparé.',
       donut:'conic-gradient(#9C4632 0 '+a1+'deg,#7E9A6A '+a1+'deg '+a2+'deg,#C9A46A '+a2+'deg 360deg)',
@@ -608,7 +602,7 @@ class Component extends DCLogic {
       pqPages:[{src:'assets/52b8058c33.jpg',n:'Couverture'},{src:'assets/e5d3ad5e5a.jpg',n:'Le programme'},{src:'assets/47710c43b6.jpg',n:'Les maisons'},{src:'assets/baa63090f4.jpg',n:'Les prestations'}],
       barRef:(el)=>{if(el)this.bar=el;},
       galRef:(el)=>{if(el&&el!==this.gal){this.gal=el;el.addEventListener('scroll',()=>this.galUpd(),{passive:true});this.later(()=>this.galUpd(),400);}},
-      galThumb:(el)=>{if(el)this.galThumbEl=el;},galCnt:(el)=>{if(el)this.galCntEl=el;},galTrack:(el)=>{if(el)this.galTrackEl=el;},
+      galThumb:(el)=>{if(el)this.galThumbEl=el;},galCnt:(el)=>{if(el&&!el.innerHTML)el.innerHTML='01 <span style="opacity:.45">/ 06</span>';if(el)this.galCntEl=el;},galTrack:(el)=>{if(el)this.galTrackEl=el;},
       galPrev:()=>this.galStep(-1),galNext:()=>this.galStep(1),
       galDown:(e)=>{this.galSeek(e);const mv=(ev)=>this.galSeek(ev),up=()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',up);if(this.gal)this.gal.style.scrollBehavior='smooth';};addEventListener('pointermove',mv);addEventListener('pointerup',up);},
       sendForm:(e)=>{if(e&&e.preventDefault)e.preventDefault();const f=e.target;if(this.state.sending)return;const fd=new FormData(f);
