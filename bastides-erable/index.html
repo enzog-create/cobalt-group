@@ -5,6 +5,8 @@
 <script>window.FILM_SRC='assets/film-v11.mp4'</script>
 <script>window.FILM_SRC='assets/film-v11.mp4'</script>
 <script>window.FILM_SRC='assets/film-v11.mp4'</script>
+<script>window.FILM_SRC='assets/film-v11.mp4'</script>
+<script>window.FILM_SRC='assets/film-v11.mp4'</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Les Bastides de l’Érable · 9 maisons neuves avec jardin · Marseille 13e · Cobalt Group</title>
@@ -442,7 +444,7 @@ class Component extends DCLogic {
     v.addEventListener('timeupdate',()=>{if(this.R.bar&&v.duration)this.R.bar.style.width=(v.currentTime/v.duration*100)+'%';});
     v.addEventListener('ended',()=>{if(this.state.view==='film'&&!this.state.trans)this.transition(true);});
     v.addEventListener('playing',()=>{v.style.opacity='1';if(this.R.load)this.R.load.style.opacity='0';if(this.R.title){this.later(()=>{this.R.title.style.opacity='0';this.R.title.style.transform='translateY(-30px) scale(.96)';},1400);}});
-    if(window.FILM_SRC){v.preload='auto';this.t0=performance.now();this.native=true;const chk=()=>this.tryStart();v.addEventListener('progress',chk);this.ptimer=setInterval(chk,250);v.addEventListener('canplaythrough',()=>{this.loaded=true;this.tryStart();},{once:true});v.addEventListener('error',()=>{this.loaded=true;this.tryStart();},{once:true});v.src=window.FILM_SRC;v.load();return;}
+    if(window.FILM_SRC){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.preload='auto';this.t0=performance.now();this.native=true;const chk=()=>this.tryStart();v.addEventListener('progress',chk);this.ptimer=setInterval(chk,250);v.addEventListener('canplaythrough',()=>{this.loaded=true;this.tryStart();},{once:true});v.addEventListener('error',()=>{this.loaded=true;this.tryStart();},{once:true});v.src=window.FILM_SRC;v.load();return;}
     const MS=window.ManagedMediaSource||window.MediaSource;
     if(MS&&MS.isTypeSupported&&MS.isTypeSupported(CODEC)){const ms=new MS();v.disableRemotePlayback=true;v.src=URL.createObjectURL(ms);
       ms.addEventListener('sourceopen',async()=>{try{const sb=ms.addSourceBuffer(CODEC);
@@ -453,7 +455,7 @@ class Component extends DCLogic {
   tryStart(all){const v=this.R.v;if(!v||this.started||!this.minWait||this.state.view!=='film')return;const b=v.buffered;
     let ok=this.loaded||all||(b.length&&b.end(0)>=4);
     if(this.native){const d=v.duration||29,be=b.length?b.end(b.length-1):0,el=(performance.now()-this.t0)/1000,r=el>0.3?be/el:0;
-      ok=this.loaded||be>=d-0.1||(v.readyState>=3&&el>5);}
+      ok=this.loaded||be>=d-0.1||v.readyState>=3||el>1.5;}
     if(ok){if(this.ptimer)clearInterval(this.ptimer);this.started=true;v.playbackRate=RATE;const pr=v.play();if(pr&&pr.catch)pr.catch(()=>{v.muted=true;v.play().catch(()=>{});});}}
   resetFilm(){const R=this.R;this.seq=(this.seq||0)+1;if(this.craf)cancelAnimationFrame(this.craf);if(this.traf)cancelAnimationFrame(this.traf);
     if(R.vwrap){R.vwrap.style.transition='none';R.vwrap.style.transform='none';}
