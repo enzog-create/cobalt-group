@@ -1789,6 +1789,10 @@
   /* ───────── LES BASTIDES DE L'ÉRABLE (mini-site) ───────── */
   .be-launch { position: relative; background: #9C4632; color: #F3EBDD; padding: 120px 60px; overflow: hidden; }
   .be-launch::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 20%, rgba(255,235,210,.10), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(60,18,8,.35), transparent 60%); pointer-events: none; }
+  .co-frise { position: absolute; left: 0; right: 0; height: 22px; pointer-events: none; z-index: 1; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='22'%3E%3Cg fill='none' stroke='%23C9A96E' stroke-width='2'%3E%3Cpath d='M0 20a16 16 0 0 1 32 0'/%3E%3Cpath d='M16 20V7' stroke-width='1' opacity='.55'/%3E%3Cpath d='M0 20.5H32' stroke-width='1.6'/%3E%3C/g%3E%3C/svg%3E") repeat-x; background-size: 32px 22px; opacity: .55; }
+  .co-frise.light { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='22'%3E%3Cg fill='none' stroke='%23E8D4A5' stroke-width='2'%3E%3Cpath d='M0 20a16 16 0 0 1 32 0'/%3E%3Cpath d='M16 20V7' stroke-width='1' opacity='.55'/%3E%3Cpath d='M0 20.5H32' stroke-width='1.6'/%3E%3C/g%3E%3C/svg%3E"); opacity: .45; }
+  .co-frise.top { top: 26px; transform: scaleY(-1); } .co-frise.bot { bottom: 26px; }
+  @media (max-width: 760px) { .co-frise { background-size: 26px 18px; height: 18px; } .co-frise.top { top: 16px; } .co-frise.bot { bottom: 16px; } }
   .be-frise { position: absolute; left: 0; right: 0; height: 22px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='22'%3E%3Cg fill='none' stroke='%23E9D3B4' stroke-width='2'%3E%3Cpath d='M0 20a16 16 0 0 1 32 0'/%3E%3Cpath d='M16 20V7' stroke-width='1' opacity='.55'/%3E%3Cpath d='M0 20.5H32' stroke-width='1.6'/%3E%3C/g%3E%3C/svg%3E") repeat-x; background-size: 32px 22px; opacity: .75; }
   .be-frise-top { top: 24px; transform: scaleY(-1); } .be-frise-bot { bottom: 24px; }
   .be-wrap { position: relative; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr 1fr; gap: 70px; align-items: center; }
@@ -1895,6 +1899,7 @@
 
 <!-- ABOUT -->
 <section class="about" id="apropos">
+  <div class="co-frise bot" aria-hidden="true"></div>
   <div class="about-grid">
     <div class="about-logo-wrap fade-up">
       <img src="logo-cobalt.png" alt="Cobalt Group & Construction — Immobilier par nature"
@@ -1935,6 +1940,7 @@
 
 <!-- QUI SOMMES-NOUS - FONDATEUR & EQUIPE -->
 <section class="founder" id="equipe">
+  <div class="co-frise bot" aria-hidden="true"></div>
   <div class="founder-inner">
     <div class="founder-head fade-up">
       <h2>Qui sommes nous ?</h2>
@@ -2069,6 +2075,8 @@
 </section>
 
 <section class="projects" id="projets">
+  <div class="co-frise top light" aria-hidden="true"></div>
+  <div class="co-frise bot light" aria-hidden="true"></div>
   <div class="section-header">
     <div>
       <div class="section-tag">Nos biens & projets</div>
@@ -2379,6 +2387,8 @@
 
 <!-- DISPOSITIF JEANBRUN -->
 <section class="jeanbrun" id="jeanbrun">
+  <div class="co-frise top light" aria-hidden="true"></div>
+  <div class="co-frise bot light" aria-hidden="true"></div>
   <div class="jeanbrun-header fade-up">
     <div class="section-tag">Dispositif fiscal · Loi de finances 2026</div>
     <h2 class="section-title">Dispositif <em>Jeanbrun</em></h2>
@@ -2511,6 +2521,8 @@
 
 <!-- MAISON NOBLEBOIS -->
 <section class="noblebois" id="noblebois">
+  <div class="co-frise top light" aria-hidden="true"></div>
+  <div class="co-frise bot light" aria-hidden="true"></div>
   <div class="noblebois-inner">
 
     <div class="noblebois-hero">
@@ -2720,6 +2732,7 @@
 
 <!-- PARTENAIRES -->
 <section class="partners" id="partenaires">
+  <div class="co-frise top" aria-hidden="true"></div>
   <div class="partners-head fade-up">
     <div class="partners-eyebrow">Ils nous font confiance</div>
     <h2 class="partners-title">Nos <em>Partenaires</em></h2>
